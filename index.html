@@ -1,6 +1,4 @@
-export default {
-  async fetch(request) {
-    const html = `<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,7 +19,6 @@ export default {
             overflow-x: hidden;
         }
         
-        /* Фоновый эффект */
         body::before {
             content: '';
             position: absolute;
@@ -48,12 +45,6 @@ export default {
             border: 1px solid rgba(255, 70, 70, 0.3);
         }
         
-        /* Аватарка */
-        .avatar-container {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
         .avatar {
             width: 120px;
             height: 120px;
@@ -61,25 +52,7 @@ export default {
             object-fit: cover;
             border: 4px solid #ff4444;
             box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4); }
-            50% { box-shadow: 0 15px 35px rgba(255, 0, 0, 0.7); }
-            100% { box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4); }
-        }
-        
-        .avatar-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,50,50,0.3) 0%, transparent 70%);
-            z-index: -1;
+            margin-bottom: 15px;
         }
         
         h1 { 
@@ -92,7 +65,6 @@ export default {
             background: linear-gradient(45deg, #333, #ff0000);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .subtitle { 
@@ -146,6 +118,14 @@ export default {
             box-shadow: 0 15px 30px rgba(40,167,69,0.6); 
         }
         
+        .btn-copy {
+            background: linear-gradient(45deg, #6c757d, #495057);
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
         .info { 
             margin-top: 30px; 
             padding: 20px; 
@@ -179,20 +159,47 @@ export default {
             font-weight: 500;
         }
         
-        .success { 
+        .success-message { 
             color: #155724; 
             background: #d4edda; 
-            padding: 15px; 
-            border-radius: 12px; 
-            margin: 15px 0; 
+            padding: 10px; 
+            border-radius: 8px; 
+            margin: 10px 0; 
             display: none; 
             border-left: 4px solid #28a745;
         }
         
-        .emoji { 
-            font-size: 48px; 
-            margin-bottom: 5px; 
-            filter: drop-shadow(0 5px 10px rgba(255,0,0,0.3));
+        .copy-block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .copy-field {
+            flex: 1;
+            padding: 12px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .copy-btn {
+            padding: 12px 20px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: #ff6666;
+            transform: scale(1.02);
         }
         
         .stats {
@@ -220,25 +227,18 @@ export default {
 </head>
 <body>
     <div class="container">
-        <div class="avatar-container">
-            <!-- ЗДЕСЬ БУДЕТ ТВОЯ ФОТКА -->
-            <img src="https://i.ibb.co/ссылку-на-твою-фотку/geo.jpg" alt="GEOVAXUE" class="avatar" onerror="this.style.display='none'">
-            <div class="avatar-glow"></div>
-        </div>
+        <img src="ССЫЛКА_НА_ТВОЮ_ФОТКУ" alt="GEOVAXUE" class="avatar" onerror="this.style.display='none'">
         
-        <div class="emoji">⚡️🔥⚡️</div>
         <h1>GEOVAXUE</h1>
         <div class="subtitle">ОФИЦИАЛЬНЫЙ БОТ</div>
         
-        <div class="success" id="success-message">
-            ✅ Прокси подключается! После подтверждения нажми "Открыть бота"
-        </div>
+        <div class="success-message" id="successMessage"></div>
         
-        <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="btn btn-proxy" id="proxy-btn">
-            🔌 ПОДКЛЮЧИТЬ ПРОКСИ
+        <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="btn btn-proxy">
+            🔌 ПОДКЛЮЧИТЬ ПРОКСИ АВТОМАТИЧЕСКИ
         </a>
         
-        <a href="https://t.me/geovaxuebonusbot?start=geo" class="btn btn-telegram" id="bot-btn">
+        <a href="https://t.me/geovaxuebonusbot?start=geo" class="btn btn-telegram">
             📱 ОТКРЫТЬ БОТА
         </a>
         
@@ -250,16 +250,44 @@ export default {
         
         <div class="warning">
             ⚡️ ПРОБЛЕМЫ С ДОСТУПОМ?<br>
-            1️⃣ Нажми "ПОДКЛЮЧИТЬ ПРОКСИ"<br>
+            1️⃣ Нажми "ПОДКЛЮЧИТЬ ПРОКСИ АВТОМАТИЧЕСКИ"<br>
             2️⃣ Подтверди в Telegram<br>
             3️⃣ Вернись и нажми "ОТКРЫТЬ БОТА"
         </div>
         
         <div class="info">
-            <p><strong>🔧 Прокси для ручного добавления:</strong></p>
-            <div class="proxy-url">tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6</div>
-            <p>📌 Просто скопируй и вставь в Telegram</p>
-            <p>🤖 Или найди бота: <strong>@geovaxuebonusbot</strong></p>
+            <p><strong>📋 РУЧНОЙ ВВОД ПРОКСИ (если авто не сработало):</strong></p>
+            
+            <p>Скопируй эти данные и вставь в Telegram (Настройки → Данные и память → Использовать прокси):</p>
+            
+            <div class="copy-block">
+                <input type="text" class="copy-field" id="proxyServer" value="37.139.42.151" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('proxyServer', 'Сервер скопирован!')">📋</button>
+            </div>
+            
+            <div class="copy-block">
+                <input type="text" class="copy-field" id="proxyPort" value="443" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('proxyPort', 'Порт скопирован!')">📋</button>
+            </div>
+            
+            <div class="copy-block">
+                <input type="text" class="copy-field" id="proxySecret" value="f5199e949c0f23bc887581218ad8c1e6" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('proxySecret', 'Секрет скопирован!')">📋</button>
+            </div>
+            
+            <p><strong>🤖 БОТ И КАНАЛ (нажми чтобы скопировать):</strong></p>
+            
+            <div class="copy-block">
+                <input type="text" class="copy-field" id="botUsername" value="@geovaxuebonusbot" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('botUsername', 'Юзернейм бота скопирован!')">📋</button>
+            </div>
+            
+            <div class="copy-block">
+                <input type="text" class="copy-field" id="channelUsername" value="@officialgeovaxue" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('channelUsername', 'Юзернейм канала скопирован!')">📋</button>
+            </div>
+            
+            <p>🔍 Найди в Telegram: <strong>@geovaxuebonusbot</strong></p>
             <p>💬 Канал: <strong>@officialgeovaxue</strong></p>
         </div>
         
@@ -269,18 +297,20 @@ export default {
     </div>
 
     <script>
-        document.getElementById('proxy-btn').addEventListener('click', function() {
-            localStorage.setItem('proxyClicked', 'true');
-            document.getElementById('success-message').style.display = 'block';
-        });
+        function copyToClipboard(elementId, message) {
+            var copyText = document.getElementById(elementId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            
+            var successMessage = document.getElementById('successMessage');
+            successMessage.innerHTML = '✅ ' + message;
+            successMessage.style.display = 'block';
+            
+            setTimeout(function() {
+                successMessage.style.display = 'none';
+            }, 2000);
+        }
     </script>
 </body>
-</html>`;
-
-    return new Response(html, {
-      headers: {
-        'content-type': 'text/html;charset=UTF-8',
-      },
-    });
-  }
-}
+</html>
