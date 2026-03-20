@@ -99,11 +99,27 @@
         .bonus-link:hover { opacity: 0.9; transform: scale(0.99); }
         .fugo-bg { background: linear-gradient(45deg, #b52e2e, #ff4d4d); }
         .beef-bg { background: linear-gradient(45deg, #6b3e1a, #a0522d); }
-        .step-card {
+        
+        /* Блок с инструкцией */
+        .instruction-block {
             background: #f0f2f5;
+            border-radius: 14px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .instruction-title {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #222;
+            text-align: center;
+        }
+        .step-card {
+            background: #ffffff;
             border-radius: 14px;
             padding: 14px;
             margin: 12px 0;
+            border: 1px solid #e9ecef;
         }
         .step-num {
             display: inline-block;
@@ -195,30 +211,35 @@
                 </a>
             </div>
             
-            <!-- ШАГ 1: ПРОКСИ -->
-            <div class="step-card">
-                <div><span class="step-num">1</span> <span class="step-title">ПОДКЛЮЧИТЬ ПРОКСИ</span></div>
-                <div class="step-desc">Telegram в России работает с перебоями. Добавь прокси — это 10 секунд.</div>
-                <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="tg-button proxy-button">
-                    🔌 ПОДКЛЮЧИТЬ ПРОКСИ
-                </a>
-                <div class="info-text">👉 Telegram спросит «Добавить прокси?» — нажми <strong>ДА</strong></div>
-            </div>
-            
-            <!-- ШАГ 2: ПЕРЕХОД + ПРЕДУПРЕЖДЕНИЕ ПРО КОМП -->
-            <div class="step-card">
-                <div><span class="step-num">2</span> <span class="step-title">ПЕРЕЙТИ В КАНАЛ</span></div>
-                <div class="step-desc">После прокси нажми кнопку — откроется Telegram-канал</div>
+            <!-- ИНСТРУКЦИЯ: КАК ПОПАСТЬ В TELEGRAM-КАНАЛ -->
+            <div class="instruction-block">
+                <div class="instruction-title">📱 КАК ПОПАСТЬ В TELEGRAM-КАНАЛ</div>
                 
-                <div class="warning-note">
-                    📱 <strong>ВАЖНО:</strong> Telegram на компьютере не открывается!<br>
-                    Открывай канал <strong>только с телефона</strong>.
+                <!-- ШАГ 1: ПРОКСИ -->
+                <div class="step-card">
+                    <div><span class="step-num">1</span> <span class="step-title">ПОДКЛЮЧИТЬ ПРОКСИ</span></div>
+                    <div class="step-desc">Telegram в России работает с перебоями. Добавь прокси — это 10 секунд.</div>
+                    <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="tg-button proxy-button">
+                        🔌 ПОДКЛЮЧИТЬ ПРОКСИ
+                    </a>
+                    <div class="info-text">👉 Telegram спросит «Добавить прокси?» — нажми <strong>ДА</strong></div>
                 </div>
                 
-                <a href="https://t.me/officialgeovaxue" class="tg-button" target="_blank" rel="noopener noreferrer">
-                    📱 ПЕРЕЙТИ В КАНАЛ
-                </a>
-                <div class="info-text">👉 Если не открывается — закрой Telegram, открой заново и нажми ещё раз</div>
+                <!-- ШАГ 2: ПЕРЕХОД + ПРЕДУПРЕЖДЕНИЕ ПРО КОМП -->
+                <div class="step-card">
+                    <div><span class="step-num">2</span> <span class="step-title">ПЕРЕЙТИ В КАНАЛ</span></div>
+                    <div class="step-desc">После прокси нажми кнопку — откроется Telegram-канал</div>
+                    
+                    <div class="warning-note">
+                        📱 <strong>ВАЖНО:</strong> Telegram на компьютере не открывается!<br>
+                        Открывай канал <strong>только с телефона</strong>.
+                    </div>
+                    
+                    <a href="https://t.me/officialgeovaxue" class="tg-button" target="_blank" rel="noopener noreferrer">
+                        📱 ПЕРЕЙТИ В КАНАЛ
+                    </a>
+                    <div class="info-text">👉 Если не открывается — закрой Telegram, открой заново и нажми ещё раз</div>
+                </div>
             </div>
             
             <div class="info-text" style="margin-top: 8px; text-align: center;">
