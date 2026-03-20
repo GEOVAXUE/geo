@@ -2,11 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GEOVAXUE BOT</title>
+    <title>GEOVAXUE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             display: flex; 
@@ -14,317 +13,202 @@
             align-items: center; 
             min-height: 100vh; 
             margin: 0; 
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 100%);
-            position: relative;
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1f1a1a 100%);
         }
-        
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="%23ff0000" stroke-width="2"/><circle cx="50" cy="50" r="10" fill="%23ff0000"/></svg>');
-            background-size: 100px 100px;
-            pointer-events: none;
-        }
-        
         .container { 
-            max-width: 420px; 
-            padding: 30px 20px; 
+            max-width: 480px; 
+            padding: 30px 25px; 
             text-align: center; 
             background: rgba(255, 255, 255, 0.95); 
-            border-radius: 32px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 0 2px #ff3333 inset; 
+            border-radius: 40px; 
+            box-shadow: 0 30px 50px rgba(0,0,0,0.5); 
             margin: 20px; 
-            position: relative;
-            z-index: 10;
-            backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 70, 70, 0.3);
         }
-        
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #ff4444;
-            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
-            margin-bottom: 15px;
-        }
-        
         h1 { 
-            color: #1a1a1a; 
-            margin-bottom: 5px; 
-            font-size: 32px; 
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: linear-gradient(45deg, #333, #ff0000);
+            font-size: 42px; 
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ff4444, #ff8888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
         }
-        
-        .subtitle { 
-            color: #444; 
-            margin-bottom: 25px; 
-            font-size: 16px;
-            font-weight: 500;
-            background: rgba(255, 68, 68, 0.1);
-            padding: 8px 15px;
-            border-radius: 50px;
-            display: inline-block;
-            border: 1px solid rgba(255, 68, 68, 0.3);
-        }
-        
-        .btn { 
-            display: block; 
-            width: 100%; 
-            padding: 16px; 
-            margin: 12px 0; 
-            border: none; 
-            border-radius: 50px; 
-            font-size: 18px; 
-            font-weight: 700; 
-            text-decoration: none; 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
-            box-sizing: border-box; 
-            text-transform: uppercase;
+        .sub { 
+            color: #888; 
+            font-size: 12px; 
+            margin-bottom: 25px;
             letter-spacing: 1px;
         }
         
-        .btn-telegram { 
-            background: linear-gradient(45deg, #0088cc, #00a2ff); 
-            color: white; 
-            box-shadow: 0 8px 20px rgba(0,136,204,0.4);
+        /* Бонусы */
+        .bonus-block {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-radius: 28px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #ff4444;
         }
-        
-        .btn-telegram:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 15px 30px rgba(0,136,204,0.6); 
+        .bonus-title {
+            color: #ffaa00;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
-        
-        .btn-proxy { 
-            background: linear-gradient(45deg, #28a745, #34ce57); 
-            color: white; 
-            box-shadow: 0 8px 20px rgba(40,167,69,0.4);
-        }
-        
-        .btn-proxy:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 15px 30px rgba(40,167,69,0.6); 
-        }
-        
-        .btn-copy {
-            background: linear-gradient(45deg, #6c757d, #495057);
-            color: white;
-            padding: 12px;
-            font-size: 16px;
-            margin: 5px 0;
-        }
-        
-        .info { 
-            margin-top: 30px; 
-            padding: 20px; 
-            background: rgba(0, 0, 0, 0.03); 
-            border-radius: 16px; 
-            font-size: 14px; 
-            color: #555; 
-            text-align: left; 
-            border: 1px solid rgba(255, 68, 68, 0.2);
-        }
-        
-        .proxy-url { 
-            word-break: break-all; 
-            background: #f5f5f5; 
-            padding: 12px; 
-            border-radius: 12px; 
-            font-family: monospace; 
-            margin: 12px 0; 
-            font-size: 12px; 
-            border: 1px dashed #ff4444;
-        }
-        
-        .warning { 
-            color: #8a3f3f; 
-            background: rgba(255, 200, 200, 0.3); 
-            padding: 15px; 
-            border-radius: 12px; 
-            margin: 20px 0; 
-            border-left: 4px solid #ff4444;
-            text-align: left;
-            font-weight: 500;
-        }
-        
-        .success-message { 
-            color: #155724; 
-            background: #d4edda; 
-            padding: 10px; 
-            border-radius: 8px; 
-            margin: 10px 0; 
-            display: none; 
-            border-left: 4px solid #28a745;
-        }
-        
-        .copy-block {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .bonus-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
             margin: 10px 0;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.2s;
         }
+        .fugo {
+            background: linear-gradient(45deg, #b52e2e, #ff4d4d);
+            color: white;
+        }
+        .beef {
+            background: linear-gradient(45deg, #6b3e1a, #a0522d);
+            color: white;
+        }
+        .bonus-btn:hover { opacity: 0.9; transform: scale(1.01); }
         
-        .copy-field {
-            flex: 1;
-            padding: 12px;
+        /* Шаги */
+        .step {
             background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 14px;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
         }
-        
-        .copy-btn {
-            padding: 12px 20px;
+        .step-number {
+            display: inline-block;
             background: #ff4444;
             color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            line-height: 32px;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 12px;
         }
-        
-        .copy-btn:hover {
-            background: #ff6666;
-            transform: scale(1.02);
+        .step-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #222;
         }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
+        .step-desc {
             color: #666;
             font-size: 14px;
+            margin-bottom: 18px;
         }
-        
-        .stats span {
-            background: rgba(255, 68, 68, 0.1);
-            padding: 5px 12px;
+        .action-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px;
             border-radius: 50px;
-            border: 1px solid rgba(255, 68, 68, 0.2);
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .proxy-btn {
+            background: #28a745;
+            color: white;
+        }
+        .telegram-btn {
+            background: #0088cc;
+            color: white;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 12px;
         }
         
         .footer {
-            margin-top: 20px;
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 25px;
+            text-align: center;
+        }
+        hr {
+            margin: 15px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+        .success-msg {
+            background: #d4edda;
+            color: #155724;
+            padding: 8px;
+            border-radius: 12px;
             font-size: 12px;
-            color: #888;
+            margin-bottom: 15px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="ССЫЛКА_НА_ТВОЮ_ФОТКУ" alt="GEOVAXUE" class="avatar" onerror="this.style.display='none'">
-        
         <h1>GEOVAXUE</h1>
-        <div class="subtitle">ОФИЦИАЛЬНЫЙ TG GEOVAXUE </div>
+        <div class="sub">OFFICIAL CHANNEL</div>
         
-        <div class="success-message" id="successMessage"></div>
-
-                <!-- БОНУСЫ ОТ GEO (НОВЫЙ БЛОК) -->
-        <div style="margin: 30px 0 20px 0; padding: 20px; background: linear-gradient(135deg, #ffd700, #ffa500); border-radius: 20px; box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);">
-            <h2 style="color: #1a1a1a; margin-bottom: 15px; font-size: 24px; font-weight: 800;">🎁 БОНУСЫ ОТ GEO</h2>
-            
-            <a href="https://fuguway62.com/c9f4c823e?activation_code=BONUSOTGEO" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 16px; margin: 10px 0; border: none; border-radius: 50px; background: linear-gradient(45deg, #8B0000, #FF4500); color: white; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 8px 20px rgba(139,0,0,0.4); transition: transform 0.3s ease;">
-                🎰 FUGO: 250% + 500 FS + 50 FS БЕЗ ДЕПА
+        <div class="success-msg" id="successMsg"></div>
+        
+        <!-- БОНУСЫ -->
+        <div class="bonus-block">
+            <div class="bonus-title">🔥 ЗАБЕРИ БОНУСЫ 🔥</div>
+            <a href="https://fuguway62.com/c9f4c823e?activation_code=BONUSOTGEO" class="bonus-btn fugo" target="_blank" rel="noopener noreferrer">
+                🎰 FUGO — 250% + 500 FS + 50 FS БЕЗ ДЕПОЗИТА
             </a>
-            
-            <a href="https://beefway61.com/c7f7c1d30" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; padding: 16px; margin: 10px 0; border: none; border-radius: 50px; background: linear-gradient(45deg, #654321, #8B4513); color: white; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 8px 20px rgba(101,67,33,0.4); transition: transform 0.3s ease;">
-                🥩 BEEF: БОНУС 125% + КЭШБЭК 30%
+            <a href="https://beefway61.com/c7f7c1d30" class="bonus-btn beef" target="_blank" rel="noopener noreferrer">
+                🥩 BEEF — 125% БОНУС + КЭШБЭК 30%
             </a>
-            
-            <p style="color: #333; margin-top: 15px; font-size: 14px; font-weight: 600;">⚡️ Активируй бонусы сразу после регистрации!</p>
         </div>
         
-        <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="btn btn-proxy">
-            🔌 ПОДКЛЮЧИТЬ ПРОКСИ АВТОМАТИЧЕСКИ
-        </a>
-        
-        <a href="https://t.me/geovaxuebonusbot?start=geo" class="btn btn-telegram">
-            📱 ОТКРЫТЬ Телеграм
-        </a>
-        
-        <div class="stats">
-            <span>⚡️ 24/7</span>
-            <span>🔥 FREE</span>
-            <span>💎 PROXY</span>
+        <!-- ШАГ 1: ПРОКСИ -->
+        <div class="step">
+            <div><span class="step-number">1</span></div>
+            <div class="step-title">ПОДКЛЮЧИ ПРОКСИ</div>
+            <div class="step-desc">Telegram в России работает с перебоями. Сначала добавь прокси — это займёт 10 секунд.</div>
+            <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="action-btn proxy-btn">
+                🔌 ПОДКЛЮЧИТЬ ПРОКСИ
+            </a>
+            <div class="note">👉 Telegram спросит «Добавить прокси?» — нажми <strong>ДА</strong></div>
         </div>
         
-        <div class="warning">
-            ⚡️ ПРОБЛЕМЫ С ДОСТУПОМ?<br>
-            1️⃣ Нажми "ПОДКЛЮЧИТЬ ПРОКСИ АВТОМАТИЧЕСКИ"<br>
-            2️⃣ Подтверди в Telegram<br>
-            3️⃣ Вернись и нажми "ОТКРЫТЬ БОТА"
-        </div>
-        
-        <div class="info">
-            <p><strong>📋 РУЧНОЙ ВВОД ПРОКСИ (если авто не сработало):</strong></p>
-            
-            <p>Скопируй эти данные и вставь в Telegram (Настройки → Данные и память → Использовать прокси):</p>
-            
-            <div class="copy-block">
-                <input type="text" class="copy-field" id="proxyServer" value="37.139.42.151" readonly>
-                <button class="copy-btn" onclick="copyToClipboard('proxyServer', 'Сервер скопирован!')">📋</button>
-            </div>
-            
-            <div class="copy-block">
-                <input type="text" class="copy-field" id="proxyPort" value="443" readonly>
-                <button class="copy-btn" onclick="copyToClipboard('proxyPort', 'Порт скопирован!')">📋</button>
-            </div>
-            
-            <div class="copy-block">
-                <input type="text" class="copy-field" id="proxySecret" value="f5199e949c0f23bc887581218ad8c1e6" readonly>
-                <button class="copy-btn" onclick="copyToClipboard('proxySecret', 'Секрет скопирован!')">📋</button>
-            </div>
-            
-            <p><strong>🤖 БОТ И КАНАЛ (нажми чтобы скопировать):</strong></p>
-            
-            <div class="copy-block">
-                <input type="text" class="copy-field" id="botUsername" value="@geovaxuebonusbot" readonly>
-                <button class="copy-btn" onclick="copyToClipboard('botUsername', 'Юзернейм бота скопирован!')">📋</button>
-            </div>
-            
-            <div class="copy-block">
-                <input type="text" class="copy-field" id="channelUsername" value="@officialgeovaxue" readonly>
-                <button class="copy-btn" onclick="copyToClipboard('channelUsername', 'Юзернейм канала скопирован!')">📋</button>
-            </div>
-            
-            <p>🔍 Найди в Telegram: <strong>@geovaxuebonusbot</strong></p>
-            <p>💬 Канал: <strong>@officialgeovaxue</strong></p>
+        <!-- ШАГ 2: TELEGRAM КАНАЛ -->
+        <div class="step">
+            <div><span class="step-number">2</span></div>
+            <div class="step-title">ПЕРЕЙДИ В КАНАЛ</div>
+            <div class="step-desc">После подключения прокси нажми кнопку — откроется Telegram-канал</div>
+            <a href="https://t.me/officialgeovaxue" class="action-btn telegram-btn">
+                📱 ПЕРЕЙТИ В КАНАЛ
+            </a>
+            <div class="note">👉 Если не открывается — закрой Telegram, открой заново и нажми ещё раз</div>
         </div>
         
         <div class="footer">
-            GEOVAXUE © 2026 | Вход без границ
+            GEOVAXUE © 2026 • Сначала прокси, потом канал
         </div>
     </div>
 
     <script>
-        function copyToClipboard(elementId, message) {
-            var copyText = document.getElementById(elementId);
-            copyText.select();
-            copyText.setSelectionRange(0, 99999);
-            document.execCommand('copy');
-            
-            var successMessage = document.getElementById('successMessage');
-            successMessage.innerHTML = '✅ ' + message;
-            successMessage.style.display = 'block';
-            
-            setTimeout(function() {
-                successMessage.style.display = 'none';
-            }, 2000);
+        // уведомление для копирования (оставил на всякий случай, но ручной поиск убран)
+        function showMsg(msg) {
+            const el = document.getElementById('successMsg');
+            el.innerHTML = msg;
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 2000);
         }
     </script>
 </body>
