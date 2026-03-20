@@ -24,21 +24,24 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
         
-        /* Шапка */
+        /* ШАПКА — контрастная, не сливается */
         .header {
-            background: linear-gradient(135deg, #1a1a1a, #2d0a0a);
+            background: linear-gradient(135deg, #b52e2e 0%, #8b1a1a 100%);
             padding: 24px 20px;
             text-align: center;
+            border-bottom: 3px solid #ffaa00;
         }
         .header h1 {
-            color: #ff4444;
+            color: #ffffff;
             font-size: 32px;
             letter-spacing: 2px;
             margin-bottom: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         .header p {
-            color: #aaa;
+            color: #ffdd99;
             font-size: 12px;
+            font-weight: 500;
         }
         
         /* Счетчик срочности */
@@ -172,6 +175,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- ШАПКА: КОНТРАСТНАЯ, НЕ СЛИВАЕТСЯ -->
         <div class="header">
             <h1>GEOVAXUE</h1>
             <p>OFFICIAL CHANNEL</p>
@@ -189,7 +193,7 @@
                 🎰 FUGO — 250% + 500 FS + 50 FS БЕЗ ДЕПОЗИТА
             </a>
             <a href="https://beefway61.com/c7f7c1d30" class="bonus-btn beef" target="_blank" rel="noopener noreferrer">
-                🥩 BEEF — 250% БОНУС + 600FS + 30% КЭШБЭК
+                🥩 BEEF — 125% БОНУС + 30% КЭШБЭК
             </a>
         </div>
         
@@ -252,7 +256,7 @@
         
         setTimeout(updateCounter, 3000);
         
-        // Эффект срочности: при наведении на бонусы — легкая вибрация текста
+        // Эффект срочности: при наведении на бонусы — легкая анимация
         const bonusBtns = document.querySelectorAll('.bonus-btn');
         bonusBtns.forEach(btn => {
             btn.addEventListener('mouseenter', () => {
