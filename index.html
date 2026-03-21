@@ -2,270 +2,49 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>GEOVAXUE | БОНУСЫ + ДОСТУП</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>GEOVAXUE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #0a0a0a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 16px;
-        }
-        .container {
-            max-width: 480px;
-            width: 100%;
-            background: #ffffff;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        /* ШАПКА — контрастная, не сливается */
-        .header {
-            background: linear-gradient(135deg, #b52e2e 0%, #8b1a1a 100%);
-            padding: 24px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ffaa00;
-        }
-        .header h1 {
-            color: #ffffff;
-            font-size: 32px;
-            letter-spacing: 2px;
-            margin-bottom: 4px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        .header p {
-            color: #ffdd99;
-            font-size: 12px;
-            font-weight: 500;
-        }
-        
-        /* Счетчик срочности */
-        .urgency {
-            background: #fff3cd;
-            padding: 12px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: #856404;
-            border-bottom: 1px solid #ffc107;
-        }
-        .timer {
-            font-size: 20px;
-            font-weight: 800;
-            background: #1a1a1a;
-            color: #ffaa00;
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 30px;
-            margin-left: 8px;
-        }
-        
-        /* Бонусы */
-        .bonus-section {
-            padding: 20px;
-            background: #f8f9fa;
-        }
-        .bonus-title {
-            font-size: 18px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 16px;
-            color: #ff6600;
-        }
-        .bonus-btn {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            margin: 10px 0;
-            border-radius: 60px;
-            font-size: 16px;
-            font-weight: 800;
-            text-decoration: none;
-            text-align: center;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .bonus-btn:active { transform: scale(0.98); }
-        .fugo { background: linear-gradient(45deg, #e63946, #ff6b6b); color: white; }
-        .beef { background: linear-gradient(45deg, #8b4513, #cd853f); color: white; }
-        
-        /* Инструкция */
-        .instruction {
-            padding: 20px;
-            background: white;
-        }
-        .instruction-title {
-            font-size: 18px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 16px;
-            color: #222;
-        }
-        .step {
-            background: #f0f2f5;
-            border-radius: 20px;
-            padding: 16px;
-            margin: 16px 0;
-        }
-        .step-number {
-            display: inline-block;
-            background: #ff4444;
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 32px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .step-title {
-            font-weight: 800;
-            font-size: 18px;
-            display: inline;
-        }
-        .step-desc {
-            font-size: 14px;
-            color: #555;
-            margin: 10px 0 12px 0;
-            padding-left: 42px;
-        }
-        .action-btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            border-radius: 60px;
-            font-size: 16px;
-            font-weight: 700;
-            text-align: center;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        .proxy-btn { background: #28a745; color: white; }
-        .channel-btn { background: #0088cc; color: white; }
-        .warning {
-            background: #ffebee;
-            border-left: 4px solid #ff4444;
-            padding: 12px;
-            font-size: 13px;
-            margin: 16px 0;
-            border-radius: 12px;
-        }
-        .info-text {
-            font-size: 12px;
-            color: #888;
-            text-align: center;
-            margin-top: 12px;
-        }
-        
-        .footer {
-            background: #f8f9fa;
-            padding: 12px;
-            text-align: center;
-            font-size: 10px;
-            color: #aaa;
-            border-top: 1px solid #eee;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f0f0f; margin: 0; padding: 20px; }
+        .card { max-width: 480px; margin: 0 auto; background: white; border-radius: 28px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { color: #ff4444; font-size: 32px; margin: 0 0 4px 0; }
+        .sub { color: #666; font-size: 14px; margin-bottom: 24px; }
+        .btn { display: block; width: 100%; padding: 14px; margin: 12px 0; border-radius: 40px; font-weight: 700; text-decoration: none; text-align: center; font-size: 16px; }
+        .btn-fugo { background: #e63946; color: white; }
+        .btn-beef { background: #8B4513; color: white; }
+        .btn-proxy { background: #28a745; color: white; }
+        .btn-tg { background: #0088cc; color: white; }
+        .note { font-size: 12px; color: #888; text-align: center; margin-top: 20px; }
+        hr { margin: 16px 0; border: none; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- ШАПКА: КОНТРАСТНАЯ, НЕ СЛИВАЕТСЯ -->
-        <div class="header">
-            <h1>GEOVAXUE</h1>
-            <p>OFFICIAL CHANNEL</p>
-        </div>
-        
-        <!-- Счетчик срочности -->
-        <div class="urgency">
-            🔥 <strong>ОСТАЛОСЬ БОНУСОВ:</strong> <span class="timer" id="bonusCounter">47</span> шт 🔥
-        </div>
-        
-        <!-- Бонусы казино -->
-        <div class="bonus-section">
-            <div class="bonus-title">🎁 ЗАБЕРИ БОНУСЫ ПРЯМО СЕЙЧАС 🎁</div>
-            <a href="https://clck.ru/3SgiB4" class="bonus-btn fugo" target="_blank" rel="noopener noreferrer">
-                🎰 FUGO — 250% + 500 FS + 50 FS БЕЗ ДЕПОЗИТА
-            </a>
-            <a href="https://clck.ru/3SgiCt" class="bonus-btn beef" target="_blank" rel="noopener noreferrer">
-                🥩 BEEF — 125% БОНУС +600 FS + 30% КЭШБЭК
-            </a>
-        </div>
-        
-        <!-- Инструкция: как попасть в Telegram -->
-        <div class="instruction">
-            <div class="instruction-title">📱 КАК ПОПАСТЬ В TELEGRAM-КАНАЛ</div>
-            
-            <!-- ШАГ 1: ПРОКСИ -->
-            <div class="step">
-                <div><span class="step-number">1</span> <span class="step-title">ПОДКЛЮЧИ ПРОКСИ</span></div>
-                <div class="step-desc">Telegram в России работает с перебоями. Добавь прокси — это 10 секунд.</div>
-                <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="action-btn proxy-btn">
-                    🔌 ПОДКЛЮЧИТЬ ПРОКСИ
-                </a>
-                <div class="info-text">👉 Telegram спросит «Добавить прокси?» — нажми <strong>ДА</strong></div>
-            </div>
-            
-            <!-- ШАГ 2: ПЕРЕЙТИ В КАНАЛ -->
-            <div class="step">
-                <div><span class="step-number">2</span> <span class="step-title">ПЕРЕЙДИ В КАНАЛ</span></div>
-                <div class="step-desc">После прокси нажми кнопку — откроется Telegram-канал</div>
-                
-                <div class="warning">
-                    📱 <strong>ВАЖНО:</strong> Telegram на компьютере не открывается!<br>
-                    Открывай канал <strong>только с телефона</strong>.
-                </div>
-                
-                <a href="https://t.me/officialgeovaxue" class="action-btn channel-btn" target="_blank" rel="noopener noreferrer">
-                    📱 ПЕРЕЙТИ В КАНАЛ
-                </a>
-                <div class="info-text">👉 Если не открывается — закрой Telegram, открой заново и нажми ещё раз</div>
-            </div>
-            
-            <div class="info-text" style="margin-top: 12px;">
-                ⚡️ Сначала прокси → потом канал. Только с телефона.
-            </div>
-        </div>
-        
-        <div class="footer">
-            GEOVAXUE © 2026 • Бонусы ограничены
-        </div>
+<div class="card">
+    <h1>GEOVAXUE</h1>
+    <div class="sub">Бонусы + доступ</div>
+    
+    <!-- БОНУСЫ (прямые ссылки, без прокладки) -->
+    <a href="https://fuguway62.com/c9f4c823e?activation_code=BONUSOTGEO" class="btn btn-fugo" target="_blank" rel="noreferrer noopener">
+        🎰 FUGO — 250% + 500 FS + 50 FS
+    </a>
+    <a href="https://beefway61.com/c7f7c1d30?activation_code=BONUSOTGEO" class="btn btn-beef" target="_blank" rel="noreferrer noopener">
+        🥩 BEEF — 125% + КЭШБЭК 30%
+    </a>
+    
+    <hr>
+    
+    <!-- ДОСТУП В TELEGRAM -->
+    <a href="tg://proxy?server=37.139.42.151&port=443&secret=f5199e949c0f23bc887581218ad8c1e6" class="btn btn-proxy">
+        🔌 1. ПОДКЛЮЧИТЬ ПРОКСИ
+    </a>
+    <a href="https://t.me/officialgeovaxue" class="btn btn-tg" target="_blank" rel="noreferrer noopener">
+        📱 2. ПЕРЕЙТИ В КАНАЛ
+    </a>
+    
+    <div class="note">
+        ⚡ Telegram на компьютере не открывается — только с телефона<br>
+        🔥 Сначала прокси, потом канал
     </div>
-
-    <script>
-        // Анимированный счетчик бонусов (уменьшается каждые 3 секунды)
-        let bonusCount = 47;
-        const counterEl = document.getElementById('bonusCounter');
-        
-        function updateCounter() {
-            if (bonusCount > 3) {
-                bonusCount--;
-                counterEl.textContent = bonusCount;
-                setTimeout(updateCounter, 3000);
-            } else {
-                counterEl.textContent = '3';
-                counterEl.style.background = '#ff4444';
-                counterEl.style.color = 'white';
-            }
-        }
-        
-        setTimeout(updateCounter, 3000);
-        
-        // Эффект срочности: при наведении на бонусы — легкая анимация
-        const bonusBtns = document.querySelectorAll('.bonus-btn');
-        bonusBtns.forEach(btn => {
-            btn.addEventListener('mouseenter', () => {
-                btn.style.transform = 'scale(1.02)';
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'scale(1)';
-            });
-        });
-    </script>
+</div>
 </body>
 </html>
