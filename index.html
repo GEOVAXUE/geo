@@ -8,152 +8,54 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(145deg, #0a0a0a 0%, #1a0c0c 100%);
+            background: linear-gradient(145deg, #0a0a0a 0%, #16100c 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            position: relative;
-            overflow-x: hidden;
         }
-        /* Падающие монетки */
-        @keyframes fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-        .coin {
-            position: absolute;
-            top: -50px;
-            background: radial-gradient(circle at 30% 30%, #ffd966, #e6b422);
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: #b87c00;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            z-index: 0;
-            pointer-events: none;
-            animation: fall linear infinite;
-        }
-        .coin::after {
-            content: "💰";
-            font-size: 16px;
-        }
-        /* Основная карточка */
         .card {
-            max-width: 580px;
+            max-width: 560px;
             width: 100%;
-            background: rgba(20, 20, 30, 0.95);
-            backdrop-filter: blur(2px);
-            border-radius: 48px;
+            background: #14100e;
+            border-radius: 44px;
             padding: 28px 24px;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,215,0,0.3);
-            position: relative;
-            z-index: 10;
-            border: 1px solid rgba(255,200,100,0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,180,80,0.3);
         }
         h1 {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: 900;
-            background: linear-gradient(135deg, #ffcc44, #ff6644);
+            background: linear-gradient(135deg, #f5b042, #ff6644);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-align: center;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255,100,0,0.5);
             margin-bottom: 5px;
         }
         .sub {
             text-align: center;
-            color: #f0b27a;
-            font-size: 14px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            color: #d9a066;
+            font-size: 13px;
+            margin-bottom: 24px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        /* Рулетка (мини-игра) */
-        .roulette-container {
-            background: #1e1a1a;
-            border-radius: 40px;
-            padding: 15px;
-            margin-bottom: 25px;
-            text-align: center;
-            border: 1px solid #ffaa33;
-            box-shadow: 0 0 15px rgba(255,170,0,0.2);
-        }
-        .roulette-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #ffcc66;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .slot-machine {
-            background: #2c2c2c;
-            border-radius: 30px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-around;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .reel {
-            background: #111;
-            padding: 12px 20px;
-            border-radius: 20px;
-            font-size: 32px;
-            font-weight: bold;
-            min-width: 80px;
-            text-align: center;
-            color: #ffdd88;
-            box-shadow: inset 0 0 8px #ffaa33, 0 5px 10px black;
-            transition: 0.2s;
-            font-family: monospace;
-        }
-        .spin-btn {
-            background: linear-gradient(45deg, #e6b422, #ff8800);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 60px;
-            font-weight: bold;
-            font-size: 18px;
-            color: #1a0c0c;
-            margin-top: 15px;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 5px 0 #7a3e00;
-        }
-        .spin-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #7a3e00; }
-        .result-text {
-            margin-top: 12px;
-            font-size: 16px;
-            color: #ffbb77;
-            font-weight: bold;
-        }
-        /* Бонусы */
+        /* Блок бонусов */
         .bonus-block {
-            background: linear-gradient(135deg, #2f2a24, #1e1916);
+            background: #1f1916;
             border-radius: 32px;
             padding: 20px;
             margin-bottom: 28px;
             border: 1px solid #ffaa55;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
         .bonus-title {
-            color: #ffcc66;
+            color: #ffcc77;
             font-size: 20px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -162,55 +64,59 @@
         .bonus-btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             margin: 12px 0;
             border-radius: 60px;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
             text-decoration: none;
             text-align: center;
             transition: 0.2s;
             color: white;
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 1px;
         }
-        .btn-fugo { background: linear-gradient(95deg, #c23b22, #ff6a44); box-shadow: 0 4px 12px #ff3a1a; }
-        .btn-beef { background: linear-gradient(95deg, #8b3c1c, #c2713a); box-shadow: 0 4px 12px #a55a2a; }
-        .bonus-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+        .btn-fugo { background: linear-gradient(95deg, #b22f15, #e65c2c); box-shadow: 0 6px 14px rgba(220,70,20,0.4); }
+        .btn-beef { background: linear-gradient(95deg, #794a1f, #b56a2a); box-shadow: 0 6px 14px rgba(150,70,20,0.4); }
+        .bonus-btn:hover { transform: scale(1.01); filter: brightness(1.05); }
         /* Прокси блок */
         .proxy-block {
-            background: #131010dd;
+            background: #1a1412;
             border-radius: 32px;
             padding: 20px;
-            margin: 25px 0;
-            backdrop-filter: blur(4px);
-            border: 1px solid #ffaa55;
+            margin: 20px 0;
+            border: 1px solid #b47c44;
         }
         .proxy-title {
             font-weight: 800;
             font-size: 20px;
             text-align: center;
-            color: #ffdd99;
-            margin-bottom: 15px;
+            color: #f5bc70;
+            margin-bottom: 8px;
+        }
+        .proxy-sub {
+            text-align: center;
+            font-size: 14px;
+            color: #bbaa88;
+            margin-bottom: 18px;
         }
         .proxy-item {
-            background: #1f1c1c;
+            background: #241e1b;
             border-radius: 28px;
-            padding: 14px;
-            margin: 15px 0;
-            border: 1px solid #ffaa33;
+            padding: 16px;
+            margin: 16px 0;
+            border: 1px solid #e6a553;
         }
         .proxy-name {
             font-weight: 800;
-            font-size: 16px;
-            color: #ffaa55;
+            font-size: 17px;
+            color: #ffbc6e;
             margin-bottom: 8px;
         }
         .proxy-link {
             font-size: 11px;
             word-break: break-all;
-            background: #0a0a0a;
-            color: #ffaa88;
+            background: #0b0807;
+            color: #f5bc8c;
             padding: 8px;
             border-radius: 20px;
             margin: 8px 0;
@@ -218,64 +124,51 @@
         }
         .proxy-btn {
             display: inline-block;
-            background: #2c8c2c;
+            background: #2d8230;
             color: white;
             text-decoration: none;
             padding: 8px 18px;
             border-radius: 40px;
             font-weight: bold;
-            margin-top: 6px;
+            margin-top: 8px;
             transition: 0.2s;
             border: none;
             cursor: pointer;
         }
-        .proxy-btn:hover { background: #3ea53e; transform: scale(1.02); }
-        .warning, .note {
-            background: #2e2222aa;
-            border-left: 4px solid #ff6644;
-            padding: 12px;
+        .proxy-btn:hover { background: #3e9e41; transform: scale(1.02); }
+        .warning {
+            background: #2e201b;
+            border-left: 5px solid #ff8844;
+            padding: 14px;
             border-radius: 20px;
-            margin: 12px 0;
+            margin: 16px 0;
+            font-size: 14px;
+            color: #f7d2a0;
+        }
+        .note {
             font-size: 13px;
-            color: #ffccaa;
+            color: #c6a87a;
+            text-align: center;
+            margin-top: 12px;
         }
         .footer {
             text-align: center;
-            color: #aa8866;
+            color: #b4823a;
             font-size: 11px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
-        .flex-row { display: flex; gap: 12px; justify-content: center; margin: 8px 0; }
-        @media (max-width: 500px) { .reel { font-size: 24px; min-width: 60px; padding: 8px 12px; } }
+        hr { margin: 12px 0; border-color: #634d2e; }
     </style>
 </head>
 <body>
-
-<!-- Падающие монетки (декор) -->
-<div id="coinsContainer"></div>
-
 <div class="card">
-    <h1>🔥 GEOVAXUE 🔥</h1>
-    <div class="sub">VIP КЛУБ | БОНУСЫ | ДОСТУП 24/7</div>
+    <h1>⚡️ GEOVAXUE ⚡️</h1>
+    <div class="sub">БОНУСЫ | ДОСТУП К КАНАЛУ | ПРОКСИ</div>
 
-    <!-- МИНИ-РУЛЕТКА (интерактив) -->
-    <div class="roulette-container">
-        <div class="roulette-title">
-            <span>🎰</span> СЛОТ УДАЧИ <span>🎲</span>
-        </div>
-        <div class="slot-machine">
-            <div class="reel" id="reel1">🎰</div>
-            <div class="reel" id="reel2">💰</div>
-            <div class="reel" id="reel3">💎</div>
-        </div>
-        <button class="spin-btn" id="spinBtn">🎡 КРУТИТЬ 🎡</button>
-        <div class="result-text" id="spinResult">Нажми, чтобы поймать удачу → выиграй бонус!</div>
-    </div>
-
-    <!-- БОНУСЫ КАЗИНО (твои ссылки) -->
+    <!-- БОНУСЫ -->
     <div class="bonus-block">
         <div class="bonus-title">
-            🎁 ЗАБЕРИ СУПЕР-БОНУСЫ 🎁
+            🎁 ЗАБЕРИ БОНУСЫ ОТ GEO 🎁
         </div>
         <a href="https://megaways15.com/c9f4c823e?activation_code=BONUSOTGEO" class="bonus-btn btn-fugo" target="_blank" rel="noreferrer noopener">
             🎰 FUGO — 250% + 500 FS + 50 FS БЕЗ ДЕПА
@@ -285,95 +178,40 @@
         </a>
     </div>
 
-    <!-- ПРОКСИ ДЛЯ TELEGRAM -->
+    <!-- ПРОКСИ ДЛЯ TELEGRAM (С ПОЯСНЕНИЕМ) -->
     <div class="proxy-block">
-        <div class="proxy-title">🔌 ОБХОД БЛОКИРОВОК 🔌</div>
+        <div class="proxy-title">🔌 ДОСТУП В TELEGRAM 🔌</div>
+        <div class="proxy-sub">
+            ❗️ Telegram в РФ может тормозить или не открываться.<br>
+            Подключи прокси — после этого мессенджер будет летать без задержек.
+        </div>
+
         <div class="proxy-item">
-            <div class="proxy-name">⚡️ ПРОКСИ 1 (СУПЕР-СЕРВЕР)</div>
+            <div class="proxy-name">⚡️ ПРОКСИ 1 (ОСНОВНОЙ)</div>
             <div class="proxy-link">tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217</div>
-            <a href="tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217" class="proxy-btn">🔌 ПОДКЛЮЧИТЬ</a>
+            <a href="tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217" class="proxy-btn">➕ ПОДКЛЮЧИТЬ</a>
         </div>
+
         <div class="proxy-item">
-            <div class="proxy-name">🛡️ ПРОКСИ 2 (РЕЗЕРВ)</div>
+            <div class="proxy-name">🛡️ ПРОКСИ 2 (РЕЗЕРВНЫЙ)</div>
             <div class="proxy-link">tg://proxy?server=185.247.143.97&port=443&secret=ee79612e7275b225437a6f49873fe7b9</div>
-            <a href="tg://proxy?server=185.247.143.97&port=443&secret=ee79612e7275b225437a6f49873fe7b9" class="proxy-btn">🔌 ПОДКЛЮЧИТЬ</a>
+            <a href="tg://proxy?server=185.247.143.97&port=443&secret=ee79612e7275b225437a6f49873fe7b9" class="proxy-btn">➕ ПОДКЛЮЧИТЬ</a>
         </div>
+
         <div class="warning">
-            📱 <strong>ТОЛЬКО С ТЕЛЕФОНА!</strong> После добавления прокси Telegram летает без блокировок.
+            📱 <strong>ВАЖНО:</strong> Прокси работают на телефоне.<br>
+            1. Нажми «ПОДКЛЮЧИТЬ» → Telegram спросит разрешение → нажми «ДА».<br>
+            2. Закрой Telegram и открой заново — теперь он работает без ограничений.<br>
+            🔁 Если один прокси не подходит, используй второй.
         </div>
         <div class="note">
-            🔁 Не открывается? → Закрой Telegram, нажми кнопку "ПОДКЛЮЧИТЬ" → перезапусти Telegram.<br>
-            ⚡️ Если один прокси не идёт — используй второй.
+            ✅ После подключения прокси бонусы и канал GEOVAXUE будут всегда доступны.
         </div>
     </div>
 
     <div class="footer">
-        GEOVAXUE © 2026 • АКТИВНЫЕ БОНУСЫ • СТАБИЛЬНЫЕ ПРОКСИ
+        GEOVAXUE © 2026 • Бонусы обновлены • Прокси стабильны
     </div>
 </div>
-
-<script>
-    // Генерация падающих монеток (декор)
-    function createCoin() {
-        const coin = document.createElement('div');
-        coin.classList.add('coin');
-        const size = Math.random() * 30 + 20;
-        coin.style.width = size + 'px';
-        coin.style.height = size + 'px';
-        coin.style.left = Math.random() * 100 + '%';
-        coin.style.animationDuration = Math.random() * 6 + 4 + 's';
-        coin.style.animationDelay = Math.random() * 8 + 's';
-        coin.style.opacity = Math.random() * 0.7 + 0.3;
-        document.getElementById('coinsContainer').appendChild(coin);
-        setTimeout(() => coin.remove(), 8000);
-    }
-    setInterval(createCoin, 800);
-
-    // РУЛЕТКА (простая, но азартная)
-    const symbols = ['💰', '🎰', '💎', '🔥', '7️⃣', '🍒', '💵', '🎲'];
-    const reel1 = document.getElementById('reel1');
-    const reel2 = document.getElementById('reel2');
-    const reel3 = document.getElementById('reel3');
-    const spinBtn = document.getElementById('spinBtn');
-    const spinResult = document.getElementById('spinResult');
-
-    function spinReel(reelElement) {
-        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-        reelElement.textContent = randomSymbol;
-        return randomSymbol;
-    }
-
-    function spinAll() {
-        spinBtn.disabled = true;
-        spinResult.textContent = "🎲 КРУТИМ... 🎲";
-        let count = 0;
-        const interval = setInterval(() => {
-            spinReel(reel1);
-            spinReel(reel2);
-            spinReel(reel3);
-            count++;
-            if (count >= 12) {
-                clearInterval(interval);
-                const final1 = spinReel(reel1);
-                const final2 = spinReel(reel2);
-                const final3 = spinReel(reel3);
-                let message = "";
-                if (final1 === final2 && final2 === final3) {
-                    message = "🎉 ДЖЕКПОТ! ЗАБИРАЙ БОНУСЫ ВЫШЕ! 🎉";
-                    spinResult.style.color = "#ffcc44";
-                } else if (final1 === final2 || final2 === final3 || final1 === final3) {
-                    message = "🍀 ПРИБЛИЗИЛСЯ! КРУТНИ ЕЩЁ 🍀";
-                    spinResult.style.color = "#ffaa66";
-                } else {
-                    message = "🎯 ЕЩЁ ПОПЫТКА! УДАЧА БЛИЗКО 🎯";
-                    spinResult.style.color = "#ffaa88";
-                }
-                spinResult.textContent = message;
-                spinBtn.disabled = false;
-            }
-        }, 90);
-    }
-    spinBtn.addEventListener('click', spinAll);
-</script>
 </body>
 </html>
