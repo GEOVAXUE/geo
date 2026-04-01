@@ -8,7 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(145deg, #0b1120 0%, #10182a 100%);
+            background: linear-gradient(145deg, #1a0a0a 0%, #0f0505 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,17 +18,16 @@
         .card {
             max-width: 580px;
             width: 100%;
-            background: #0f172ad9;
-            backdrop-filter: blur(2px);
+            background: #1e1010;
             border-radius: 48px;
             padding: 28px 24px;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,200,100,0.3);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+            border: 1px solid #ac3a3a;
         }
         h1 {
             font-size: 44px;
             font-weight: 900;
-            background: linear-gradient(135deg, #e6c86e, #e6952a);
+            background: linear-gradient(135deg, #e64848, #b81c1c);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -38,35 +37,35 @@
         }
         .sub {
             text-align: center;
-            color: #aab9de;
+            color: #c97a7a;
             font-size: 13px;
             margin-bottom: 24px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        /* ОБЩИЙ БЛОК: КАНАЛ + ПРОКСИ (логично) */
+        /* ОБЩИЙ БЛОК: КАНАЛ + ПРОКСИ */
         .access-block {
-            background: #101826;
+            background: #261616;
             border-radius: 36px;
             padding: 20px;
             margin-bottom: 28px;
-            border: 1px solid #f5bc70;
+            border: 1px solid #b34e4e;
         }
         .channel-row {
             text-align: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #2f3b54;
+            border-bottom: 1px solid #642a2a;
         }
         .channel-name {
             font-size: 20px;
             font-weight: bold;
-            color: #ffdd99;
+            color: #ff8888;
             margin-bottom: 8px;
         }
         .channel-link {
             display: inline-block;
-            background: #1e2f46;
+            background: #8b2c2c;
             color: white;
             padding: 12px 28px;
             border-radius: 60px;
@@ -75,14 +74,14 @@
             font-size: 18px;
             margin: 5px 0;
             transition: 0.2s;
-            border: 1px solid #ffc857;
+            border: 1px solid #dd5555;
         }
-        .channel-link:hover { background: #2e4570; transform: scale(1.02); }
+        .channel-link:hover { background: #a53a3a; transform: scale(1.02); }
         .warning-note {
             font-size: 13px;
-            color: #ffcd94;
+            color: #ffaaaa;
             margin: 10px 0;
-            background: #1e2638;
+            background: #2f1919;
             padding: 8px;
             border-radius: 28px;
         }
@@ -90,34 +89,34 @@
             font-weight: 800;
             font-size: 18px;
             text-align: center;
-            color: #ffdd99;
+            color: #ffaaaa;
             margin: 12px 0 8px;
         }
         .proxy-item {
-            background: #0f1624;
+            background: #1f1111;
             border-radius: 28px;
             padding: 14px;
             margin: 14px 0;
-            border: 1px solid #f5bc70;
+            border: 1px solid #b34e4e;
         }
         .proxy-name {
             font-weight: 800;
             font-size: 16px;
-            color: #ffcd7e;
+            color: #ffaa88;
             margin-bottom: 6px;
         }
         .proxy-link {
             font-size: 10px;
             word-break: break-all;
-            background: #080e18;
-            color: #ffdd99;
+            background: #120808;
+            color: #ffaa88;
             padding: 6px;
             border-radius: 20px;
             font-family: monospace;
         }
         .proxy-btn {
             display: inline-block;
-            background: #2d6a4f;
+            background: #a13d3d;
             color: white;
             text-decoration: none;
             padding: 6px 16px;
@@ -126,25 +125,26 @@
             margin-top: 8px;
             transition: 0.2s;
         }
-        .proxy-btn:hover { background: #40916c; transform: scale(1.02); }
-        /* Бонусы казино (азартные цвета) */
+        .proxy-btn:hover { background: #c24f4f; transform: scale(1.02); }
+        /* БОНУСЫ ВНИЗУ (с указателем) */
         .bonus-block {
-            background: #111827;
+            background: #1f1313;
             border-radius: 32px;
             padding: 20px;
-            margin-bottom: 24px;
-            border: 1px solid #ff9933;
-            box-shadow: 0 0 12px rgba(255,100,0,0.2);
+            margin-top: 15px;
+            border: 2px solid #dd5555;
+            text-align: center;
+        }
+        .bonus-down {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #ff8888;
         }
         .bonus-title {
-            color: #ffaa55;
-            font-size: 20px;
+            color: #ffaa77;
+            font-size: 22px;
             font-weight: bold;
-            text-align: center;
-            margin-bottom: 14px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+            margin-bottom: 16px;
         }
         .bonus-btn {
             display: block;
@@ -160,40 +160,40 @@
             color: white;
         }
         .btn-fugo {
-            background: linear-gradient(95deg, #c73b1a, #ff6a2e);
-            box-shadow: 0 6px 14px rgba(200,60,20,0.5);
+            background: linear-gradient(95deg, #b82a2a, #e65a2a);
+            box-shadow: 0 6px 14px rgba(180,40,20,0.5);
         }
         .btn-beef {
-            background: linear-gradient(95deg, #9a4a1a, #d97a2c);
-            box-shadow: 0 6px 14px rgba(150,70,20,0.5);
+            background: linear-gradient(95deg, #9a3a1a, #d16a2a);
+            box-shadow: 0 6px 14px rgba(150,50,20,0.5);
         }
         .bonus-btn:hover { transform: scale(1.01); filter: brightness(1.07); }
         .footer {
             text-align: center;
-            color: #6a7c9e;
+            color: #aa6e6e;
             font-size: 11px;
             margin-top: 20px;
         }
         .small-note {
             font-size: 12px;
-            color: #aabbdd;
+            color: #ccaaaa;
             text-align: center;
             margin-top: 12px;
         }
-        hr { margin: 8px 0; border-color: #2a3a55; }
+        hr { margin: 8px 0; border-color: #552a2a; }
     </style>
 </head>
 <body>
 <div class="card">
     <h1>⚡️ GEOVAXUE ⚡️</h1>
-    <div class="sub">ОФИЦИАЛЬНЫЙ КАНАЛ | БОНУСЫ | ДОСТУП</div>
+    <div class="sub">ОФИЦИАЛЬНЫЙ КАНАЛ | ПРОКСИ | ДОСТУП</div>
 
     <!-- ЕДИНЫЙ БЛОК: КАНАЛ + ПРОКСИ -->
     <div class="access-block">
         <div class="channel-row">
             <div class="channel-name">📢 ОСНОВНОЙ КАНАЛ 📢</div>
             <a href="https://t.me/geovaxuebonusbot?start=258289" class="channel-link" target="_blank" rel="noreferrer noopener">
-                🔥 ПОДПИСАТЬСЯ 🔥
+                🔥 ПЕРЕЙТИ В БОТА 🔥
             </a>
             <div class="warning-note">
                 ⚠️ БЕЗ ПРОКСИ TELEGRAM МОЖЕТ НЕ ОТКРЫВАТЬСЯ ⚠️
@@ -213,12 +213,15 @@
         </div>
         <div class="small-note">
             📱 1️⃣ Нажми «ПОДКЛЮЧИТЬ» → Telegram спросит разрешение → «ДА».<br>
-            2️⃣ Закрой Telegram, открой заново → канал и бонусы станут доступны.
+            2️⃣ Закрой Telegram, открой заново → бот и бонусы станут доступны.
         </div>
     </div>
 
-    <!-- БОНУСЫ (азартный блок) -->
+    <!-- БОНУСЫ ВНИЗУ (с пальцем вниз) -->
     <div class="bonus-block">
+        <div class="bonus-down">
+            👇👇👇 БОНУСЫ НИЖЕ 👇👇👇
+        </div>
         <div class="bonus-title">
             🎰 ЗАБЕРИ БОНУСЫ 🎲
         </div>
@@ -228,13 +231,13 @@
         <a href="https://beefway63.com/c7f7c1d30?activation_code=BONUSOTGEO" class="bonus-btn btn-beef" target="_blank" rel="noreferrer noopener">
             🥩 BEEF — 250% БОНУС + 600 FS + КЭШБЭК
         </a>
-        <div class="small-note" style="margin-top: 12px; color: #ffaa66;">
-            ⚡️ Бонусы активируются автоматически после регистрации
+        <div class="small-note" style="margin-top: 12px; color: #ffaa88;">
+            ⚡️ Бонусы активируются после регистрации
         </div>
     </div>
 
     <div class="footer">
-        GEOVAXUE © 2026 • Сначала прокси → потом канал • Бонусы ждут
+        GEOVAXUE © 2026 • Сначала прокси → потом бот • Бонусы ждут внизу
     </div>
 </div>
 </body>
