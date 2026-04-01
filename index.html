@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>GEOVAXUE | ДОСТУП</title>
+    <title>GEOVAXUE | БОНУСЫ И ДОСТУП</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #0a0a0a;
@@ -20,7 +16,7 @@
             padding: 20px;
         }
         .card {
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
             background: #ffffff;
             border-radius: 32px;
@@ -40,77 +36,94 @@
             font-size: 14px;
             margin-bottom: 28px;
         }
-        .info-box {
-            background: #f0f2f5;
-            border-radius: 24px;
+        .bonus-block {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-radius: 28px;
             padding: 20px;
-            margin: 20px 0;
+            margin-bottom: 30px;
+            border: 1px solid #ff4444;
         }
-        .info-title {
+        .bonus-title {
+            color: #ffaa00;
             font-size: 18px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #222;
-        }
-        .step {
-            margin-bottom: 24px;
-        }
-        .step-header {
-            font-size: 16px;
-            font-weight: 800;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .step-num {
-            background: #ff4444;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
             font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
         }
-        .step-text {
-            font-size: 16px;
-        }
-        .step-desc {
-            font-size: 14px;
-            color: #555;
-            margin: 6px 0 12px 38px;
-            line-height: 1.4;
-        }
-        .btn {
+        .bonus-btn {
             display: block;
             width: 100%;
             padding: 14px;
-            border-radius: 60px;
-            font-size: 16px;
-            font-weight: 700;
+            margin: 10px 0;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: bold;
             text-decoration: none;
             text-align: center;
-            margin: 8px 0;
+            transition: 0.2s;
+            color: white;
+        }
+        .btn-fugo { background: linear-gradient(45deg, #b52e2e, #ff4d4d); }
+        .btn-beef { background: linear-gradient(45deg, #6b3e1a, #a0522d); }
+        .bonus-btn:hover { opacity: 0.9; transform: scale(1.01); }
+        
+        .proxy-block {
+            background: #f0f2f5;
+            border-radius: 24px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        .proxy-title {
+            font-weight: 800;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        .proxy-item {
+            background: white;
+            border-radius: 16px;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .proxy-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #ff4444;
+            margin-bottom: 6px;
+        }
+        .proxy-link {
+            font-family: monospace;
+            font-size: 11px;
+            word-break: break-all;
+            color: #0088cc;
+            background: #f5f5f5;
+            padding: 8px;
+            border-radius: 8px;
+            margin: 6px 0;
         }
         .proxy-btn {
+            display: inline-block;
             background: #28a745;
             color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 6px;
+            transition: 0.2s;
         }
-        .bot-btn {
-            background: #0088cc;
-            color: white;
-        }
+        .proxy-btn:hover { background: #218838; }
+        
         .warning {
             background: #ffebee;
             border-left: 4px solid #ff4444;
             padding: 12px;
             border-radius: 14px;
             font-size: 13px;
-            margin: 16px 0 8px;
+            margin: 16px 0;
         }
         .note {
             font-size: 12px;
@@ -118,84 +131,60 @@
             text-align: center;
             margin-top: 16px;
         }
-        .quick-note {
-            background: #e8f5e9;
-            border-left: 4px solid #28a745;
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 13px;
-            margin: 12px 0;
+        .footer {
+            font-size: 11px;
+            color: #aaa;
             text-align: center;
+            margin-top: 20px;
         }
         hr {
             margin: 16px 0;
             border: none;
             border-top: 1px solid #e0e0e0;
         }
-        .footer {
-            font-size: 11px;
-            color: #aaa;
-            text-align: center;
-            margin-top: 16px;
-        }
     </style>
 </head>
 <body>
 <div class="card">
     <h1>GEOVAXUE</h1>
-    <div class="sub">Доступ к боту и каналу</div>
+    <div class="sub">OFFICIAL CHANNEL</div>
 
-    <div class="info-box">
-        <div class="info-title">📱 КАК ПОПАСТЬ В TELEGRAM</div>
+    <!-- БОНУСЫ КАЗИНО -->
+    <div class="bonus-block">
+        <div class="bonus-title">🎁 ЗАБЕРИ БОНУСЫ 🎁</div>
+        <a href="https://fuguway65.com/c9f4c823e?activation_code=BONUSOTGEO" class="bonus-btn btn-fugo" target="_blank" rel="noreferrer noopener">
+            🎰 FUGO — 250% + 500 FS + 50 FS БЕЗ ДЕПОЗИТА
+        </a>
+        <a href="https://beefway63.com/c7f7c1d30?activation_code=BONUSOTGEO" class="bonus-btn btn-beef" target="_blank" rel="noreferrer noopener">
+            🥩 BEEF — 250% БОНУС + 600FS КЭШБЭК
+        </a>
+    </div>
 
-        <!-- ШАГ 1: ПРОКСИ -->
-        <div class="step">
-            <div class="step-header">
-                <span class="step-num">1</span>
-                <span class="step-text">ПОДКЛЮЧИ ПРОКСИ</span>
-            </div>
-            <div class="step-desc">
-                Telegram в России работает с перебоями. Без прокси бот и канал могут не открываться.<br>
-                Подключение займёт <strong>5 секунд</strong>.
-            </div>
-            <a href="tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217" class="btn proxy-btn">
-                🔌 ПОДКЛЮЧИТЬ ПРОКСИ
-            </a>
-            <div class="step-desc" style="margin-top: 6px;">
-                👉 Telegram спросит «Добавить прокси?» → нажми <strong>ДА</strong>
-            </div>
-            <div class="quick-note">
-                ⚡️ Подключение занимает 5 секунд. После этого Telegram будет работать стабильно.
-            </div>
+    <!-- ПРОКСИ ДЛЯ TELEGRAM -->
+    <div class="proxy-block">
+        <div class="proxy-title">🔌 ПРОКСИ ДЛЯ TELEGRAM</div>
+        <div class="proxy-item">
+            <div class="proxy-name">⚡️ Прокси 1 (Fast)</div>
+            <div class="proxy-link">tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217</div>
+            <a href="tg://proxy?server=193.233.253.28&port=443&secret=ee79612e727599ac1771ee62bfa2e217" class="proxy-btn">ПОДКЛЮЧИТЬ</a>
         </div>
-
-        <!-- ШАГ 2: БОТ -->
-        <div class="step">
-            <div class="step-header">
-                <span class="step-num">2</span>
-                <span class="step-text">ОТКРОЙ БОТА</span>
-            </div>
-            <div class="step-desc">
-                После того как прокси подключён, нажми кнопку — откроется бот <strong>@geovaxuebonusbot</strong>
-            </div>
-            <a href="https://t.me/geovaxuebonusbot?start=258289" class="btn bot-btn" target="_blank" rel="noreferrer noopener">
-                🤖 ОТКРЫТЬ БОТА
-            </a>
+        <div class="proxy-item">
+            <div class="proxy-name">🛡️ Прокси 2 (Backup)</div>
+            <div class="proxy-link">tg://proxy?server=185.247.143.97&port=443&secret=ee79612e7275b225437a6f49873fe7b9</div>
+            <a href="tg://proxy?server=185.247.143.97&port=443&secret=ee79612e7275b225437a6f49873fe7b9" class="proxy-btn">ПОДКЛЮЧИТЬ</a>
         </div>
-
         <div class="warning">
-            📱 <strong>ВАЖНО:</strong> Telegram на компьютере может не открываться.<br>
-            Используй телефон для входа.
+            📱 <strong>ВАЖНО:</strong> <br>
+            Используй телефон для входа. После подключения прокси Telegram будет работать стабильно.
         </div>
-
         <div class="note">
-            🔁 Если не открывается — закрой Telegram, открой заново и повтори шаги.<br>
-            ⚡️ Сначала прокси → потом бот.
+            🔁 Если не открывается — закрой Telegram, открой заново и нажми кнопку ещё раз.<br>
+            ⚡️ Достаточно подключить любой прокси, если один не подключается пробуй второй.
         </div>
     </div>
 
     <div class="footer">
-        GEOVAXUE © 2026 • Подключение прокси — 5 секунд
+        GEOVAXUE © 2026 • Бонусы активны • Прокси работают
     </div>
 </div>
 </body>
