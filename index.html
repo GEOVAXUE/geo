@@ -32,13 +32,14 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 12px;
-            background: linear-gradient(135deg, #1e2a3a 0%, #0f1420 100%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 44px;
+            overflow: hidden;
             border: 2px solid #22c55e30;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         h1 {
             font-size: 24px;
@@ -96,7 +97,8 @@
         .logo-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            padding: 8px;
         }
         .logo-text h3 {
             color: white;
@@ -177,7 +179,7 @@
 <div class="card">
     <div class="header">
         <div class="avatar">
-            🔥
+            <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
         <div class="nickname">@geovaxue_official</div>
@@ -190,7 +192,7 @@
         <div class="amnezia-card">
             <div class="logo-area">
                 <div class="logo-img">
-                    <img src="https://amnezia.org/images/logo.svg" alt="Amnezia VPN">
+                    <img src="https://m-1-15-3w5hsuiikq-ez.a.run.app/img/logos/logo-with-a-w-glow.svg" alt="Amnezia VPN">
                 </div>
                 <div class="logo-text">
                     <h3>Amnezia VPN</h3>
