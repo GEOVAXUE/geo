@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE — Amnezia VPN</title>
+    <title>GEOVAXUE — Amnezia VPN + Бонусы</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -72,11 +72,13 @@
         .main-content {
             padding: 20px;
         }
+        /* Amnezia карточка */
         .amnezia-card {
             background: #111827;
             border-radius: 24px;
             padding: 24px 20px;
             border: 1px solid #1f2a3e;
+            margin-bottom: 20px;
         }
         .logo-area {
             display: flex;
@@ -165,6 +167,84 @@
             background: #1aa34a;
             transform: scale(0.97);
         }
+        /* Блок с казино BEEF */
+        .beef-bonus {
+            background: linear-gradient(135deg, #1e1915 0%, #0f0c0a 100%);
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #f59e0b30;
+            position: relative;
+            overflow: hidden;
+        }
+        .beef-bonus::before {
+            content: "🔥";
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 80px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .beef-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .beef-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #f59e0b;
+        }
+        .beef-badge {
+            background: #f59e0b20;
+            padding: 6px 12px;
+            border-radius: 60px;
+            color: #fbbf24;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .beef-desc {
+            color: #d1d5db;
+            font-size: 14px;
+            margin: 12px 0;
+            line-height: 1.4;
+        }
+        .beef-offer {
+            font-size: 28px;
+            font-weight: 800;
+            color: #f59e0b;
+            margin: 12px 0 6px;
+        }
+        .beef-offer span {
+            font-size: 14px;
+            font-weight: normal;
+            color: #9ca3af;
+        }
+        .beef-btn {
+            display: block;
+            background: #f59e0b;
+            color: #0a0f1a;
+            text-align: center;
+            padding: 14px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            margin-top: 16px;
+            transition: 0.2s;
+        }
+        .beef-btn:active {
+            background: #d97706;
+            transform: scale(0.97);
+        }
+        .beef-note {
+            font-size: 11px;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 12px;
+        }
         .footer {
             padding: 16px 20px;
             text-align: center;
@@ -189,6 +269,7 @@
     </div>
 
     <div class="main-content">
+        <!-- Amnezia VPN -->
         <div class="amnezia-card">
             <div class="logo-area">
                 <div class="logo-img">
@@ -216,6 +297,30 @@
                 🚀 СКАЧАТЬ Amnezia VPN
             </a>
         </div>
+
+        <!-- BEEF CASINO БОНУС (50 фриспинов) -->
+        <div class="beef-bonus">
+            <div class="beef-header">
+                <div class="beef-title">🥩 BEEF CASINO</div>
+                <div class="beef-badge">🎁 ЭКСКЛЮЗИВ</div>
+            </div>
+            <div class="beef-offer">
+                50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
+            </div>
+            <div class="beef-desc">
+                🔥 Активируй промокод <strong>BONUSOTGEO</strong> и забирай 50 бесплатных вращений сразу после регистрации.
+            </div>
+            <a href="https://megaways15.com/c7f7c1d30?activation_code=BONUSOTGEO" class="beef-btn" target="_blank" rel="noreferrer noopener">
+                🎰 ЗАБРАТЬ БОНУС
+            </a>
+            <div class="beef-note">
+                ✅ Без вейджера | ✅ Работает только по ссылке
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        GEOVAXUE • Amnezia VPN • BEEF CASINO бонус
     </div>
 </div>
 </body>
