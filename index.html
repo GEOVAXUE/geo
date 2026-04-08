@@ -245,6 +245,61 @@
             text-align: center;
             margin-top: 12px;
         }
+        /* Блок с инструкцией для Telegram */
+        .telegram-fallback {
+            background: #111827;
+            border-radius: 24px;
+            padding: 18px;
+            margin-top: 20px;
+            border: 1px solid #2d3e55;
+        }
+        .fallback-text {
+            font-size: 13px;
+            color: #cbd5e6;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .copy-username {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e2a3a;
+            border-radius: 60px;
+            padding: 4px 4px 4px 18px;
+            margin: 12px 0;
+        }
+        .copy-username span {
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            font-family: monospace;
+        }
+        .copy-btn {
+            background: #22c55e;
+            border: none;
+            color: #0a0f1a;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+        .copy-btn:active {
+            background: #1aa34a;
+            transform: scale(0.96);
+        }
+        .toast-msg {
+            background: #22c55e;
+            color: #0a0f1a;
+            text-align: center;
+            padding: 8px;
+            border-radius: 60px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+            display: none;
+        }
         .footer {
             padding: 16px 20px;
             text-align: center;
@@ -301,7 +356,7 @@
         <!-- BEEF CASINO БОНУС (50 фриспинов) -->
         <div class="beef-bonus">
             <div class="beef-header">
-                <div class="beef-title">🥩 BEEF </div>
+                <div class="beef-title">🥩 BEEF CASINO</div>
                 <div class="beef-badge">🎁 ЭКСКЛЮЗИВ</div>
             </div>
             <div class="beef-offer">
@@ -317,7 +372,38 @@
                 ✅ Без вейджера | ✅ Работает только по ссылке
             </div>
         </div>
+
+        <!-- Блок-подсказка, если кнопка не сработала -->
+        <div class="telegram-fallback">
+            <div class="fallback-text">
+                ⚠️ Если Telegram не открывается по кнопке — подключи Amnezia VPN и найди канал вручную:
+            </div>
+            <div class="copy-username">
+                <span>@officialgeovaxue</span>
+                <button class="copy-btn" onclick="copyToClipboard()">📋 КОПИРОВАТЬ</button>
+            </div>
+            <div id="toast" class="toast-msg">✅ Скопировано! Вставь в поиск Telegram</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        GEOVAXUE • Amnezia VPN • BEEF CASINO бонус
     </div>
 </div>
+
+<script>
+    function copyToClipboard() {
+        const text = '@officialgeovaxue';
+        navigator.clipboard.writeText(text).then(() => {
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 2000);
+        }).catch(() => {
+            alert('Не удалось скопировать');
+        });
+    }
+</script>
 </body>
 </html>
