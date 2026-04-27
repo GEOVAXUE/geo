@@ -3,313 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE — Amnezia VPN + Бонусы</title>
+    <title>GEOVAXUE — Доступ и бонусы</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #0a0f1a;
+            background: #0b0c15;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 16px;
+            padding: 20px;
         }
+
+        /* Основной контейнер */
         .card {
-            max-width: 500px;
+            max-width: 550px;
             width: 100%;
-            background: #0f1420;
-            border-radius: 28px;
+            background: #0f111a;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(80, 100, 140, 0.3);
         }
+
+        /* Шапка */
         .header {
-            padding: 24px 20px 16px;
+            padding: 28px 20px 24px;
             text-align: center;
-            border-bottom: 1px solid #1e2a3a;
+            background: linear-gradient(135deg, #0a0e14 0%, #121624 100%);
+            border-bottom: 1px solid #1e2538;
         }
+
         .avatar {
             width: 80px;
             height: 80px;
-            margin: 0 auto 12px;
+            margin: 0 auto 16px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid #22c55e30;
+            border: 3px solid #ff3b3b50;
+            box-shadow: 0 0 15px rgba(255, 59, 59, 0.3);
         }
+
         .avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -0.3px;
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #ff4d4d 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
         }
+
         .nickname {
             font-size: 14px;
-            color: #8e9aaf;
-            margin-top: 4px;
+            color: #8a99b8;
+            background: #1a1f2e;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 500;
         }
+
         .tg-channel-btn {
             display: block;
-            margin-top: 18px;
-            background: #1e2a3a;
-            padding: 12px 20px;
+            margin: 20px 0 14px;
+            background: #1b2a3f;
+            padding: 14px;
             border-radius: 60px;
             text-decoration: none;
-            color: #22c55e;
-            font-size: 15px;
-            font-weight: 600;
+            color: #4c9aff;
+            font-weight: 700;
+            font-size: 16px;
             transition: 0.2s;
-            border: 1px solid #2d3e55;
+            border: 1px solid #2e405b;
         }
+
         .tg-channel-btn:active {
-            background: #2a3a4a;
+            background: #21334d;
             transform: scale(0.98);
         }
+
+        /* Блок резервного копирования */
         .fallback-block {
-            background: #111827;
-            border-radius: 24px;
-            padding: 18px;
-            margin-top: 18px;
-            border: 1px solid #2d3e55;
+            background: #131722;
+            border-radius: 20px;
+            padding: 14px;
+            border: 1px solid #2b313f;
         }
+
         .fallback-text {
             font-size: 13px;
-            color: #cbd5e6;
-            margin-bottom: 12px;
+            color: #9aa9bf;
             text-align: center;
+            margin-bottom: 10px;
         }
+
         .copy-username {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #1e2a3a;
+            background: #0c0f18;
             border-radius: 60px;
             padding: 4px 4px 4px 18px;
-            margin: 12px 0;
         }
+
         .copy-username span {
-            color: white;
+            color: #bfd9ff;
             font-weight: 600;
             font-size: 14px;
-            font-family: monospace;
         }
+
         .copy-btn {
-            background: #22c55e;
+            background: #ff3b3b;
             border: none;
-            color: #0a0f1a;
-            font-weight: 600;
-            padding: 8px 18px;
+            color: white;
+            font-weight: 700;
+            padding: 6px 18px;
             border-radius: 40px;
             cursor: pointer;
             font-size: 13px;
             transition: 0.2s;
         }
+
         .copy-btn:active {
-            background: #1aa34a;
+            background: #cc2b2b;
             transform: scale(0.96);
         }
+
         .toast-msg {
-            background: #22c55e;
-            color: #0a0f1a;
+            background: #2b8c4c;
+            color: white;
             text-align: center;
             padding: 8px;
-            border-radius: 60px;
+            border-radius: 40px;
             font-size: 12px;
             font-weight: 600;
             margin-top: 10px;
             display: none;
         }
+
         .main-content {
             padding: 20px;
         }
-        /* Amnezia карточка */
-        .amnezia-card {
-            background: #111827;
+
+        /* Блок VPN уменьшен, но остались ключевые свойства */
+        .vpn-block {
+            background: #131722;
             border-radius: 24px;
-            padding: 24px 20px;
-            border: 1px solid #1f2a3e;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid #2b405b;
         }
-        .logo-area {
+
+        .vpn-header {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 14px;
         }
-        .logo-img {
-            width: 56px;
-            height: 56px;
+
+        .vpn-icon {
+            width: 48px;
+            height: 48px;
             background: #1e2a3a;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
-        .logo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 8px;
+
+        .vpn-icon img {
+            width: 70%;
         }
-        .logo-text h3 {
-            color: white;
+
+        .vpn-title {
             font-size: 20px;
             font-weight: 700;
+            color: #fff;
         }
-        .logo-text p {
-            color: #6c8db0;
+
+        .vpn-sub {
             font-size: 12px;
-            margin-top: 4px;
+            color: #8a99b8;
         }
-        .badge-group {
+
+        .feature-short {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0;
         }
-        .badge {
-            background: #1e2a3a;
+
+        .feature-item-mini {
+            background: #0f121c;
             padding: 6px 14px;
             border-radius: 40px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            color: #cbd5ff;
         }
-        .badge.free {
-            color: #22c55e;
-            background: #22c55e10;
-        }
-        .badge.premium {
-            color: #eab308;
-            background: #eab30810;
-        }
-        .feature-list {
-            margin: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #cbd5e6;
-            font-size: 14px;
-        }
-        .feature-item span:first-child {
-            color: #22c55e;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .btn-main {
+
+        .btn-vpn {
             display: block;
-            background: #22c55e;
-            color: #0a0f1a;
+            background: #2b5f8c;
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             border-radius: 60px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 16px;
-            margin: 24px 0 0;
+            font-weight: 700;
+            color: white;
             transition: 0.2s;
         }
-        .btn-main:active {
-            background: #1aa34a;
-            transform: scale(0.97);
+
+        .btn-vpn:active {
+            background: #1e486b;
+            transform: scale(0.98);
         }
-        /* Блок с казино BEEF */
-        .beef-bonus {
-            background: linear-gradient(135deg, #1e1915 0%, #0f0c0a 100%);
-            border-radius: 24px;
+
+        /* КАЗИНО-БЛОКИ — яркие, динамичные */
+        .casino-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 10px 0 10px;
+        }
+
+        .casino-card {
+            border-radius: 28px;
             padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #f59e0b30;
+            transition: 0.2s;
             position: relative;
             overflow: hidden;
         }
-        .beef-bonus::before {
-            content: "🔥";
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            font-size: 80px;
-            opacity: 0.1;
-            pointer-events: none;
+
+        .casino-card.beef {
+            background: linear-gradient(145deg, #23170f 0%, #1a0f08 100%);
+            border: 1px solid #f59e0b;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2);
         }
-        .beef-header {
+
+        .casino-card.fugu {
+            background: linear-gradient(145deg, #141c2c 0%, #0e1420 100%);
+            border: 1px solid #ff4d4d;
+            box-shadow: 0 8px 20px rgba(255, 77, 77, 0.2);
+        }
+
+        .casino-header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
         }
-        .beef-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #f59e0b;
-        }
-        .beef-badge {
-            background: #f59e0b20;
-            padding: 6px 12px;
-            border-radius: 60px;
-            color: #fbbf24;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .beef-desc {
-            color: #d1d5db;
-            font-size: 14px;
-            margin: 12px 0;
-            line-height: 1.4;
-        }
-        .beef-offer {
+
+        .casino-name {
             font-size: 28px;
             font-weight: 800;
+        }
+
+        .beef .casino-name {
             color: #f59e0b;
-            margin: 12px 0 6px;
         }
-        .beef-offer span {
-            font-size: 14px;
+
+        .fugu .casino-name {
+            color: #ff5a5a;
+        }
+
+        .badge-offer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffdf80;
+        }
+
+        .bonus-highlight {
+            font-size: 34px;
+            font-weight: 800;
+            margin: 12px 0 8px;
+            line-height: 1.1;
+        }
+
+        .beef .bonus-highlight {
+            color: #ffb347;
+        }
+
+        .fugu .bonus-highlight {
+            color: #ff8080;
+        }
+
+        .bonus-highlight span {
+            font-size: 16px;
             font-weight: normal;
-            color: #9ca3af;
+            color: #a0a8c0;
         }
-        .beef-btn {
-            display: block;
-            background: #f59e0b;
-            color: #0a0f1a;
+
+        .promocode-block {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 12px;
+            border-radius: 60px;
+            font-size: 14px;
+            margin: 12px 0;
+            display: inline-block;
+            backdrop-filter: blur(2px);
+        }
+
+        .promocode {
+            font-weight: 800;
+            font-family: monospace;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .casino-btn {
+            display: inline-block;
+            width: 100%;
             text-align: center;
             padding: 14px;
             border-radius: 60px;
-            text-decoration: none;
             font-weight: 800;
-            font-size: 16px;
-            margin-top: 16px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 12px;
             transition: 0.2s;
         }
-        .beef-btn:active {
-            background: #d97706;
+
+        .beef .casino-btn {
+            background: #f59e0b;
+            color: #0a0f1a;
+            box-shadow: 0 4px 12px #f59e0b50;
+        }
+
+        .fugu .casino-btn {
+            background: #ff3b3b;
+            color: white;
+            box-shadow: 0 4px 12px #ff3b3b50;
+        }
+
+        .casino-btn:active {
             transform: scale(0.97);
         }
-        .beef-note {
-            font-size: 11px;
-            color: #6b7280;
-            text-align: center;
-            margin-top: 12px;
-        }
+
         .footer {
-            padding: 16px 20px;
+            padding: 16px;
             text-align: center;
             font-size: 11px;
-            color: #4b5a77;
+            color: #4a5a7a;
             border-top: 1px solid #1a1f2c;
-            background: #0c111b;
         }
     </style>
 </head>
 <body>
+
 <div class="card">
     <div class="header">
         <div class="avatar">
@@ -320,11 +378,10 @@
         <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-channel-btn" target="_blank" rel="noreferrer noopener">
             📢 ПЕРЕЙТИ В TELEGRAM-КАНАЛ
         </a>
-        
-        <!-- Блок-подсказка (перенесён сразу после кнопки) -->
+
         <div class="fallback-block">
             <div class="fallback-text">
-                ⚠️ Если Telegram не открывается по кнопке — подключи Amnezia VPN и найди канал вручную:
+                ⚠️ Если Telegram не открывается — подключи Amnezia VPN и найди канал вручную:
             </div>
             <div class="copy-username">
                 <span>@officialgeovaxue</span>
@@ -335,54 +392,67 @@
     </div>
 
     <div class="main-content">
-        <!-- Amnezia VPN -->
-        <div class="amnezia-card">
-            <div class="logo-area">
-                <div class="logo-img">
-                    <img src="https://m-1-15-3w5hsuiikq-ez.a.run.app/img/logos/logo-with-a-w-glow.svg" alt="Amnezia VPN">
+        <!-- Адаптированный VPN блок – сокращён, картинка осталась -->
+        <div class="vpn-block">
+            <div class="vpn-header">
+                <div class="vpn-icon">
+                    <img src="https://m-1-15-3w5hsuiikq-ez.a.run.app/img/logos/logo-with-a-w-glow.svg" alt="Amnezia">
                 </div>
-                <div class="logo-text">
-                    <h3>Amnezia VPN</h3>
-                    <p>Работает там, где другие молчат</p>
+                <div>
+                    <div class="vpn-title">Amnezia VPN</div>
+                    <div class="vpn-sub">Работает там, где другие молчат</div>
                 </div>
             </div>
-
-            <div class="badge-group">
-                <span class="badge free">🎁 Бесплатно</span>
-                <span class="badge premium">⚡ Премиум</span>
+            <div class="feature-short">
+                <span class="feature-item-mini">🚀 Обход блокировок</span>
+                <span class="feature-item-mini">🔒 Open Source</span>
+                <span class="feature-item-mini">📱 Все устройства</span>
             </div>
-
-            <div class="feature-list">
-                <div class="feature-item"><span>✓</span> Обходит любые блокировки</div>
-                <div class="feature-item"><span>✓</span> Работает на телефоне и компьютере</div>
-                <div class="feature-item"><span>✓</span> Open Source — код открыт</div>
-                <div class="feature-item"><span>✓</span> Бесплатная версия — 1 клик</div>
-            </div>
-
-            <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="btn-main" target="_blank" rel="noreferrer noopener">
-                🚀 СКАЧАТЬ Amnezia VPN
+            <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="btn-vpn" target="_blank" rel="noreferrer noopener">
+                🔓 СКАЧАТЬ Amnezia VPN
             </a>
         </div>
 
-        <!-- BEEF CASINO БОНУС (50 фриспинов) -->
-        <div class="beef-bonus">
-            <div class="beef-header">
-                <div class="beef-title">🥩 BEEF</div>
-                <div class="beef-badge">🎁 ЭКСКЛЮЗИВ</div>
+        <!-- ДВА КАЗИНО: ЯРКИЕ, С БОЛЬШИМИ БОНУСАМИ -->
+        <div class="casino-grid">
+            <!-- BEEF -->
+            <div class="casino-card beef">
+                <div class="casino-header">
+                    <span class="casino-name">🥩 BEEF</span>
+                    <span class="badge-offer">🔥 ЭКСКЛЮЗИВ GEO</span>
+                </div>
+                <div class="bonus-highlight">
+                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
+                </div>
+                <div class="promocode-block">
+                    🔐 ПРОМОКОД: <span class="promocode">BONUSOTGEO</span>
+                </div>
+                <a href="https://megaways18.com/c7f7c1d30?activation_code=BONUSOTGEO" class="casino-btn" target="_blank" rel="noreferrer noopener">
+                    🎰 ЗАБРАТЬ БОНУС
+                </a>
             </div>
-            <div class="beef-offer">
-                50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
-            </div>
-            <div class="beef-desc">
-                🔥 Активируй промокод <strong>BONUSOTGEO</strong> и забирай 50 бесплатных вращений сразу после регистрации.
-            </div>
-            <a href="https://megaways14.com/c7f7c1d30?activation_code=BONUSOTGEO" class="beef-btn" target="_blank" rel="noreferrer noopener">
-                🎰 ЗАБРАТЬ БОНУС
-            </a>
-            <div class="beef-note">
-                ✅ Без вейджера | ✅ Работает только по ссылке
+
+            <!-- FUGU -->
+            <div class="casino-card fugu">
+                <div class="casino-header">
+                    <span class="casino-name">🐡 FUGU</span>
+                    <span class="badge-offer">🎁 VIP ПАКЕТ</span>
+                </div>
+                <div class="bonus-highlight">
+                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
+                </div>
+                <div class="promocode-block">
+                    🔐 ПРОМОКОД: <span class="promocode">BONUSOTGEO</span>
+                </div>
+                <a href="https://megaways18.com/c9f4c823e?activation_code=BONUSOTGEO" class="casino-btn" target="_blank" rel="noreferrer noopener">
+                    🎰 ЗАБРАТЬ БОНУС
+                </a>
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        GEOVAXUE • Бонусы активируются после регистрации • VPN работает 24/7
     </div>
 </div>
 
