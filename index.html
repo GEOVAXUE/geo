@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Премиум доступ и бонусы</title>
+    <title>GEOVAXUE | Премиум бонусы</title>
     <style>
         * {
             margin: 0;
@@ -12,41 +12,42 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, sans-serif;
-            background: #07080c;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, sans-serif;
+            background: #f2f4f8;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 16px;
+            padding: 20px;
         }
 
-        /* Карточка — современная, с тонкой границей */
+        /* Светлая карточка — luxury стиль */
         .card {
-            max-width: 520px;
+            max-width: 540px;
             width: 100%;
-            background: #0f1117;
-            border-radius: 44px;
+            background: #ffffff;
+            border-radius: 40px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eaeef3;
         }
 
         /* Шапка */
         .header {
-            padding: 24px 24px 20px;
+            padding: 28px 24px 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: #ffffff;
+            border-bottom: 1px solid #eff3f8;
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 76px;
+            height: 76px;
             margin: 0 auto 14px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid #ff4d4d;
-            box-shadow: 0 0 16px rgba(255, 77, 77, 0.25);
+            border: 2px solid #ffd580;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
         }
 
         .avatar img {
@@ -56,54 +57,54 @@
         }
 
         h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            color: #1a1f2c;
+            letter-spacing: -0.3px;
+            margin-bottom: 4px;
         }
 
         .nickname {
-            font-size: 13px;
-            color: #8e99b3;
-            background: rgba(255, 255, 255, 0.04);
+            font-size: 14px;
+            color: #6c7a91;
+            background: #f0f3f9;
             display: inline-block;
-            padding: 5px 16px;
-            border-radius: 100px;
+            padding: 6px 18px;
+            border-radius: 40px;
             font-weight: 500;
         }
 
-        /* Кнопка Telegram */
+        /* Telegram кнопка */
         .tg-channel-btn {
             display: block;
-            margin: 20px 0 14px;
-            background: rgba(25, 35, 55, 0.9);
-            padding: 13px;
+            margin: 20px 0 16px;
+            background: #eef2f9;
+            padding: 14px;
             border-radius: 100px;
             text-decoration: none;
-            color: #5b9aff;
+            color: #1a4cff;
             font-weight: 600;
             font-size: 15px;
             transition: 0.2s;
-            border: 1px solid rgba(91, 154, 255, 0.3);
+            border: 1px solid #dce3ec;
         }
 
         .tg-channel-btn:active {
-            background: #1a2a45;
+            background: #e2e8f2;
             transform: scale(0.98);
         }
 
-        /* Fallback block */
+        /* Fallback блок */
         .fallback-block {
-            background: rgba(18, 22, 32, 0.7);
+            background: #f8fafd;
             border-radius: 24px;
             padding: 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid #e9edf3;
         }
 
         .fallback-text {
             font-size: 12px;
-            color: #8e99b3;
+            color: #6c7a91;
             text-align: center;
             margin-bottom: 10px;
         }
@@ -112,23 +113,24 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0a0c12;
+            background: #ffffff;
+            border: 1px solid #e2e8f2;
             border-radius: 100px;
-            padding: 4px 4px 4px 18px;
+            padding: 4px 4px 4px 20px;
         }
 
         .copy-username span {
-            color: #bfd9ff;
-            font-weight: 500;
-            font-size: 13px;
+            color: #1a1f2c;
+            font-weight: 600;
+            font-size: 14px;
         }
 
         .copy-btn {
-            background: #ff4d4d;
+            background: #ff5a5a;
             border: none;
             color: white;
-            font-weight: 600;
-            padding: 6px 20px;
+            font-weight: 700;
+            padding: 6px 22px;
             border-radius: 100px;
             cursor: pointer;
             font-size: 12px;
@@ -136,17 +138,18 @@
         }
 
         .copy-btn:active {
-            background: #cc2b2b;
+            background: #e04444;
             transform: scale(0.96);
         }
 
         .toast-msg {
-            background: #2b8c4c;
+            background: #2f8b4c;
             color: white;
             text-align: center;
             padding: 6px;
             border-radius: 100px;
             font-size: 11px;
+            font-weight: 600;
             margin-top: 8px;
             display: none;
         }
@@ -155,30 +158,31 @@
             padding: 20px 24px 28px;
         }
 
-        /* VPN — минималистичный блок */
-        .vpn-modern {
-            background: rgba(18, 22, 32, 0.6);
+        /* VPN блок (аккуратный) */
+        .vpn-light {
+            background: #f8fafd;
             border-radius: 28px;
-            padding: 16px 18px;
+            padding: 16px 20px;
             margin-bottom: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid #e9edf3;
         }
 
         .vpn-row {
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 12px;
         }
 
         .vpn-icon {
             width: 44px;
             height: 44px;
-            background: rgba(255, 255, 255, 0.05);
+            background: #ffffff;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf3;
         }
 
         .vpn-icon img {
@@ -187,174 +191,189 @@
 
         .vpn-info h4 {
             font-size: 18px;
-            font-weight: 600;
-            color: #fff;
+            font-weight: 700;
+            color: #1a1f2c;
         }
 
         .vpn-info p {
-            font-size: 11px;
-            color: #7f8aa3;
+            font-size: 12px;
+            color: #6c7a91;
         }
 
-        .tags {
+        .vpn-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 12px 0;
+            margin: 14px 0;
         }
 
-        .tag {
-            background: rgba(255, 255, 255, 0.04);
+        .vpn-tag {
+            background: #ffffff;
+            border: 1px solid #e2e8f2;
             padding: 5px 14px;
-            border-radius: 100px;
+            border-radius: 40px;
             font-size: 12px;
-            color: #b8c3e0;
+            font-weight: 500;
+            color: #1a4cff;
         }
 
         .vpn-button {
             display: block;
-            background: #1a2e42;
+            background: #eef2f9;
             text-align: center;
-            padding: 11px;
+            padding: 12px;
             border-radius: 100px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            color: #9bbdf0;
+            color: #1a4cff;
             transition: 0.2s;
         }
 
         .vpn-button:active {
-            background: #112436;
+            background: #e2e8f2;
             transform: scale(0.98);
         }
 
-        /* КАЗИНО-СЕТКА — современные, минималистичные карточки */
+        /* БЛОКИ КАЗИНО — FUGU сверху, ярко, дорого */
         .casino-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
 
-        .casino-item {
-            background: #13161f;
+        .casino-card {
             border-radius: 28px;
-            padding: 18px 20px;
+            padding: 20px 22px;
             transition: 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .casino-item.beef {
-            border-top: 3px solid #f5a623;
+        /* FUGU — главный, выше и ярче */
+        .casino-card.fugu {
+            background: linear-gradient(115deg, #fff6f0 0%, #ffffff 100%);
+            border: 1px solid #ffd9b3;
+            box-shadow: 0 12px 24px rgba(255, 90, 30, 0.08);
         }
 
-        .casino-item.fugu {
-            border-top: 3px solid #ff4d4d;
+        /* BEEF — тоже привлекательный, но чуть сдержаннее */
+        .casino-card.beef {
+            background: #ffffff;
+            border: 1px solid #fee2c0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
         }
 
-        .casino-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .casino-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .casino-name {
+            font-size: 26px;
+            font-weight: 800;
             letter-spacing: -0.5px;
         }
 
-        .beef .casino-name {
-            color: #f5a623;
-        }
-
         .fugu .casino-name {
-            color: #ff6b6b;
+            color: #ff6a2c;
         }
 
-        .badge-new {
+        .beef .casino-name {
+            color: #b45f1b;
+        }
+
+        .badge {
             font-size: 11px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 12px;
-            border-radius: 100px;
-            color: #b0bbdb;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 40px;
+            background: rgba(0, 0, 0, 0.04);
+            color: #6c7a91;
         }
 
-        .offer {
-            font-size: 28px;
+        .fugu .badge {
+            background: #ffefe5;
+            color: #ff6a2c;
+        }
+
+        .offer-main {
+            font-size: 32px;
             font-weight: 800;
             margin: 12px 0 8px;
+            line-height: 1.2;
         }
 
-        .beef .offer {
-            color: #f5a623;
+        .fugu .offer-main {
+            color: #ff6a2c;
         }
 
-        .fugu .offer {
-            color: #ff6b6b;
+        .beef .offer-main {
+            color: #b45f1b;
         }
 
-        .offer span {
-            font-size: 14px;
+        .offer-main span {
+            font-size: 16px;
             font-weight: normal;
-            color: #8895b7;
+            color: #7a879f;
         }
 
-        .promo {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 6px 12px;
+        .promo-light {
+            background: #ffffff;
+            border: 1px solid #e9edf3;
+            padding: 6px 16px;
             border-radius: 100px;
             display: inline-block;
             font-size: 13px;
-            margin: 10px 0;
+            margin: 12px 0;
             font-family: monospace;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
         }
 
-        .promo code {
+        .promo-light code {
             font-weight: 800;
-            color: #ffdf80;
+            color: #1a1f2c;
             background: none;
-            font-size: 14px;
+            font-size: 15px;
         }
 
-        .action-btn {
+        .casino-btn {
             display: block;
             width: 100%;
             text-align: center;
-            padding: 14px;
+            padding: 15px;
             border-radius: 100px;
             font-weight: 700;
             text-decoration: none;
             font-size: 17px;
-            margin-top: 12px;
+            margin-top: 14px;
             transition: 0.2s;
         }
 
-        .beef .action-btn {
-            background: #f5a623;
-            color: #0f1117;
-            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
-        }
-
-        .fugu .action-btn {
-            background: #ff4d4d;
+        .fugu .casino-btn {
+            background: #ff6a2c;
             color: white;
-            box-shadow: 0 6px 14px rgba(255, 77, 77, 0.2);
+            box-shadow: 0 8px 18px rgba(255, 106, 44, 0.2);
         }
 
-        .action-btn:active {
+        .beef .casino-btn {
+            background: #f0f2f7;
+            color: #b45f1b;
+            border: 1px solid #e2e8f2;
+        }
+
+        .casino-btn:active {
             transform: scale(0.97);
         }
 
         .footer {
-            padding: 14px 20px;
+            padding: 16px 20px;
             text-align: center;
             font-size: 10px;
-            color: #5b6883;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            background: #090b10;
+            color: #8c9ab3;
+            border-top: 1px solid #eef2f8;
+            background: #ffffff;
         }
     </style>
 </head>
@@ -366,7 +385,7 @@
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
-        <div class="nickname">⬇️ БОНУСЫ НИЖЕ ⬇️</div>
+        <div class="nickname">⬇️ ЭКСКЛЮЗИВНЫЕ БОНУСЫ ⬇️</div>
         <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-channel-btn" target="_blank" rel="noreferrer noopener">
             📢 ПЕРЕЙТИ В TELEGRAM-КАНАЛ
         </a>
@@ -384,59 +403,59 @@
     </div>
 
     <div class="main-content">
-        <!-- VPN Amnezia (кратко, стильно) -->
-        <div class="vpn-modern">
+        <!-- VPN Amnezia (светлая версия) -->
+        <div class="vpn-light">
             <div class="vpn-row">
                 <div class="vpn-icon">
                     <img src="https://m-1-15-3w5hsuiikq-ez.a.run.app/img/logos/logo-with-a-w-glow.svg" alt="Amnezia">
                 </div>
                 <div class="vpn-info">
                     <h4>Amnezia VPN</h4>
-                    <p>Обходит любые блокировки</p>
+                    <p>Обходит блокировки, работает везде</p>
                 </div>
             </div>
-            <div class="tags">
-                <span class="tag">🚀 Высокая скорость</span>
-                <span class="tag">🔓 Open Source</span>
-                <span class="tag">🛡️ Нет логов</span>
+            <div class="vpn-tags">
+                <span class="vpn-tag">⚡高速</span>
+                <span class="vpn-tag">🔓 Open Source</span>
+                <span class="vpn-tag">🛡️ Без логов</span>
             </div>
             <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="vpn-button" target="_blank" rel="noreferrer noopener">
                 🔓 СКАЧАТЬ Amnezia VPN
             </a>
         </div>
 
-        <!-- БЛОКИ КАЗИНО — без потери качества, компактно -->
+        <!-- КАЗИНО: FUGU — выше / BEEF — ниже -->
         <div class="casino-grid">
-            <!-- Beef -->
-            <div class="casino-item beef">
-                <div class="casino-title">
-                    <span class="casino-name">🥩 BEEF CASINO</span>
-                    <span class="badge-new">ЭКСКЛЮЗИВ GEO</span>
+            <!-- FUGU (VIP) -->
+            <div class="casino-card fugu">
+                <div class="casino-header">
+                    <span class="casino-name">🐡 FUGU CASINO</span>
+                    <span class="badge">🔥 VIP ПАКЕТ</span>
                 </div>
-                <div class="offer">
-                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
+                <div class="offer-main">
+                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
                 </div>
-                <div class="promo">
+                <div class="promo-light">
                     🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
                 </div>
-                <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
+                <a href="https://fuguway68.com/c9f4c823e?activation_code=BONUSOTGEO" class="casino-btn" target="_blank" rel="noreferrer noopener">
                     🎰 ЗАБРАТЬ БОНУС
                 </a>
             </div>
 
-            <!-- Fugu -->
-            <div class="casino-item fugu">
-                <div class="casino-title">
-                    <span class="casino-name">🐡 FUGU CASINO</span>
-                    <span class="badge-new">VIP ПАКЕТ</span>
+            <!-- BEEF (эксклюзив) -->
+            <div class="casino-card beef">
+                <div class="casino-header">
+                    <span class="casino-name">🥩 BEEF CASINO</span>
+                    <span class="badge">🎁 ЭКСКЛЮЗИВ GEO</span>
                 </div>
-                <div class="offer">
-                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
+                <div class="offer-main">
+                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
                 </div>
-                <div class="promo">
+                <div class="promo-light">
                     🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
                 </div>
-                <a href="https://fuguway68.com/c9f4c823e?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
+                <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="casino-btn" target="_blank" rel="noreferrer noopener">
                     🎰 ЗАБРАТЬ БОНУС
                 </a>
             </div>
