@@ -31,7 +31,6 @@
             box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
         }
 
-        /* Шапка */
         .header {
             padding: 24px 20px 18px;
             text-align: center;
@@ -149,7 +148,6 @@
             padding: 20px 20px 24px;
         }
 
-        /* Аккуратный VPN блок */
         .vpn-modern {
             background: rgba(18, 22, 32, 0.6);
             border-radius: 28px;
@@ -218,11 +216,10 @@
             transition: 0.2s;
         }
 
-        /* КАЗИНО-БЛОКИ — НОВЫЙ ДИЗАЙН */
         .casino-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
 
         /* Общие стили для карточек казино */
@@ -234,55 +231,7 @@
             overflow: hidden;
         }
 
-        /* FUGU (стильный, с акцентом) */
-        .casino-item.fugu {
-            background: linear-gradient(135deg, #1e1a2f, #14101f);
-            border: 1px solid rgba(255, 122, 58, 0.4);
-            box-shadow: 0 8px 20px rgba(255, 122, 58, 0.1);
-        }
-
-        .casino-item.fugu .casino-name {
-            background: linear-gradient(115deg, #ffaa6a, #ff7a3a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .casino-item.fugu .bonus-text {
-            color: #ffaa6a;
-        }
-
-        .casino-item.fugu .action-btn {
-            background: linear-gradient(95deg, #ff7a3a, #ff5a1a);
-            color: white;
-            box-shadow: 0 6px 14px rgba(255, 90, 26, 0.3);
-        }
-
-        /* BEEF (премиум, с золотым акцентом) */
-        .casino-item.beef {
-            background: linear-gradient(135deg, #1f1b16, #14100c);
-            border: 1px solid rgba(245, 166, 35, 0.4);
-            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.08);
-        }
-
-        .casino-item.beef .casino-name {
-            background: linear-gradient(115deg, #f5c674, #f5a623);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .casino-item.beef .bonus-text {
-            color: #f5a623;
-        }
-
-        .casino-item.beef .action-btn {
-            background: linear-gradient(95deg, #f5a623, #d4830c);
-            color: #0a0c12;
-            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
-        }
-
-        /* IRIS — НОВЫЙ, СУПЕР-ВЫДЕЛЯЮЩИЙСЯ */
+        /* IRIS — НАВЕРХУ, МАКСИМАЛЬНО ВЫДЕЛЯЕТСЯ */
         .casino-item.iris {
             background: radial-gradient(circle at 10% 20%, #2a1a3a, #110c1a);
             border: 1px solid #ff5efb;
@@ -292,7 +241,7 @@
 
         @keyframes pulseGlow {
             0% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
-            50% { box-shadow: 0 0 20px rgba(255, 94, 251, 0.6); border-color: #ffaaff; }
+            50% { box-shadow: 0 0 25px rgba(255, 94, 251, 0.6); border-color: #ffaaff; }
             100% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
         }
 
@@ -317,6 +266,54 @@
             background: linear-gradient(95deg, #ff5efb, #c42ee0);
             color: white;
             box-shadow: 0 6px 14px rgba(255, 94, 251, 0.4);
+        }
+
+        /* FUGU (стильный) */
+        .casino-item.fugu {
+            background: linear-gradient(135deg, #1e1a2f, #14101f);
+            border: 1px solid rgba(255, 122, 58, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 122, 58, 0.1);
+        }
+
+        .casino-item.fugu .casino-name {
+            background: linear-gradient(115deg, #ffaa6a, #ff7a3a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .casino-item.fugu .bonus-text {
+            color: #ffaa6a;
+        }
+
+        .casino-item.fugu .action-btn {
+            background: linear-gradient(95deg, #ff7a3a, #ff5a1a);
+            color: white;
+            box-shadow: 0 6px 14px rgba(255, 90, 26, 0.3);
+        }
+
+        /* BEEF (премиум, золотой) */
+        .casino-item.beef {
+            background: linear-gradient(135deg, #1f1b16, #14100c);
+            border: 1px solid rgba(245, 166, 35, 0.4);
+            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.08);
+        }
+
+        .casino-item.beef .casino-name {
+            background: linear-gradient(115deg, #f5c674, #f5a623);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .casino-item.beef .bonus-text {
+            color: #f5a623;
+        }
+
+        .casino-item.beef .action-btn {
+            background: linear-gradient(95deg, #f5a623, #d4830c);
+            color: #0a0c12;
+            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
         }
 
         .casino-header {
@@ -441,43 +438,9 @@
             </a>
         </div>
 
-        <!-- КАЗИНО (FUGU, BEEF, IRIS — IRIS выделен максимально) -->
+        <!-- КАЗИНО: IRIS — САМЫЙ ПЕРВЫЙ (ВЫДЕЛЕН) -->
         <div class="casino-grid">
-            <!-- FUGU -->
-            <div class="casino-item fugu">
-                <div class="casino-header">
-                    <span class="casino-name">🐡 FUGU CASINO</span>
-                    <span class="badge-new">VIP ПАКЕТ</span>
-                </div>
-                <div class="bonus-text">
-                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
-                </div>
-                <div class="promocode">
-                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
-                </div>
-                <a href="https://fuguway68.com/c9f4c823e?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
-                    🎰 ЗАБРАТЬ БОНУС
-                </a>
-            </div>
-
-            <!-- BEEF -->
-            <div class="casino-item beef">
-                <div class="casino-header">
-                    <span class="casino-name">🥩 BEEF CASINO</span>
-                    <span class="badge-new">🔥 ЭКСКЛЮЗИВ GEO</span>
-                </div>
-                <div class="bonus-text">
-                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
-                </div>
-                <div class="promocode">
-                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
-                </div>
-                <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
-                    🎰 ЗАБРАТЬ БОНУС
-                </a>
-            </div>
-
-            <!-- IRIS — НОВЫЙ КАЗИК, МАКСИМАЛЬНО ВЫДЕЛЯЕТСЯ -->
+            <!-- IRIS — НАВЕРХУ, СВЕТИТСЯ, ПУЛЬСИРУЕТ -->
             <div class="casino-item iris">
                 <div class="casino-header">
                     <span class="casino-name">🌈 IRIS CASINO</span>
@@ -499,6 +462,40 @@
                 </a>
                 <a href="https://irisroute61.com/c50427374?activation_code=BONUSOTGEO" class="action-btn" style="margin-top: 8px; background: transparent; border: 1px solid #ff5efb; box-shadow: none; color: #ffaaff;" target="_blank" rel="noreferrer noopener">
                     💰 АКТИВИРОВАТЬ БОНУС
+                </a>
+            </div>
+
+            <!-- FUGU (второй) -->
+            <div class="casino-item fugu">
+                <div class="casino-header">
+                    <span class="casino-name">🐡 FUGU CASINO</span>
+                    <span class="badge-new">VIP ПАКЕТ</span>
+                </div>
+                <div class="bonus-text">
+                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
+                </div>
+                <div class="promocode">
+                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
+                </div>
+                <a href="https://fuguway68.com/c9f4c823e?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
+                    🎰 ЗАБРАТЬ БОНУС
+                </a>
+            </div>
+
+            <!-- BEEF (третий) -->
+            <div class="casino-item beef">
+                <div class="casino-header">
+                    <span class="casino-name">🥩 BEEF CASINO</span>
+                    <span class="badge-new">🔥 ЭКСКЛЮЗИВ GEO</span>
+                </div>
+                <div class="bonus-text">
+                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
+                </div>
+                <div class="promocode">
+                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
+                </div>
+                <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
+                    🎰 ЗАБРАТЬ БОНУС
                 </a>
             </div>
         </div>
