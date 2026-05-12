@@ -218,29 +218,105 @@
             transition: 0.2s;
         }
 
-        /* КАЗИНО-БЛОКИ — FUGU выше BEEF */
+        /* КАЗИНО-БЛОКИ — НОВЫЙ ДИЗАЙН */
         .casino-grid {
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
 
+        /* Общие стили для карточек казино */
         .casino-item {
             border-radius: 28px;
-            padding: 18px 20px;
+            padding: 20px;
             transition: 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* FUGU выше, ярче */
+        /* FUGU (стильный, с акцентом) */
         .casino-item.fugu {
-            background: linear-gradient(115deg, #1e1826, #14101c);
-            border-top: 3px solid #ff7a3a;
+            background: linear-gradient(135deg, #1e1a2f, #14101f);
+            border: 1px solid rgba(255, 122, 58, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 122, 58, 0.1);
         }
 
+        .casino-item.fugu .casino-name {
+            background: linear-gradient(115deg, #ffaa6a, #ff7a3a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .casino-item.fugu .bonus-text {
+            color: #ffaa6a;
+        }
+
+        .casino-item.fugu .action-btn {
+            background: linear-gradient(95deg, #ff7a3a, #ff5a1a);
+            color: white;
+            box-shadow: 0 6px 14px rgba(255, 90, 26, 0.3);
+        }
+
+        /* BEEF (премиум, с золотым акцентом) */
         .casino-item.beef {
-            background: #131720;
-            border-top: 3px solid #f5a623;
+            background: linear-gradient(135deg, #1f1b16, #14100c);
+            border: 1px solid rgba(245, 166, 35, 0.4);
+            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.08);
+        }
+
+        .casino-item.beef .casino-name {
+            background: linear-gradient(115deg, #f5c674, #f5a623);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .casino-item.beef .bonus-text {
+            color: #f5a623;
+        }
+
+        .casino-item.beef .action-btn {
+            background: linear-gradient(95deg, #f5a623, #d4830c);
+            color: #0a0c12;
+            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
+        }
+
+        /* IRIS — НОВЫЙ, СУПЕР-ВЫДЕЛЯЮЩИЙСЯ */
+        .casino-item.iris {
+            background: radial-gradient(circle at 10% 20%, #2a1a3a, #110c1a);
+            border: 1px solid #ff5efb;
+            box-shadow: 0 0 25px rgba(255, 94, 251, 0.3);
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
+            50% { box-shadow: 0 0 20px rgba(255, 94, 251, 0.6); border-color: #ffaaff; }
+            100% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
+        }
+
+        .casino-item.iris .casino-name {
+            background: linear-gradient(115deg, #ffaaff, #ff5efb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .casino-item.iris .badge-new {
+            background: #ff5efb20;
+            color: #ffaaff;
+            border: 1px solid #ff5efb;
+        }
+
+        .casino-item.iris .bonus-text {
+            color: #ffaaff;
+        }
+
+        .casino-item.iris .action-btn {
+            background: linear-gradient(95deg, #ff5efb, #c42ee0);
+            color: white;
+            box-shadow: 0 6px 14px rgba(255, 94, 251, 0.4);
         }
 
         .casino-header {
@@ -248,42 +324,27 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .casino-name {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
-        }
-
-        .fugu .casino-name {
-            color: #ff8a5c;
-        }
-
-        .beef .casino-name {
-            color: #f5a623;
         }
 
         .badge-new {
-            font-size: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 12px;
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 5px 14px;
             border-radius: 60px;
             color: #b0bbdb;
+            font-weight: 600;
         }
 
         .bonus-text {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 800;
-            margin: 8px 0 6px;
-        }
-
-        .fugu .bonus-text {
-            color: #ff8a5c;
-        }
-
-        .beef .bonus-text {
-            color: #f5a623;
+            margin: 12px 0 8px;
         }
 
         .bonus-text span {
@@ -293,44 +354,33 @@
         }
 
         .promocode {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 6px 12px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 14px;
             border-radius: 60px;
             display: inline-block;
-            font-size: 12px;
-            margin: 8px 0;
+            font-size: 13px;
+            margin: 10px 0;
             font-family: monospace;
+            backdrop-filter: blur(4px);
         }
 
         .promocode code {
             font-weight: 800;
             color: #ffdf80;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .action-btn {
             display: block;
             width: 100%;
             text-align: center;
-            padding: 13px;
+            padding: 14px;
             border-radius: 60px;
             font-weight: 700;
             text-decoration: none;
             font-size: 17px;
-            margin-top: 10px;
+            margin-top: 12px;
             transition: 0.2s;
-        }
-
-        .fugu .action-btn {
-            background: #ff7a3a;
-            color: #0a0c12;
-            box-shadow: 0 6px 14px rgba(255, 122, 58, 0.2);
-        }
-
-        .beef .action-btn {
-            background: #f5a623;
-            color: #0f1117;
-            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
         }
 
         .action-btn:active {
@@ -362,7 +412,7 @@
         <div class="fallback">
             <p>⚠️ Если Telegram не открывается — подключи VPN и найди канал вручную:</p>
             <div class="copy-row">
-                <span>@geovaxuebonusbot</span>
+                <span>@officialgeovaxue</span>
                 <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
             </div>
             <div id="toastMsg" class="toast">✅ Скопировано! Вставь в поиск Telegram</div>
@@ -391,8 +441,9 @@
             </a>
         </div>
 
-        <!-- КАЗИНО (FUGU выше BEEF, компактно) -->
+        <!-- КАЗИНО (FUGU, BEEF, IRIS — IRIS выделен максимально) -->
         <div class="casino-grid">
+            <!-- FUGU -->
             <div class="casino-item fugu">
                 <div class="casino-header">
                     <span class="casino-name">🐡 FUGU CASINO</span>
@@ -409,6 +460,7 @@
                 </a>
             </div>
 
+            <!-- BEEF -->
             <div class="casino-item beef">
                 <div class="casino-header">
                     <span class="casino-name">🥩 BEEF CASINO</span>
@@ -422,6 +474,31 @@
                 </div>
                 <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
                     🎰 ЗАБРАТЬ БОНУС
+                </a>
+            </div>
+
+            <!-- IRIS — НОВЫЙ КАЗИК, МАКСИМАЛЬНО ВЫДЕЛЯЕТСЯ -->
+            <div class="casino-item iris">
+                <div class="casino-header">
+                    <span class="casino-name">🌈 IRIS CASINO</span>
+                    <span class="badge-new">🔥 НОВИНКА 🔥</span>
+                </div>
+                <div class="bonus-text">
+                    50 FS <span>БЕЗ ДЕПОЗИТА</span>
+                </div>
+                <div class="promocode">
+                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
+                </div>
+                <div style="font-size: 12px; color: #b0bbdb; margin: 8px 0;">
+                    ✅ Заполни профиль + телефон<br>
+                    ✅ Подтверди e-mail<br>
+                    ✅ Без дубликатов аккаунтов
+                </div>
+                <a href="https://irisroute61.com/c50427374?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
+                    🍭 ЗАБРАТЬ 50 FS IRIS 🍭
+                </a>
+                <a href="https://irisroute61.com/c50427374?activation_code=BONUSOTGEO" class="action-btn" style="margin-top: 8px; background: transparent; border: 1px solid #ff5efb; box-shadow: none; color: #ffaaff;" target="_blank" rel="noreferrer noopener">
+                    💰 АКТИВИРОВАТЬ БОНУС
                 </a>
             </div>
         </div>
