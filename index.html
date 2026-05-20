@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Бонусы и доступ</title>
+    <title>GEOVAXUE | Доступ к каналу</title>
     <style>
         * {
             margin: 0;
@@ -31,6 +31,7 @@
             box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
         }
 
+        /* Шапка */
         .header {
             padding: 24px 20px 18px;
             text-align: center;
@@ -74,6 +75,7 @@
             font-weight: 500;
         }
 
+        /* Кнопка Telegram */
         .tg-btn {
             display: block;
             margin: 18px 0 14px;
@@ -93,6 +95,7 @@
             transform: scale(0.98);
         }
 
+        /* Резервный блок для копирования */
         .fallback {
             background: rgba(18, 22, 32, 0.7);
             border-radius: 24px;
@@ -148,11 +151,11 @@
             padding: 20px 20px 24px;
         }
 
+        /* VPN Amnezia блок */
         .vpn-modern {
             background: rgba(18, 22, 32, 0.6);
             border-radius: 28px;
             padding: 14px 18px;
-            margin-bottom: 24px;
             border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
@@ -216,174 +219,6 @@
             transition: 0.2s;
         }
 
-        .casino-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        /* Общие стили для карточек казино */
-        .casino-item {
-            border-radius: 28px;
-            padding: 20px;
-            transition: 0.2s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* IRIS — НАВЕРХУ, МАКСИМАЛЬНО ВЫДЕЛЯЕТСЯ */
-        .casino-item.iris {
-            background: radial-gradient(circle at 10% 20%, #2a1a3a, #110c1a);
-            border: 1px solid #ff5efb;
-            box-shadow: 0 0 25px rgba(255, 94, 251, 0.3);
-            animation: pulseGlow 2s infinite;
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
-            50% { box-shadow: 0 0 25px rgba(255, 94, 251, 0.6); border-color: #ffaaff; }
-            100% { box-shadow: 0 0 5px rgba(255, 94, 251, 0.3); border-color: #ff5efb; }
-        }
-
-        .casino-item.iris .casino-name {
-            background: linear-gradient(115deg, #ffaaff, #ff5efb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .casino-item.iris .badge-new {
-            background: #ff5efb20;
-            color: #ffaaff;
-            border: 1px solid #ff5efb;
-        }
-
-        .casino-item.iris .bonus-text {
-            color: #ffaaff;
-        }
-
-        .casino-item.iris .action-btn {
-            background: linear-gradient(95deg, #ff5efb, #c42ee0);
-            color: white;
-            box-shadow: 0 6px 14px rgba(255, 94, 251, 0.4);
-        }
-
-        /* FUGU (стильный) */
-        .casino-item.fugu {
-            background: linear-gradient(135deg, #1e1a2f, #14101f);
-            border: 1px solid rgba(255, 122, 58, 0.4);
-            box-shadow: 0 8px 20px rgba(255, 122, 58, 0.1);
-        }
-
-        .casino-item.fugu .casino-name {
-            background: linear-gradient(115deg, #ffaa6a, #ff7a3a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .casino-item.fugu .bonus-text {
-            color: #ffaa6a;
-        }
-
-        .casino-item.fugu .action-btn {
-            background: linear-gradient(95deg, #ff7a3a, #ff5a1a);
-            color: white;
-            box-shadow: 0 6px 14px rgba(255, 90, 26, 0.3);
-        }
-
-        /* BEEF (премиум, золотой) */
-        .casino-item.beef {
-            background: linear-gradient(135deg, #1f1b16, #14100c);
-            border: 1px solid rgba(245, 166, 35, 0.4);
-            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.08);
-        }
-
-        .casino-item.beef .casino-name {
-            background: linear-gradient(115deg, #f5c674, #f5a623);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .casino-item.beef .bonus-text {
-            color: #f5a623;
-        }
-
-        .casino-item.beef .action-btn {
-            background: linear-gradient(95deg, #f5a623, #d4830c);
-            color: #0a0c12;
-            box-shadow: 0 6px 14px rgba(245, 166, 35, 0.2);
-        }
-
-        .casino-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-        .casino-name {
-            font-size: 26px;
-            font-weight: 800;
-        }
-
-        .badge-new {
-            font-size: 11px;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 5px 14px;
-            border-radius: 60px;
-            color: #b0bbdb;
-            font-weight: 600;
-        }
-
-        .bonus-text {
-            font-size: 28px;
-            font-weight: 800;
-            margin: 12px 0 8px;
-        }
-
-        .bonus-text span {
-            font-size: 14px;
-            font-weight: normal;
-            color: #8e99b3;
-        }
-
-        .promocode {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 8px 14px;
-            border-radius: 60px;
-            display: inline-block;
-            font-size: 13px;
-            margin: 10px 0;
-            font-family: monospace;
-            backdrop-filter: blur(4px);
-        }
-
-        .promocode code {
-            font-weight: 800;
-            color: #ffdf80;
-            font-size: 14px;
-        }
-
-        .action-btn {
-            display: block;
-            width: 100%;
-            text-align: center;
-            padding: 14px;
-            border-radius: 60px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 17px;
-            margin-top: 12px;
-            transition: 0.2s;
-        }
-
-        .action-btn:active {
-            transform: scale(0.97);
-        }
-
         .footer {
             padding: 12px 20px;
             text-align: center;
@@ -401,7 +236,7 @@
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
-        <div class="nickname">👇 ЭКСКЛЮЗИВНЫЕ БОНУСЫ 👇</div>
+        <div class="nickname">ОФИЦИАЛЬНЫЙ КАНАЛ</div>
         <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
             📢 ПЕРЕЙТИ В TELEGRAM-КАНАЛ
         </a>
@@ -417,7 +252,7 @@
     </div>
 
     <div class="main-content">
-        <!-- VPN Amnezia (компактно) -->
+        <!-- Amnezia VPN -->
         <div class="vpn-modern">
             <div class="vpn-row">
                 <div class="vpn-icon">
@@ -425,7 +260,7 @@
                 </div>
                 <div>
                     <div class="vpn-title">Amnezia VPN</div>
-                    <div class="vpn-desc">Обходит блокировки, работает везде</div>
+                    <div class="vpn-desc">Работает там, где другие молчат</div>
                 </div>
             </div>
             <div class="tags">
@@ -437,72 +272,10 @@
                 🔓 СКАЧАТЬ Amnezia VPN
             </a>
         </div>
-
-        <!-- КАЗИНО: IRIS — САМЫЙ ПЕРВЫЙ (ВЫДЕЛЕН) -->
-        <div class="casino-grid">
-            <!-- IRIS — НАВЕРХУ, СВЕТИТСЯ, ПУЛЬСИРУЕТ -->
-            <div class="casino-item iris">
-                <div class="casino-header">
-                    <span class="casino-name">🌈 IRIS CASINO</span>
-                    <span class="badge-new">🔥 НОВИНКА 🔥</span>
-                </div>
-                <div class="bonus-text">
-                    50 FS <span>БЕЗ ДЕПОЗИТА</span>
-                </div>
-                <div class="promocode">
-                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
-                </div>
-                <div style="font-size: 12px; color: #b0bbdb; margin: 8px 0;">
-                    ✅ Заполни профиль + телефон<br>
-                    ✅ Подтверди e-mail<br>
-                    ✅ Без дубликатов аккаунтов
-                </div>
-                <a href="https://megaways25.com/c50427374?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
-                    🍭 ЗАБРАТЬ 50 FS IRIS 🍭
-                </a>
-                <a href="https://megaways25.com/c50427374?activation_code=BONUSOTGEO" class="action-btn" style="margin-top: 8px; background: transparent; border: 1px solid #ff5efb; box-shadow: none; color: #ffaaff;" target="_blank" rel="noreferrer noopener">
-                    💰 АКТИВИРОВАТЬ БОНУС
-                </a>
-            </div>
-
-            <!-- FUGU (второй) -->
-            <div class="casino-item fugu">
-                <div class="casino-header">
-                    <span class="casino-name">🐡 FUGU CASINO</span>
-                    <span class="badge-new">VIP ПАКЕТ</span>
-                </div>
-                <div class="bonus-text">
-                    250% + 250FS <span>НА ПЕРВЫЙ ДЕПОЗИТ</span>
-                </div>
-                <div class="promocode">
-                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
-                </div>
-                <a href="https://fuguway610.com/c9f4c823e?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
-                    🎰 ЗАБРАТЬ БОНУС
-                </a>
-            </div>
-
-            <!-- BEEF (третий) -->
-            <div class="casino-item beef">
-                <div class="casino-header">
-                    <span class="casino-name">🥩 BEEF CASINO</span>
-                    <span class="badge-new">🔥 ЭКСКЛЮЗИВ GEO</span>
-                </div>
-                <div class="bonus-text">
-                    50 ФРИСПИНОВ <span>БЕЗ ДЕПОЗИТА</span>
-                </div>
-                <div class="promocode">
-                    🔐 ПРОМОКОД: <code>BONUSOTGEO</code>
-                </div>
-                <a href="https://beefway66.com/c7f7c1d30?activation_code=BONUSOTGEO" class="action-btn" target="_blank" rel="noreferrer noopener">
-                    🎰 ЗАБРАТЬ БОНУС
-                </a>
-            </div>
-        </div>
     </div>
 
     <div class="footer">
-        GEOVAXUE • Бонусы активируются после регистрации • VPN безлимит
+        GEOVAXUE • Доступ к каналу • VPN безлимит
     </div>
 </div>
 
