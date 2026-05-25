@@ -22,7 +22,7 @@
         }
 
         .card {
-            max-width: 520px;
+            max-width: 480px;
             width: 100%;
             background: #121620;
             border-radius: 40px;
@@ -32,15 +32,15 @@
         }
 
         .header {
-            padding: 24px 20px 18px;
+            padding: 32px 20px 24px;
             text-align: center;
             background: #0f131c;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 12px;
             border-radius: 50%;
             overflow: hidden;
@@ -76,21 +76,21 @@
 
         .tg-btn {
             display: block;
-            margin: 18px 0 14px;
-            background: rgba(27, 42, 63, 0.8);
-            padding: 12px;
+            margin: 24px 0 16px;
+            background: #2787F5;
+            padding: 14px;
             border-radius: 60px;
             text-decoration: none;
-            color: #5b9aff;
+            color: white;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
             transition: 0.2s;
-            border: 1px solid rgba(91, 154, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(39, 135, 245, 0.3);
         }
 
         .tg-btn:active {
-            background: #1a2a45;
             transform: scale(0.98);
+            background: #1a6bc9;
         }
 
         .fallback {
@@ -145,180 +145,44 @@
         }
 
         .main-content {
-            padding: 20px 20px 24px;
+            padding: 20px;
         }
 
-        /* Melbet блок */
-        .melbet-block {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0f1820 100%);
-            border-radius: 28px;
-            padding: 18px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 77, 77, 0.2);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .melbet-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #ff4d4d;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .melbet-title span {
-            background: #ff4d4d;
-            color: white;
-            font-size: 12px;
-            padding: 2px 10px;
-            border-radius: 60px;
-        }
-
-        .melbet-offer {
-            font-size: 28px;
-            font-weight: 800;
-            color: white;
-            margin: 12px 0 6px;
-        }
-
-        .melbet-offer small {
-            font-size: 14px;
-            font-weight: 400;
-            color: #9aa4bf;
-        }
-
-        .promo-row {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 60px;
-            padding: 8px 12px;
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .promo-code {
-            font-family: monospace;
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #ff4d4d;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 6px 16px;
-            border-radius: 60px;
-        }
-
-        .copy-promo-btn {
-            background: #2f8b4c;
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 60px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-        .melbet-btn {
-            display: block;
-            background: #ff4d4d;
-            text-align: center;
-            padding: 14px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 16px;
-            color: white;
-            transition: 0.2s;
-            margin-top: 10px;
-            box-shadow: 0 4px 12px rgba(255, 77, 77, 0.3);
-        }
-
-        .melbet-btn:active {
-            transform: scale(0.98);
-            background: #e03e3e;
-        }
-
-        .melbet-note {
-            font-size: 11px;
-            color: #8e99b3;
-            text-align: center;
-            margin-top: 12px;
-        }
-
-        .vpn-modern {
+        .vpn-block {
             background: rgba(18, 22, 32, 0.6);
-            border-radius: 28px;
-            padding: 14px 18px;
+            border-radius: 24px;
+            padding: 14px 16px;
             border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .vpn-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .vpn-icon {
-            width: 42px;
-            height: 42px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .vpn-icon img {
-            width: 60%;
-        }
-
         .vpn-title {
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
             color: #fff;
+            margin-bottom: 4px;
         }
 
         .vpn-desc {
             font-size: 11px;
             color: #8e99b3;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 10px 0;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 4px 12px;
-            border-radius: 60px;
-            font-size: 11px;
-            color: #b0bbdb;
+            margin-bottom: 10px;
         }
 
         .vpn-action {
             display: block;
             background: rgba(27, 42, 63, 0.7);
             text-align: center;
-            padding: 10px;
+            padding: 8px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             color: #7cb8ff;
             transition: 0.2s;
         }
 
         .footer {
-            padding: 12px 20px;
+            padding: 16px 20px;
             text-align: center;
             font-size: 10px;
             color: #5b6883;
@@ -335,12 +199,13 @@
         </div>
         <h1>GEOVAXUE</h1>
         <div class="nickname">ОФИЦИАЛЬНЫЙ КАНАЛ</div>
+        
         <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
-            📢 ПЕРЕЙТИ В TELEGRAM-КАНАЛ
+            📢 ПЕРЕЙТИ В TELEGRAM
         </a>
 
         <div class="fallback">
-            <p>⚠️ Если Telegram не открывается — подключи VPN и найди канал вручную:</p>
+            <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
             <div class="copy-row">
                 <span>@officialgeovaxue</span>
                 <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
@@ -350,37 +215,9 @@
     </div>
 
     <div class="main-content">
-        <!-- MELBET БЛОК -->
-        <div class="melbet-block">
-            <div class="melbet-title">
-                🎁 MELBET <span>ОФИЦИАЛЬНО В РФ</span>
-            </div>
-            <div class="melbet-offer">
-                До 30 000 ₽ <small>фрибетом за первый депозит</small>
-            </div>
-            <a href="https://tracker.partnersmelbet.ru/link?btag=105694199_495985" class="melbet-btn" target="_blank" rel="noreferrer noopener">
-                🚀 ЗАБРАТЬ БОНУС
-            </a>
-            <div class="melbet-note">
-                ✅ Лицензия ФНС РФ №25 • Регистрация 1 минуту
-            </div>
-        </div>
-
-        <div class="vpn-modern">
-            <div class="vpn-row">
-                <div class="vpn-icon">
-                    <img src="https://m-1-15-3w5hsuiikq-ez.a.run.app/img/logos/logo-with-a-w-glow.svg" alt="Amnezia">
-                </div>
-                <div>
-                    <div class="vpn-title">Amnezia VPN</div>
-                    <div class="vpn-desc">Работает там, где другие молчат</div>
-                </div>
-            </div>
-            <div class="tags">
-                <span class="tag">⚡ Высокая скорость</span>
-                <span class="tag">🔓 Open source</span>
-                <span class="tag">🛡️ Нет логов</span>
-            </div>
+        <div class="vpn-block">
+            <div class="vpn-title">🌐 Нужен VPN?</div>
+            <div class="vpn-desc">Чтобы Telegram работал стабильно — установи Amnezia</div>
             <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="vpn-action" target="_blank" rel="noreferrer noopener">
                 🔓 СКАЧАТЬ Amnezia VPN
             </a>
@@ -388,7 +225,7 @@
     </div>
 
     <div class="footer">
-        GEOVAXUE • Доступ к каналу • VPN безлимит
+        GEOVAXUE • Доступ к каналу
     </div>
 </div>
 
@@ -401,26 +238,6 @@
             setTimeout(() => {
                 toast.style.display = 'none';
             }, 2000);
-        });
-    }
-
-    function copyPromoCode() {
-        const code = 'BONUSOTGEO';
-        navigator.clipboard.writeText(code).then(() => {
-            const toast = document.createElement('div');
-            toast.textContent = '✅ Промокод скопирован! BONUSOTGEO';
-            toast.style.position = 'fixed';
-            toast.style.bottom = '20px';
-            toast.style.left = '50%';
-            toast.style.transform = 'translateX(-50%)';
-            toast.style.background = '#2f8b4c';
-            toast.style.color = 'white';
-            toast.style.padding = '10px 20px';
-            toast.style.borderRadius = '60px';
-            toast.style.fontSize = '14px';
-            toast.style.zIndex = '9999';
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 2000);
         });
     }
 </script>
