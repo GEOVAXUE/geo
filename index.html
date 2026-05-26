@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Доступ к каналу</title>
+    <title>GEOVAXUE | Бонус TonPlay</title>
     <style>
         * {
             margin: 0;
@@ -74,9 +74,93 @@
             font-weight: 500;
         }
 
+        .tonplay-block {
+            margin: 0 20px 20px 20px;
+            background: linear-gradient(135deg, #1e2a3a 0%, #121a24 100%);
+            border-radius: 28px;
+            padding: 20px;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .tonplay-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff6b6b;
+            text-align: center;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tonplay-badge {
+            background: #ff6b6b;
+            color: white;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 60px;
+        }
+
+        .bonus-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .bonus-item {
+            flex: 1;
+            min-width: 120px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .bonus-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ff6b6b;
+        }
+
+        .bonus-label {
+            font-size: 11px;
+            color: #9aa4bf;
+            margin-top: 4px;
+        }
+
+        .tonplay-btn {
+            display: block;
+            background: #ff6b6b;
+            text-align: center;
+            padding: 14px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            transition: 0.2s;
+            margin-top: 8px;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+
+        .tonplay-btn:active {
+            transform: scale(0.98);
+            background: #e05555;
+        }
+
+        .tonplay-note {
+            font-size: 10px;
+            color: #6c7a8e;
+            text-align: center;
+            margin-top: 12px;
+        }
+
         .tg-btn {
             display: block;
-            margin: 24px 0 16px;
+            margin: 0 20px 16px 20px;
             background: #2787F5;
             padding: 14px;
             border-radius: 60px;
@@ -85,6 +169,7 @@
             font-weight: 700;
             font-size: 16px;
             transition: 0.2s;
+            text-align: center;
             box-shadow: 0 4px 12px rgba(39, 135, 245, 0.3);
         }
 
@@ -94,6 +179,7 @@
         }
 
         .fallback {
+            margin: 0 20px 20px 20px;
             background: rgba(18, 22, 32, 0.7);
             border-radius: 24px;
             padding: 12px 16px;
@@ -145,10 +231,11 @@
         }
 
         .main-content {
-            padding: 20px;
+            padding: 0 0 20px 0;
         }
 
         .vpn-block {
+            margin: 0 20px 0 20px;
             background: rgba(18, 22, 32, 0.6);
             border-radius: 24px;
             padding: 14px 16px;
@@ -187,6 +274,7 @@
             font-size: 10px;
             color: #5b6883;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -199,19 +287,59 @@
         </div>
         <h1>GEOVAXUE</h1>
         <div class="nickname">ОФИЦИАЛЬНЫЙ КАНАЛ</div>
-        
-        <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
-            📢 ПЕРЕЙТИ В TELEGRAM
-        </a>
+    </div>
 
-        <div class="fallback">
-            <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
-            <div class="copy-row">
-                <span>@officialgeovaxue</span>
-                <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
-            </div>
-            <div id="toastMsg" class="toast">✅ Скопировано! Вставь в поиск Telegram</div>
+    <div class="tonplay-block">
+        <div class="tonplay-title">
+            🏆 TONPLAY <span class="tonplay-badge">БОНУС ОТ GEO</span>
         </div>
+        <div class="bonus-grid">
+            <div class="bonus-item">
+                <div class="bonus-value">777$</div>
+                <div class="bonus-label">в ежедневном колесе</div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-value">375%</div>
+                <div class="bonus-label">на первый депозит</div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-value">+200 FS</div>
+                <div class="bonus-label">фриспинов</div>
+            </div>
+        </div>
+        <div class="bonus-grid">
+            <div class="bonus-item">
+                <div class="bonus-value">9.5%</div>
+                <div class="bonus-label">кешбэк</div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-value">7%</div>
+                <div class="bonus-label">крипто-бонус</div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-value">$5000</div>
+                <div class="bonus-label">ежедневные раздачи</div>
+            </div>
+        </div>
+        <a href="https://tonplay.fo/hUWchxp2e3HGBE?click_id={click_id}" class="tonplay-btn" target="_blank" rel="noreferrer noopener">
+            🔥 ЗАБРАТЬ БОНУС
+        </a>
+        <div class="tonplay-note">
+            ⚡ Единственное лицензированное Telegram-казино • Моментальный вывод
+        </div>
+    </div>
+
+    <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
+        📢 ПЕРЕЙТИ В TELEGRAM
+    </a>
+
+    <div class="fallback">
+        <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
+        <div class="copy-row">
+            <span>@officialgeovaxue</span>
+            <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
+        </div>
+        <div id="toastMsg" class="toast">✅ Скопировано! Вставь в поиск Telegram</div>
     </div>
 
     <div class="main-content">
