@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, sans-serif;
-            background: #0c0f17;
+            background: #0a0c12;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,7 +28,7 @@
             border-radius: 40px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
         }
 
         .header {
@@ -76,50 +76,75 @@
 
         /* 7K блок */
         .offer-block {
-            margin: 0 20px 20px 20px;
-            background: linear-gradient(135deg, #1e2a3a 0%, #121a24 100%);
-            border-radius: 28px;
-            padding: 20px;
-            border: 1px solid rgba(255, 107, 107, 0.3);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin: 0 16px 20px 16px;
+            background: linear-gradient(135deg, #1f1b2e 0%, #130f1c 100%);
+            border-radius: 32px;
+            padding: 24px 20px;
+            border: 1px solid rgba(255, 107, 107, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 77, 77, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-block::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,77,77,0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .offer-title {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
-            color: #ff6b6b;
+            background: linear-gradient(135deg, #ff6b6b, #ff9a4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
         }
 
         .offer-sub {
             text-align: center;
-            color: #9aa4bf;
-            font-size: 13px;
-            margin-bottom: 20px;
+            color: #ff6b6b;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
         }
 
         .promo-block {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 60px;
-            padding: 10px 16px;
-            margin-bottom: 20px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
             text-align: center;
-            border: 1px solid rgba(255, 107, 107, 0.2);
+            border: 1px solid #ff6b6b;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
         }
 
         .promo-label {
-            font-size: 12px;
-            color: #9aa4bf;
-            margin-bottom: 4px;
+            font-size: 11px;
+            color: #ff9a4d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
         }
 
         .promo-code {
             font-family: monospace;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
-            letter-spacing: 3px;
-            color: #ff6b6b;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #ff6b6b, #ff9a4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .bonus-grid {
@@ -131,69 +156,80 @@
 
         .bonus-item {
             flex: 1;
-            min-width: 120px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 12px 8px;
+            min-width: 130px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 16px 8px;
             text-align: center;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .bonus-value {
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 800;
-            color: #ff6b6b;
+            background: linear-gradient(135deg, #ff6b6b, #ff9a4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .bonus-label {
             font-size: 11px;
-            color: #9aa4bf;
-            margin-top: 4px;
+            color: #b0bbdb;
+            margin-top: 6px;
         }
 
-        .min-deposit {
+        .deposit-info {
             text-align: center;
-            margin: 15px 0;
+            margin: 16px 0 20px;
             padding: 8px;
-            background: rgba(255, 107, 107, 0.1);
-            border-radius: 60px;
+            background: rgba(255, 107, 107, 0.08);
+            border-radius: 16px;
         }
 
-        .min-deposit span {
+        .deposit-small {
+            font-size: 10px;
+            color: #8e99b3;
+        }
+
+        .deposit-small strong {
             color: #ff6b6b;
-            font-weight: 800;
-            font-size: 16px;
+            font-size: 13px;
         }
 
         .offer-btn {
             display: block;
-            background: #ff6b6b;
+            background: linear-gradient(90deg, #ff4d4d, #e63e3e);
             text-align: center;
-            padding: 14px;
+            padding: 16px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 18px;
             color: white;
             transition: 0.2s;
             margin-top: 8px;
-            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .offer-btn:active {
-            transform: scale(0.98);
-            background: #e05555;
+            transform: scale(0.97);
+            background: linear-gradient(90deg, #e63e3e, #cc3535);
         }
 
         .offer-note {
             font-size: 10px;
             color: #6c7a8e;
             text-align: center;
-            margin-top: 12px;
+            margin-top: 16px;
         }
 
         .tg-btn {
             display: block;
-            margin: 0 20px 16px 20px;
+            margin: 0 16px 16px 16px;
             background: #2787F5;
             padding: 14px;
             border-radius: 60px;
@@ -212,7 +248,7 @@
         }
 
         .fallback {
-            margin: 0 20px 20px 20px;
+            margin: 0 16px 20px 16px;
             background: rgba(18, 22, 32, 0.7);
             border-radius: 24px;
             padding: 12px 16px;
@@ -268,7 +304,7 @@
         }
 
         .vpn-block {
-            margin: 0 20px 0 20px;
+            margin: 0 16px 0 16px;
             background: rgba(18, 22, 32, 0.6);
             border-radius: 24px;
             padding: 14px 16px;
@@ -343,8 +379,8 @@
             </div>
         </div>
 
-        <div class="min-deposit">
-            💰 Минимальный депозит — <span>1000 рублей</span>
+        <div class="deposit-info">
+            <span class="deposit-small">💎 Минимальный депозит для активации бонуса — <strong>1000 ₽</strong></span>
         </div>
 
         <a href="https://bonusgolddirect.com/l/6a195fbbfa069d5f92026d72" class="offer-btn" target="_blank" rel="noreferrer noopener">
@@ -376,6 +412,10 @@
                 🔓 СКАЧАТЬ Amnezia VPN
             </a>
         </div>
+    </div>
+
+    <div class="footer">
+        GEOVAXUE • Доступ к каналу
     </div>
 </div>
 
