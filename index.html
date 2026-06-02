@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Бонус 7K</title>
+    <title>GEOVAXUE | Бонус + Amnezia</title>
     <style>
         * {
             margin: 0;
@@ -13,379 +13,336 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica Neue, sans-serif;
-            background: #0a0c12;
+            background: radial-gradient(circle at 10% 20%, #0B0E17, #05070C);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 16px;
+            padding: 20px;
         }
 
+        /* ГЛАВНАЯ КАРТОЧКА — стеклянный эффект */
         .card {
-            max-width: 480px;
+            max-width: 500px;
             width: 100%;
-            background: #121620;
-            border-radius: 40px;
+            background: rgba(18, 24, 34, 0.65);
+            backdrop-filter: blur(16px);
+            border-radius: 48px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s ease;
         }
 
+        /* ШАПКА */
         .header {
-            padding: 32px 20px 24px;
+            padding: 28px 20px 20px;
             text-align: center;
-            background: #0f131c;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(10, 12, 20, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .avatar {
-            width: 80px;
-            height: 80px;
+            width: 85px;
+            height: 85px;
             margin: 0 auto 12px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid #ff4d4d;
-            box-shadow: 0 0 18px rgba(255, 77, 77, 0.3);
+            background: linear-gradient(135deg, #ff6a6a, #b53b3b);
+            padding: 2px;
         }
 
         .avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%;
+            background: #121620;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #ff5a5a);
+            background: linear-gradient(135deg, #FFF, #FFA5A5);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 6px;
+            letter-spacing: -0.3px;
         }
 
         .nickname {
-            font-size: 13px;
-            color: #9aa4bf;
-            background: rgba(255, 255, 255, 0.05);
+            font-size: 12px;
+            color: #9aa6c2;
+            background: rgba(255, 255, 255, 0.06);
             display: inline-block;
-            padding: 5px 16px;
+            padding: 5px 18px;
             border-radius: 60px;
             font-weight: 500;
+            backdrop-filter: blur(4px);
         }
 
+        /* КНОПКА TELEGRAM */
         .tg-btn {
             display: block;
-            margin: 0 16px 16px 16px;
-            background: #2787F5;
-            padding: 14px;
-            border-radius: 60px;
+            margin: 0 20px 18px 20px;
+            background: linear-gradient(95deg, #2D8CFF, #1A5FCC);
+            padding: 15px;
+            border-radius: 80px;
             text-decoration: none;
             color: white;
             font-weight: 700;
             font-size: 16px;
-            transition: 0.2s;
+            transition: all 0.2s;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(39, 135, 245, 0.3);
+            box-shadow: 0 10px 20px -5px rgba(45, 140, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        .tg-btn:active { transform: scale(0.97); background: linear-gradient(95deg, #1f70db, #0f4aa3); }
 
-        .tg-btn:active {
-            transform: scale(0.98);
-            background: #1a6bc9;
-        }
-
+        /* Ручной поиск */
         .fallback {
-            margin: 0 16px 20px 16px;
-            background: rgba(18, 22, 32, 0.7);
-            border-radius: 24px;
-            padding: 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin: 0 20px 20px 20px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 12px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
         .fallback p {
             font-size: 12px;
-            color: #8e99b3;
+            color: #b7c1da;
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-
         .copy-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: #0a0c12;
-            border-radius: 60px;
-            padding: 4px 4px 4px 18px;
+            background: #0F121C;
+            border-radius: 100px;
+            padding: 4px 4px 4px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .copy-row span {
-            color: #bfd9ff;
+            color: #CED8FF;
             font-weight: 500;
             font-size: 13px;
         }
-
         .copy-btn {
             background: #ff4d4d;
             border: none;
             color: white;
             font-weight: 600;
-            padding: 6px 20px;
+            padding: 7px 24px;
             border-radius: 60px;
             cursor: pointer;
             font-size: 12px;
+            transition: 0.15s;
         }
+        .copy-btn:active { transform: scale(0.96); background: #dc3c3c; }
 
-        .toast {
-            background: #2f8b4c;
-            color: white;
-            text-align: center;
-            padding: 6px;
-            border-radius: 60px;
-            font-size: 11px;
-            margin-top: 8px;
-            display: none;
-        }
-
-        /* СТИЛИ ДЛЯ КАЗИНО — современный, минималистичный, "модный" */
+        /* БЛОК КАЗИНО — выше, яркий, модный неон */
         .offer-block {
-            margin: 0 16px 20px 16px;
-            background: rgba(20, 24, 36, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
-            padding: 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s ease;
+            margin: 0 20px 20px 20px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+            border-radius: 36px;
+            padding: 20px 18px;
+            border: 1px solid rgba(255, 210, 90, 0.35);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+            transition: all 0.2s;
         }
-
-        .offer-block:active {
-            transform: scale(0.99);
-        }
-
         .offer-title {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(125deg, #FFFFFF, #E0E0E0);
+            background: linear-gradient(125deg, #FFE6A3, #FFB347);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-align: center;
             letter-spacing: -0.5px;
         }
-
         .offer-sub {
             text-align: center;
-            color: #aaaac7;
-            font-size: 11px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #FFD966;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
             margin-bottom: 14px;
+            text-transform: uppercase;
         }
-
         .promo-wrapper {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 60px;
-            padding: 6px 6px 6px 18px;
-            margin-bottom: 16px;
+            background: #0C0F17;
+            border-radius: 70px;
+            padding: 8px 8px 8px 22px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            border: 1px solid rgba(255, 190, 70, 0.6);
         }
-
         .promo-code {
-            font-family: monospace;
-            font-size: 16px;
-            font-weight: 700;
+            font-family: 'SF Mono', monospace;
+            font-size: 18px;
+            font-weight: 800;
             letter-spacing: 1px;
             color: #FFD966;
         }
-
         .copy-promo-btn {
-            background: rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.6);
+            background: rgba(255, 190, 70, 0.2);
+            border: 1px solid #FFB84D;
             color: #FFD966;
             font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 40px;
+            padding: 8px 22px;
+            border-radius: 60px;
             cursor: pointer;
-            font-size: 11px;
+            font-size: 12px;
             transition: 0.2s;
         }
-
-        .copy-promo-btn:active {
-            transform: scale(0.96);
-            background: rgba(255, 215, 0, 0.4);
-        }
-
+        .copy-promo-btn:active { transform: scale(0.96); background: rgba(255, 190, 70, 0.5);}
         .bonus-grid {
             display: flex;
             gap: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-
         .bonus-item {
             flex: 1;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            padding: 8px 4px;
+            background: rgba(255, 200, 100, 0.08);
+            border-radius: 28px;
+            padding: 10px 4px;
             text-align: center;
+            border: 1px solid rgba(255, 200, 120, 0.2);
         }
-
         .bonus-value {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
-            color: #FFD966;
+            color: #FFCF8A;
         }
-
         .bonus-label {
-            font-size: 9px;
-            color: #9ca3bf;
-            margin-top: 4px;
+            font-size: 10px;
+            color: #b9c3e0;
+            margin-top: 6px;
         }
-
         .deposit-note {
             text-align: center;
-            font-size: 9px;
-            color: #8e99b3;
-            background: rgba(255, 215, 0, 0.08);
-            padding: 4px 10px;
-            border-radius: 40px;
+            font-size: 10px;
+            color: #cbd5ff;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 6px 12px;
+            border-radius: 60px;
             width: fit-content;
-            margin: 8px auto;
+            margin: 8px auto 12px;
         }
-
-        .deposit-note strong {
-            color: #FFD966;
-        }
-
         .offer-btn {
             display: block;
-            background: #2A2F3F;
+            background: linear-gradient(95deg, #282E3F, #1B1F2C);
             text-align: center;
-            padding: 10px;
-            border-radius: 60px;
+            padding: 12px;
+            border-radius: 80px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
+            font-weight: 800;
+            font-size: 14px;
             color: #FFD966;
             transition: 0.2s;
-            margin-top: 4px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border: 1px solid rgba(255, 200, 70, 0.6);
         }
-
-        .offer-btn:active {
-            transform: scale(0.97);
-            background: #1F232F;
-        }
-
+        .offer-btn:active { transform: scale(0.97); background: #1E2333; }
         .offer-footer {
-            font-size: 8px;
-            color: #6c7a8e;
+            font-size: 9px;
+            color: #7F89AA;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
-        /* УВЕЛИЧЕННЫЙ И КРАСИВЫЙ БЛОК VPN */
+        /* БЛОК VPN — с картинкой и новым минимализмом */
         .vpn-block {
-            margin: 0 16px 24px 16px;
-            background: linear-gradient(115deg, #0E1725 0%, #0B111C 100%);
-            border-radius: 32px;
-            padding: 24px 20px;
-            border: 1px solid rgba(74, 158, 255, 0.4);
-            box-shadow: 0 16px 28px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s ease;
+            margin: 0 20px 24px 20px;
+            background: rgba(12, 18, 28, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 38px;
+            padding: 0px 0px 20px 0px;
+            border: 1px solid rgba(74, 158, 255, 0.5);
+            overflow: hidden;
+            transition: transform 0.2s;
         }
-        
-        .vpn-block:active {
-            transform: scale(0.99);
+        .vpn-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid rgba(74, 158, 255, 0.3);
         }
-
+        .vpn-content {
+            padding: 18px 18px 10px 18px;
+        }
         .vpn-title {
             font-size: 22px;
             font-weight: 800;
-            background: linear-gradient(115deg, #7CB8FF, #3A7BD5);
+            background: linear-gradient(115deg, #9CC9FF, #3D7FDD);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            margin-bottom: 10px;
         }
-
         .vpn-desc {
-            font-size: 14px;
-            color: #BDC7E5;
-            margin-bottom: 20px;
-            line-height: 1.4;
+            font-size: 13px;
+            color: #C7D2F0;
+            line-height: 1.45;
             background: rgba(0, 15, 30, 0.5);
             padding: 12px 14px;
             border-radius: 24px;
-            border-left: 3px solid #4A9EFF;
+            margin-bottom: 16px;
         }
-
         .vpn-features {
             display: flex;
-            gap: 10px;
-            margin-bottom: 24px;
+            gap: 8px;
             flex-wrap: wrap;
+            margin-bottom: 18px;
         }
-
         .vpn-feature {
-            background: rgba(74, 158, 255, 0.12);
-            padding: 6px 14px;
-            border-radius: 60px;
-            font-size: 11px;
+            background: rgba(64, 128, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 10px;
             font-weight: 600;
-            color: #9DC6FF;
-            backdrop-filter: blur(2px);
+            color: #B3D4FF;
         }
-
         .vpn-action {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: linear-gradient(95deg, #1F3A5F, #11263E);
-            text-align: center;
-            padding: 14px 20px;
+            gap: 10px;
+            background: linear-gradient(95deg, #1E3A5F, #10243E);
+            padding: 12px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 15px;
             color: white;
             transition: 0.2s;
-            border: 1px solid rgba(74, 158, 255, 0.6);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            border: 1px solid #4A9EFF;
         }
-
-        .vpn-action:active {
-            transform: scale(0.97);
-            background: linear-gradient(95deg, #0F2A48, #091B30);
-        }
-        
+        .vpn-action:active { transform: scale(0.97); background: #102A44;}
         .vpn-note {
-            font-size: 11px;
-            color: #6A7D9E;
+            font-size: 10px;
+            color: #7888B0;
             text-align: center;
             margin-top: 14px;
-            letter-spacing: 0.3px;
         }
 
         .footer {
-            padding: 16px 20px;
+            padding: 14px 20px;
             text-align: center;
             font-size: 10px;
-            color: #5b6883;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
-            margin-top: 8px;
+            color: #5f6c8f;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
     </style>
 </head>
 <body>
-
 <div class="card">
     <div class="header">
         <div class="avatar">
@@ -405,40 +362,17 @@
             <span>@officialgeovaxue</span>
             <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
         </div>
-        <div id="toastMsg" class="toast">✅ Скопировано! Вставь в поиск Telegram</div>
+        <div id="toastMsg" class="toast" style="display: none;">✅ Скопировано! Вставь в поиск Telegram</div>
     </div>
 
-    <!-- УВЕЛИЧЕННЫЙ БЛОК VPN (теперь выше казино, более заметный и стильный) -->
-    <div class="vpn-block">
-        <div class="vpn-title">
-            🔐 AMNEZIA VPN
-        </div>
-        <div class="vpn-desc">
-            🌍 Обходи блокировки и работай с Telegram, сайтами без задержек. Шифрование 256 бит, no-logs политика.
-        </div>
-        <div class="vpn-features">
-            <span class="vpn-feature">⚡ Безлимитный трафик</span>
-            <span class="vpn-feature">🔒 WireGuard + OpenVPN</span>
-            <span class="vpn-feature">📱 Все устройства</span>
-        </div>
-        <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="vpn-action" target="_blank" rel="noreferrer noopener">
-            🔓 СКАЧАТЬ Amnezia VPN
-        </a>
-        <div class="vpn-note">
-            ✅ Бесплатный пробный период • Безопасность превыше всего
-        </div>
-    </div>
-
-    <!-- БЛОК КАЗИНО - сделан компактнее, но стильнее, модный минимализм -->
+    <!-- БЛОК КАЗИНО (ВЫШЕ VPN) -->
     <div class="offer-block">
         <div class="offer-title">7K BONUS</div>
         <div class="offer-sub">эксклюзив от GEO</div>
-
         <div class="promo-wrapper">
             <span class="promo-code">BONUSOTGEO</span>
             <button class="copy-promo-btn" onclick="copyPromoCode()">📋 КОПИРОВАТЬ</button>
         </div>
-
         <div class="bonus-grid">
             <div class="bonus-item">
                 <div class="bonus-value">70%</div>
@@ -449,33 +383,47 @@
                 <div class="bonus-label">Sugar Rush</div>
             </div>
         </div>
+        <div class="deposit-note">💎 Депозит от <strong>1000 ₽</strong></div>
+        <a href="https://bonusgolddirect.com/l/6a195fbbfa069d5f92026d72" class="offer-btn" target="_blank" rel="noreferrer noopener">🎁 ЗАБРАТЬ БОНУС</a>
+        <div class="offer-footer">только для новых игроков • промокод активирует бонус</div>
+    </div>
 
-        <div class="deposit-note">
-            💎 Депозит от <strong>1000 ₽</strong>
-        </div>
-
-        <a href="https://bonusgolddirect.com/l/6a195fbbfa069d5f92026d72" class="offer-btn" target="_blank" rel="noreferrer noopener">
-            🎁 ЗАБРАТЬ БОНУС
-        </a>
-        <div class="offer-footer">
-            только для новых игроков • промокод активирует бонус
+    <!-- БЛОК VPN С КАРТИНКОЙ (ссылка на реальное изображение Amnezia) -->
+    <div class="vpn-block">
+        <img class="vpn-img" src="https://amnezia.org/img/promo/amnezia_preview.png" alt="Amnezia VPN" onerror="this.onerror=null; this.src='https://amnezia.org/img/logo.svg';">
+        <div class="vpn-content">
+            <div class="vpn-title">🔐 AMNEZIA VPN</div>
+            <div class="vpn-desc">
+                🌍 Обходи блокировки мгновенно. Telegram, сайты, приложения — без ограничений. 256-битное шифрование + No-logs политика.
+            </div>
+            <div class="vpn-features">
+                <span class="vpn-feature">⚡ Безлимит</span>
+                <span class="vpn-feature">🛡️ WireGuard/OpenVPN</span>
+                <span class="vpn-feature">📱 iOS/Android/Win/Mac</span>
+            </div>
+            <a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&arf=CSRRQBXRCNVBKDZU" class="vpn-action" target="_blank" rel="noreferrer noopener">
+                🔓 СКАЧАТЬ Amnezia VPN
+            </a>
+            <div class="vpn-note">✅ Бесплатный пробный период • Топ-1 по приватности</div>
         </div>
     </div>
 
-    <div class="footer">
-        GEOVAXUE • Доступ к каналу
-    </div>
+    <div class="footer">GEOVAXUE • Доступ к каналу и бонусам</div>
 </div>
 
 <script>
     function copyChannel() {
         const text = '@officialgeovaxue';
         navigator.clipboard.writeText(text).then(() => {
-            const toast = document.getElementById('toastMsg');
+            let toast = document.getElementById('toastMsg');
             toast.style.display = 'block';
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 2000);
+            toast.style.backgroundColor = '#2f8b4c';
+            toast.style.color = 'white';
+            toast.style.textAlign = 'center';
+            toast.style.padding = '6px';
+            toast.style.borderRadius = '60px';
+            toast.style.marginTop = '8px';
+            setTimeout(() => { toast.style.display = 'none'; }, 2000);
         });
     }
 
@@ -496,14 +444,16 @@
         toast.style.bottom = '30px';
         toast.style.left = '50%';
         toast.style.transform = 'translateX(-50%)';
-        toast.style.background = '#2f8b4c';
-        toast.style.color = 'white';
-        toast.style.padding = '10px 24px';
+        toast.style.background = '#1F2A3E';
+        toast.style.backdropFilter = 'blur(12px)';
+        toast.style.color = '#FFE6A3';
+        toast.style.padding = '12px 24px';
         toast.style.borderRadius = '60px';
         toast.style.fontSize = '14px';
         toast.style.fontWeight = '600';
         toast.style.zIndex = '9999';
-        toast.style.boxShadow = '0 4px 12px black';
+        toast.style.border = '1px solid #FFD966';
+        toast.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2000);
     }
