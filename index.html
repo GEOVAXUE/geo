@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Бонус + VPN</title>
+    <title>GEOVAXUE | Бонусы + VPN</title>
     <style>
         * {
             margin: 0;
@@ -137,7 +137,7 @@
             font-size: 12px;
         }
 
-        /* БЛОК КАЗИНО — светлый, с иконкой */
+        /* ОБЩИЙ БЛОК КАЗИНО — светлый, с иконкой */
         .offer-block {
             margin: 0 16px 20px 16px;
             background: #ffffff;
@@ -163,11 +163,13 @@
             align-items: center;
             justify-content: center;
             padding: 8px;
+            flex-shrink: 0;
         }
 
         .offer-icon img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .offer-title {
@@ -210,6 +212,11 @@
             border-radius: 60px;
             cursor: pointer;
             font-size: 13px;
+            transition: 0.15s;
+        }
+
+        .copy-promo-btn:active {
+            transform: scale(0.96);
         }
 
         .bonus-grid {
@@ -245,7 +252,7 @@
             background: #f7f9fc;
             padding: 8px;
             border-radius: 60px;
-            margin: 12px 0;
+            margin: 12px 0 16px;
         }
 
         .offer-btn {
@@ -264,6 +271,74 @@
         .offer-btn:active {
             transform: scale(0.97);
             background: #d46b2e;
+        }
+
+        /* БЛОК ВТОРОГО КАЗИНО (Apex) */
+        .offer-block-apex {
+            margin: 0 16px 20px 16px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 20px;
+            border: 2px solid #ffb07a;
+            box-shadow: 0 8px 20px rgba(255, 107, 43, 0.12);
+        }
+
+        .offer-block-apex .offer-title {
+            color: #c96b2b;
+        }
+
+        .offer-block-apex .promo-code {
+            color: #c96b2b;
+        }
+
+        .offer-block-apex .copy-promo-btn {
+            background: #c96b2b;
+        }
+
+        .offer-block-apex .bonus-item {
+            background: #fff5ea;
+        }
+
+        .offer-block-apex .bonus-value {
+            color: #c96b2b;
+        }
+
+        .offer-block-apex .offer-btn {
+            background: #c96b2b;
+        }
+
+        .offer-block-apex .offer-btn:active {
+            background: #ad5922;
+        }
+
+        .offer-apex-tag {
+            display: inline-block;
+            background: #ffb07a;
+            color: #2d1b0e;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 12px;
+            border-radius: 60px;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .offer-apex-desc {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin: 14px 0 18px;
+            font-size: 13px;
+            color: #2d2d2d;
+            background: #faf6f2;
+            padding: 12px 16px;
+            border-radius: 24px;
+        }
+
+        .offer-apex-desc span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* БЛОК VPN — такой же стиль, иконка */
@@ -292,11 +367,13 @@
             align-items: center;
             justify-content: center;
             padding: 8px;
+            flex-shrink: 0;
         }
 
         .vpn-icon img {
             width: 100%;
             height: auto;
+            display: block;
         }
 
         .vpn-title {
@@ -379,11 +456,13 @@
 <body>
 
 <div class="card">
+    <!-- ШАПКА -->
     <div class="header">
         <div class="avatar">
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
+        <div class="nickname">ОФИЦИАЛЬНЫЙ КАНАЛ</div>
     </div>
 
     <!-- TELEGRAM -->
@@ -399,7 +478,7 @@
         </div>
     </div>
 
-    <!-- КАЗИНО — значок 7K -->
+    <!-- КАЗИНО 1: 7K -->
     <div class="offer-block">
         <div class="offer-header">
             <div class="offer-icon">
@@ -436,7 +515,40 @@
         </a>
     </div>
 
-    <!-- VPN — значок Amnezia -->
+    <!-- КАЗИНО 2: APEX (новый, с рамкой и описанием) -->
+    <div class="offer-block-apex">
+        <div class="offer-header">
+            <div class="offer-icon">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f3b37b'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='44' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" alt="Apex">
+            </div>
+            <div>
+                <div class="offer-title">⭐️ APEX</div>
+                <div class="offer-sub">
+                    🔥 ТОЛЬКО ОТКРЫЛСЯ
+                    <span class="offer-apex-tag">НОВЫЙ КАЗИК</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="offer-apex-desc">
+            <span>✔️ еженедельный кешбэк</span>
+            <span>✔️ ежедневный рейкбэк</span>
+            <span>✔️ продвинутая VIP-программа</span>
+            <span>✔️ магазин бонусов и лутбоксы</span>
+            <span>✔️ розыгрыш квартиры в Москве</span>
+        </div>
+
+        <div class="promo-wrapper">
+            <span class="promo-code">BONUSOTGEO</span>
+            <button class="copy-promo-btn" onclick="copyPromoCode()">📋 КОПИРОВАТЬ</button>
+        </div>
+
+        <a href="https://apx3-smart.com/adnhoavlss" class="offer-btn" target="_blank" rel="noreferrer noopener">
+            🚀 ЗАБРАТЬ БОНУС
+        </a>
+    </div>
+
+    <!-- VPN -->
     <div class="vpn-block">
         <div class="vpn-header">
             <div class="vpn-icon">
