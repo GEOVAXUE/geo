@@ -13,31 +13,29 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #eef2f7;
+            background: linear-gradient(145deg, #d4dff7 0%, #c5d4ed 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             padding: 20px;
         }
 
-        /* Карточка — светлая, приятная */
         .card {
             max-width: 520px;
             width: 100%;
             background: #ffffff;
             border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 25px 40px -12px rgba(45, 62, 90, 0.25);
             transition: transform 0.2s;
         }
 
-        /* Шапка */
         .header {
             padding: 28px 20px 20px;
             text-align: center;
             background: #f8fafd;
-            border-bottom: 1px solid #e9edf2;
+            border-bottom: 1px solid #e3e9f2;
         }
 
         .avatar {
@@ -45,7 +43,7 @@
             height: 85px;
             margin: 0 auto 12px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff7e5e, #feb47b);
+            background: linear-gradient(135deg, #7b8fc7, #a7b9db);
             padding: 3px;
         }
 
@@ -60,7 +58,7 @@
         h1 {
             font-size: 28px;
             font-weight: 800;
-            color: #1a2c3e;
+            color: #1a2c42;
             margin-bottom: 6px;
         }
 
@@ -74,7 +72,6 @@
             font-weight: 500;
         }
 
-        /* Кнопка Telegram */
         .tg-btn {
             display: block;
             margin: 16px 16px 12px 16px;
@@ -95,7 +92,6 @@
             background: #1c8bc2;
         }
 
-        /* Блок ручного копирования */
         .fallback {
             margin: 0 16px 20px 16px;
             background: #f1f4f9;
@@ -127,7 +123,7 @@
         }
 
         .copy-btn {
-            background: #ff8a5c;
+            background: #7b8fc7;
             border: none;
             color: white;
             font-weight: 600;
@@ -137,14 +133,17 @@
             font-size: 12px;
         }
 
-        /* ОБЩИЙ БЛОК КАЗИНО — светлый, с иконкой */
+        .copy-btn:active {
+            transform: scale(0.96);
+        }
+
         .offer-block {
             margin: 0 16px 20px 16px;
             background: #ffffff;
             border-radius: 28px;
             padding: 20px;
             border: 1px solid #eef2f8;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
         }
 
         .offer-header {
@@ -157,12 +156,12 @@
         .offer-icon {
             width: 48px;
             height: 48px;
-            background: #fef3e8;
+            background: #eef2fc;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 8px;
+            padding: 6px;
             flex-shrink: 0;
         }
 
@@ -175,7 +174,7 @@
         .offer-title {
             font-size: 24px;
             font-weight: 800;
-            color: #ea7c3c;
+            color: #3a5a7a;
         }
 
         .offer-sub {
@@ -200,11 +199,11 @@
             font-size: 18px;
             font-weight: 800;
             letter-spacing: 1px;
-            color: #ea7c3c;
+            color: #3a5a7a;
         }
 
         .copy-promo-btn {
-            background: #ea7c3c;
+            background: #3a5a7a;
             border: none;
             color: white;
             font-weight: 700;
@@ -227,7 +226,7 @@
 
         .bonus-item {
             flex: 1;
-            background: #fef5ee;
+            background: #f0f4fc;
             border-radius: 20px;
             padding: 12px 8px;
             text-align: center;
@@ -236,7 +235,7 @@
         .bonus-value {
             font-size: 24px;
             font-weight: 800;
-            color: #ea7c3c;
+            color: #3a5a7a;
         }
 
         .bonus-label {
@@ -257,7 +256,7 @@
 
         .offer-btn {
             display: block;
-            background: #ea7c3c;
+            background: #3a5a7a;
             text-align: center;
             padding: 14px;
             border-radius: 60px;
@@ -270,50 +269,50 @@
 
         .offer-btn:active {
             transform: scale(0.97);
-            background: #d46b2e;
+            background: #2d4a66;
         }
 
-        /* БЛОК ВТОРОГО КАЗИНО (Apex) */
+        /* APEX блок */
         .offer-block-apex {
             margin: 0 16px 20px 16px;
             background: #ffffff;
             border-radius: 28px;
             padding: 20px;
-            border: 2px solid #ffb07a;
-            box-shadow: 0 8px 20px rgba(255, 107, 43, 0.12);
+            border: 2px solid #f0b27a;
+            box-shadow: 0 8px 20px rgba(240, 178, 122, 0.2);
         }
 
         .offer-block-apex .offer-title {
-            color: #c96b2b;
+            color: #b87a4a;
         }
 
         .offer-block-apex .promo-code {
-            color: #c96b2b;
+            color: #b87a4a;
         }
 
         .offer-block-apex .copy-promo-btn {
-            background: #c96b2b;
+            background: #b87a4a;
         }
 
         .offer-block-apex .bonus-item {
-            background: #fff5ea;
+            background: #fef5ea;
         }
 
         .offer-block-apex .bonus-value {
-            color: #c96b2b;
+            color: #b87a4a;
         }
 
         .offer-block-apex .offer-btn {
-            background: #c96b2b;
+            background: #b87a4a;
         }
 
         .offer-block-apex .offer-btn:active {
-            background: #ad5922;
+            background: #9e663a;
         }
 
         .offer-apex-tag {
             display: inline-block;
-            background: #ffb07a;
+            background: #f0b27a;
             color: #2d1b0e;
             font-size: 10px;
             font-weight: 800;
@@ -341,14 +340,13 @@
             gap: 6px;
         }
 
-        /* БЛОК VPN — такой же стиль, иконка */
         .vpn-block {
             margin: 0 16px 24px 16px;
             background: #ffffff;
             border-radius: 28px;
             padding: 20px;
             border: 1px solid #eef2f8;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
         }
 
         .vpn-header {
@@ -456,16 +454,13 @@
 <body>
 
 <div class="card">
-    <!-- ШАПКА -->
     <div class="header">
         <div class="avatar">
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
-        <div class="nickname">ОФИЦИАЛЬНЫЙ КАНАЛ</div>
     </div>
 
-    <!-- TELEGRAM -->
     <a href="https://t.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
         📢 ПЕРЕЙТИ В TELEGRAM
     </a>
@@ -478,7 +473,7 @@
         </div>
     </div>
 
-    <!-- КАЗИНО 1: 7K -->
+    <!-- 7K -->
     <div class="offer-block">
         <div class="offer-header">
             <div class="offer-icon">
@@ -515,17 +510,17 @@
         </a>
     </div>
 
-    <!-- КАЗИНО 2: APEX (новый, с рамкой и описанием) -->
+    <!-- APEX -->
     <div class="offer-block-apex">
         <div class="offer-header">
             <div class="offer-icon">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f3b37b'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='44' font-weight='bold' text-anchor='middle' fill='%23ffffff'%3EA%3C/text%3E%3C/svg%3E" alt="Apex">
+                <img src="https://cdn.7k-affiliates.com/apex_logo_200x200.png" alt="Apex">
             </div>
             <div>
                 <div class="offer-title">⭐️ APEX</div>
                 <div class="offer-sub">
                     🔥 ТОЛЬКО ОТКРЫЛСЯ
-                    <span class="offer-apex-tag">НОВЫЙ КАЗИК</span>
+                    <span class="offer-apex-tag">НОВЫЙ ПРОЕКТ</span>
                 </div>
             </div>
         </div>
