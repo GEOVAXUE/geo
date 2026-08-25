@@ -19,6 +19,7 @@
             justify-content: center;
             align-items: center;
             padding: 16px;
+            overflow-x: hidden;
         }
 
         .card {
@@ -157,7 +158,7 @@
             background: #5a3f86;
         }
 
-        /* Универсальный блок для проектов */
+        /* Универсальный блок для проектов (изначально скрыты) */
         .project-block {
             background: #1a1628;
             border-radius: 24px;
@@ -165,7 +166,14 @@
             margin-bottom: 16px;
             border: 1px solid rgba(164, 119, 232, 0.12);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: 0.2s;
+            transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .project-block.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-header {
@@ -246,6 +254,7 @@
             padding: 20px;
             border: 1px solid rgba(164, 119, 232, 0.12);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            margin-top: 16px;
         }
 
         .vpn-header {
@@ -379,34 +388,35 @@
             </div>
         </div>
 
-        <!-- SPINTO -->
-        <div class="project-block">
-            <div class="project-header">
-                <div class="project-icon">🎰</div>
-                <div class="project-title">SPINTO</div>
+        <!-- Блоки, которые появятся через 3 секунды -->
+        <div id="hiddenProjects" style="display: none;">
+            <div class="project-block" id="project1">
+                <div class="project-header">
+                    <div class="project-icon">🎰</div>
+                    <div class="project-title">SPINTO</div>
+                </div>
+                <div class="project-bonus">
+                    <span class="bonus-chip"><strong>500 000 ₽</strong> бонус</span>
+                    <span class="bonus-chip"><strong>500 FS</strong> на старт</span>
+                </div>
+                <a href="https://transitdigitals.top/?ref=fap_w53570p111_hbrdlev" class="project-btn" target="_blank" rel="noreferrer noopener">
+                    🎁 ЗАБРАТЬ БОНУС
+                </a>
             </div>
-            <div class="project-bonus">
-                <span class="bonus-chip"><strong>500 000 ₽</strong> бонус</span>
-                <span class="bonus-chip"><strong>500 FS</strong> на старт</span>
-            </div>
-            <a href="https://clck.ru/3VQkg5" class="project-btn" target="_blank" rel="noreferrer noopener">
-                🎁 ЗАБРАТЬ БОНУС
-            </a>
-        </div>
 
-        <!-- LEV -->
-        <div class="project-block">
-            <div class="project-header">
-                <div class="project-icon">🦁</div>
-                <div class="project-title">LEV</div>
+            <div class="project-block" id="project2">
+                <div class="project-header">
+                    <div class="project-icon">🦁</div>
+                    <div class="project-title">LEV</div>
+                </div>
+                <div class="project-bonus">
+                    <span class="bonus-chip"><strong>100 000 ₽</strong> бонус</span>
+                    <span class="bonus-chip"><strong>250 FS</strong> на старт</span>
+                </div>
+                <a href="https://clck.ru/3VQkg5" class="project-btn" target="_blank" rel="noreferrer noopener">
+                    🎁 ЗАБРАТЬ БОНУС
+                </a>
             </div>
-            <div class="project-bonus">
-                <span class="bonus-chip"><strong>100 000 ₽</strong> бонус</span>
-                <span class="bonus-chip"><strong>250 FS</strong> на старт</span>
-            </div>
-            <a href="https://transitdigitals.top/?ref=fap_w53570p111_hbrdlev" class="project-btn" target="_blank" rel="noreferrer noopener">
-                🎁 ЗАБРАТЬ БОНУС
-            </a>
         </div>
 
         <!-- VPN -->
@@ -455,6 +465,28 @@
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2000);
     }
+
+    // Таймер: через 3 секунды показываем блоки с проектами
+    setTimeout(function() {
+        const hiddenDiv = document.getElementById('hiddenProjects');
+        hiddenDiv.style.display = 'block';
+
+        // Добавляем класс visible для плавного появления
+        const blocks = hiddenDiv.querySelectorAll('.project-block');
+        blocks.forEach((block, index) => {
+            setTimeout(() => {
+                block.classList.add('visible');
+            }, 100 * (index + 1));
+        });
+
+        // Прокрутка к блокам через 500 мс после появления
+        setTimeout(() => {
+            const firstBlock = document.getElementById('project1');
+            if (firstBlock) {
+                firstBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 600);
+    }, 3000);
 </script>
 </body>
 </html>
