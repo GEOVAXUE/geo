@@ -32,6 +32,7 @@
             padding: 0 0 24px 0;
         }
 
+        /* Шапка */
         .header {
             padding: 30px 20px 24px;
             text-align: center;
@@ -77,10 +78,12 @@
             margin-top: 4px;
         }
 
+        /* Основной блок */
         .main-content {
             padding: 24px 20px 0;
         }
 
+        /* Кнопка Telegram — крупная и яркая */
         .tg-btn {
             display: block;
             margin-bottom: 16px;
@@ -109,6 +112,7 @@
             transform: scale(0.97);
         }
 
+        /* Ручное копирование ника */
         .fallback {
             background: #1e1a2e;
             border-radius: 24px;
@@ -157,89 +161,7 @@
             background: #5a3f86;
         }
 
-        /* Универсальный блок для проектов */
-        .project-block {
-            background: #1a1628;
-            border-radius: 24px;
-            padding: 16px;
-            margin-bottom: 16px;
-            border: 1px solid rgba(164, 119, 232, 0.12);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: 0.2s;
-        }
-
-        .project-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .project-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(164, 119, 232, 0.1);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: 800;
-            color: #d4bfff;
-            flex-shrink: 0;
-            border: 1px solid rgba(164, 119, 232, 0.1);
-        }
-
-        .project-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #d4bfff;
-            letter-spacing: 0.5px;
-        }
-
-        .project-bonus {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .bonus-chip {
-            background: rgba(255, 255, 255, 0.04);
-            padding: 6px 12px;
-            border-radius: 60px;
-            font-size: 12px;
-            color: #b0a0d0;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            flex: 1;
-            text-align: center;
-            min-width: 80px;
-        }
-
-        .bonus-chip strong {
-            color: #d4bfff;
-            font-weight: 700;
-        }
-
-        .project-btn {
-            display: block;
-            background: linear-gradient(90deg, #6b4c9e, #8a5ac9);
-            text-align: center;
-            padding: 12px;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            color: white;
-            transition: 0.2s;
-            box-shadow: 0 4px 12px rgba(106, 76, 158, 0.2);
-        }
-
-        .project-btn:active {
-            transform: scale(0.97);
-            opacity: 0.9;
-        }
-
+        /* VPN блок */
         .vpn-block {
             background: linear-gradient(145deg, #1a1628, #13101e);
             border-radius: 28px;
@@ -359,6 +281,7 @@
 <body>
 
 <div class="card">
+    <!-- Шапка -->
     <div class="header">
         <div class="avatar">
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
@@ -368,46 +291,18 @@
     </div>
 
     <div class="main-content">
+        <!-- Кнопка Telegram -->
         <a href="https://telegram.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
             📢 ПЕРЕЙТИ В TELEGRAM
         </a>
 
+        <!-- Ручное копирование ника -->
         <div class="fallback">
             <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
             <div class="copy-row">
                 <span>@geovaxuebonusbot</span>
                 <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
             </div>
-        </div>
-
-        <!-- Блок SPINTO -->
-        <div class="project-block">
-            <div class="project-header">
-                <div class="project-icon">🎰</div>
-                <div class="project-title">SPINTO</div>
-            </div>
-            <div class="project-bonus">
-                <span class="bonus-chip"><strong>500 000 ₽</strong> бонус</span>
-                <span class="bonus-chip"><strong>500 FS</strong> на старт</span>
-            </div>
-            <a href="https://clck.ru/3VQkg5" class="project-btn" target="_blank" rel="noreferrer noopener">
-                🎁 ЗАБРАТЬ БОНУС
-            </a>
-        </div>
-
-        <!-- Блок LEV -->
-        <div class="project-block">
-            <div class="project-header">
-                <div class="project-icon">🦁</div>
-                <div class="project-title">LEV</div>
-            </div>
-            <div class="project-bonus">
-                <span class="bonus-chip"><strong>100 000 ₽</strong> бонус</span>
-                <span class="bonus-chip"><strong>250 FS</strong> на старт</span>
-            </div>
-            <a href="https://transitdigitals.top/?ref=fap_w53570p111_hbrdlev" class="project-btn" target="_blank" rel="noreferrer noopener">
-                🎁 ЗАБРАТЬ БОНУС
-            </a>
         </div>
 
         <!-- VPN блок -->
@@ -456,14 +351,6 @@
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2000);
     }
-
-    // Автоматическая прокрутка к блокам с проектами через 2 секунды
-    setTimeout(() => {
-        const firstProject = document.querySelector('.project-block');
-        if (firstProject) {
-            firstProject.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    }, 2000);
 </script>
 </body>
 </html>
