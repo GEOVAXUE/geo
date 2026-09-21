@@ -83,10 +83,10 @@
             padding: 24px 20px 0;
         }
 
-        /* Кнопка Telegram — крупная и яркая */
+        /* Кнопка Telegram */
         .tg-btn {
             display: block;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
             background: linear-gradient(90deg, #2787F5, #1a6bc9);
             padding: 18px 20px;
             border-radius: 60px;
@@ -112,143 +112,75 @@
             transform: scale(0.97);
         }
 
-        /* Ручное копирование ника */
-        .fallback {
-            background: #1e1a2e;
+        /* Блоки казино */
+        .offer-block {
+            background: #1a1628;
             border-radius: 24px;
-            padding: 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            margin-bottom: 24px;
-        }
-
-        .fallback p {
-            font-size: 12px;
-            color: #8a7aaa;
-            text-align: center;
-            margin-bottom: 8px;
-        }
-
-        .copy-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #0c0a14;
-            border-radius: 60px;
-            padding: 4px 4px 4px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .copy-row span {
-            color: #d4bfff;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .copy-btn {
-            background: #6b4c9e;
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 6px 20px;
-            border-radius: 60px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: 0.15s;
-        }
-
-        .copy-btn:active {
-            transform: scale(0.95);
-            background: #5a3f86;
-        }
-
-        /* VPN блок */
-        .vpn-block {
-            background: linear-gradient(145deg, #1a1628, #13101e);
-            border-radius: 28px;
-            padding: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
             border: 1px solid rgba(164, 119, 232, 0.12);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-            margin-top: 16px;
-        }
-
-        .vpn-header {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             gap: 14px;
-            margin-bottom: 12px;
         }
 
-        .vpn-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(164, 119, 232, 0.1);
+        .offer-icon {
+            width: 52px;
+            height: 52px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 6px;
             flex-shrink: 0;
-            border: 1px solid rgba(164, 119, 232, 0.1);
-        }
-
-        .vpn-icon img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .vpn-title {
-            font-size: 20px;
-            font-weight: 800;
-            background: linear-gradient(90deg, #ffd6a8, #f5a77a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .vpn-desc {
-            font-size: 13px;
-            color: #a090b8;
-            line-height: 1.5;
-            margin-bottom: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 10px 14px;
-            border-radius: 20px;
-        }
-
-        .vpn-features {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-
-        .vpn-feature {
+            overflow: hidden;
             background: rgba(255, 255, 255, 0.04);
-            padding: 4px 14px;
-            border-radius: 60px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #b0a0d0;
         }
 
-        .vpn-action {
-            display: block;
-            background: linear-gradient(90deg, #f5a77a, #e88b5a);
-            text-align: center;
-            padding: 14px;
-            border-radius: 60px;
+        .offer-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .offer-info {
+            flex: 1;
+        }
+
+        .offer-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #d4bfff;
+            margin-bottom: 2px;
+        }
+
+        .offer-desc {
+            font-size: 12px;
+            color: #b0a0d0;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+
+        .offer-promo {
+            font-size: 11px;
+            color: #8a7aaa;
+        }
+
+        .offer-btn {
+            background: linear-gradient(90deg, #6b4c9e, #8a5ac9);
+            color: white;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
-            color: #1a1628;
+            font-size: 13px;
+            padding: 10px 16px;
+            border-radius: 60px;
+            white-space: nowrap;
             transition: 0.2s;
-            box-shadow: 0 4px 16px rgba(245, 167, 122, 0.25);
+            box-shadow: 0 4px 12px rgba(106, 76, 158, 0.2);
         }
 
-        .vpn-action:active {
-            transform: scale(0.97);
+        .offer-btn:active {
+            transform: scale(0.95);
             opacity: 0.9;
         }
 
@@ -296,34 +228,48 @@
             📢 ПЕРЕЙТИ В TELEGRAM
         </a>
 
-        <!-- Ручное копирование ника -->
-        <div class="fallback">
-            <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
-            <div class="copy-row">
-                <span>@geovaxuebonusbot</span>
-                <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
+        <!-- SPINTO -->
+        <div class="offer-block">
+            <div class="offer-icon">
+                <img src="https://www.google.com/s2/favicons?domain=spinto.casino&sz=64" alt="Spinto">
             </div>
+            <div class="offer-info">
+                <div class="offer-title">SPINTO</div>
+                <div class="offer-desc">до 300.000 + 500 FS</div>
+                <div class="offer-promo">Промо: BONUSOTGEO</div>
+            </div>
+            <a href="https://myadsdeal.com/l/6aada509cb8e51c86d0c4962" class="offer-btn" target="_blank" rel="noreferrer noopener">
+                🎁 ИГРАТЬ
+            </a>
         </div>
 
-        <!-- VPN блок -->
-        <div class="vpn-block">
-            <div class="vpn-header">
-                <div class="vpn-icon">
-                    <img src="https://storage.googleapis.com/vanyavpn/logo.png" alt="Дядя Ваня VPN">
-                </div>
-                <div class="vpn-title">ДЯДЯ ВАНЯ VPN</div>
+        <!-- 7K -->
+        <div class="offer-block">
+            <div class="offer-icon">
+                <img src="https://www.google.com/s2/favicons?domain=7k.casino&sz=64" alt="7K">
             </div>
-            <div class="vpn-desc">
-                🔥 Безлимитный VPN для телефона, компа и телевизора. Никаких лимитов и замедлений. Просто вруби и летай.
+            <div class="offer-info">
+                <div class="offer-title">7K</div>
+                <div class="offer-desc">до 300.000 + 500 FS</div>
+                <div class="offer-promo">Промо: BONUSOTGEO</div>
             </div>
-            <div class="vpn-features">
-                <span class="vpn-feature">⚡ Безлимитный трафик</span>
-                <span class="vpn-feature">🛡️ No-logs</span>
-                <span class="vpn-feature">📱 Все устройства</span>
-                <span class="vpn-feature">🌍 Обход блокировок</span>
+            <a href="https://myadsdeal.com/l/6aa81f287cf47d2414032382" class="offer-btn" target="_blank" rel="noreferrer noopener">
+                🎁 ИГРАТЬ
+            </a>
+        </div>
+
+        <!-- IRIS -->
+        <div class="offer-block">
+            <div class="offer-icon">
+                <img src="https://www.google.com/s2/favicons?domain=iris.casino&sz=64" alt="Iris">
             </div>
-            <a href="https://bit.ly/vanyavpn#rmh9jgor5" class="vpn-action" target="_blank" rel="noreferrer noopener">
-                🔓 СКАЧАТЬ VPN
+            <div class="offer-info">
+                <div class="offer-title">IRIS</div>
+                <div class="offer-desc">300% со старта</div>
+                <div class="offer-promo">Промо: BONUSOTGEO</div>
+            </div>
+            <a href="https://irisroute64.com/c50427374" class="offer-btn" target="_blank" rel="noreferrer noopener">
+                🎁 ИГРАТЬ
             </a>
         </div>
     </div>
@@ -334,13 +280,6 @@
 </div>
 
 <script>
-    function copyChannel() {
-        const text = '@geovaxuebonusbot';
-        navigator.clipboard.writeText(text).then(() => {
-            showToast('✅ Скопировано: ' + text);
-        });
-    }
-
     function showToast(msg) {
         let existing = document.getElementById('customToast');
         if (existing) existing.remove();
