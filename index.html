@@ -83,7 +83,7 @@
 
         .tg-btn {
             display: block;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             background: linear-gradient(90deg, #2787F5, #1a6bc9);
             padding: 18px 20px;
             border-radius: 60px;
@@ -107,6 +107,55 @@
 
         .tg-btn:active {
             transform: scale(0.97);
+        }
+
+        /* Блок ручного копирования ника */
+        .fallback {
+            background: #1e1a2e;
+            border-radius: 24px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 24px;
+        }
+
+        .fallback p {
+            font-size: 12px;
+            color: #8a7aaa;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .copy-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0c0a14;
+            border-radius: 60px;
+            padding: 4px 4px 4px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .copy-row span {
+            color: #d4bfff;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .copy-btn {
+            background: #6b4c9e;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 6px 20px;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.15s;
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+            background: #5a3f86;
         }
 
         .offer-block {
@@ -229,10 +278,19 @@
             📢 ПЕРЕЙТИ В TELEGRAM
         </a>
 
+        <!-- Ручное копирование ника -->
+        <div class="fallback">
+            <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
+            <div class="copy-row">
+                <span>@geovaxuebonusbot</span>
+                <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
+            </div>
+        </div>
+
         <!-- SPINTO -->
         <div class="offer-block">
             <div class="offer-icon">
-                <img src="https://www.google.com/s2/favicons?domain=spinto.casino&sz=64" alt="Spinto">
+                <img src="https://spintocasino-official.pro/uploads/asa-1.webp" alt="Spinto">
             </div>
             <div class="offer-info">
                 <div class="offer-title">SPINTO</div>
@@ -248,7 +306,7 @@
         <!-- 7K -->
         <div class="offer-block">
             <div class="offer-icon">
-                <img src="https://www.google.com/s2/favicons?domain=7k.casino&sz=64" alt="7K">
+                <img src="https://7k.casino/uploads/7k_logo_web-autumn.svg" alt="7K">
             </div>
             <div class="offer-info">
                 <div class="offer-title">7K</div>
@@ -264,14 +322,14 @@
         <!-- IRIS -->
         <div class="offer-block">
             <div class="offer-icon">
-                <img src="https://www.google.com/s2/favicons?domain=iris.casino&sz=64" alt="Iris">
+                <img src="https://iriscasino16.com/favicon.ico" alt="Iris">
             </div>
             <div class="offer-info">
                 <div class="offer-title">IRIS</div>
                 <div class="offer-desc">300% со старта</div>
                 <div class="offer-promo">Промо: BONUSOTGEO</div>
             </div>
-            <a href="https://irisroute64.com/c50427374" class="offer-btn" target="_blank" rel="noreferrer noopener">
+            <a href="https://irisroute65.com/c50427374" class="offer-btn" target="_blank" rel="noreferrer noopener">
                 🎁 ИГРАТЬ
             </a>
         </div>
@@ -283,6 +341,13 @@
 </div>
 
 <script>
+    function copyChannel() {
+        const text = '@officialgeovaxue';
+        navigator.clipboard.writeText(text).then(() => {
+            showToast('✅ Скопировано: ' + text);
+        });
+    }
+
     function showToast(msg) {
         let existing = document.getElementById('customToast');
         if (existing) existing.remove();
