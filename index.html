@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0c0a14;
+            background: radial-gradient(circle at top, #1a0f2e 0%, #0a0612 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,28 +24,44 @@
         .card {
             max-width: 440px;
             width: 100%;
-            background: #13101e;
+            background: linear-gradient(160deg, #1c1130 0%, #100a1e 100%);
             border-radius: 36px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 25px 60px rgba(164, 119, 232, 0.3);
+            border: 1px solid rgba(164, 119, 232, 0.2);
             padding: 0 0 24px 0;
         }
 
         .header {
-            padding: 30px 20px 24px;
+            padding: 32px 20px 26px;
             text-align: center;
-            background: #181423;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: linear-gradient(180deg, #2a1748 0%, #1c1130 100%);
+            border-bottom: 1px solid rgba(164, 119, 232, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 167, 122, 0.15) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .avatar {
             width: 85px;
             height: 85px;
-            margin: 0 auto 12px;
+            margin: 0 auto 14px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #a477e8, #6b4c9e);
+            background: linear-gradient(135deg, #f5a77a, #a477e8);
             padding: 3px;
+            box-shadow: 0 0 30px rgba(245, 167, 122, 0.5);
+            position: relative;
+            z-index: 1;
         }
 
         .avatar img {
@@ -59,31 +75,31 @@
         h1 {
             font-size: 30px;
             font-weight: 800;
-            background: linear-gradient(90deg, #d4bfff, #a477e8);
+            background: linear-gradient(90deg, #f5a77a, #a477e8);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            position: relative;
+            z-index: 1;
         }
 
         .subhead {
             font-size: 14px;
-            color: #8a7aaa;
-            background: rgba(255, 255, 255, 0.04);
-            display: inline-block;
-            padding: 6px 20px;
-            border-radius: 60px;
-            font-weight: 500;
-            margin-top: 4px;
+            color: #f5a77a;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
         }
 
         .main-content {
             padding: 24px 20px 0;
         }
 
+        /* Кнопка Telegram — крупная и яркая */
         .tg-btn {
             display: block;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             background: linear-gradient(90deg, #2787F5, #1a6bc9);
             padding: 18px 20px;
             border-radius: 60px;
@@ -93,15 +109,15 @@
             font-size: 18px;
             transition: 0.2s;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(39, 135, 245, 0.3);
+            box-shadow: 0 6px 20px rgba(39, 135, 245, 0.4);
             letter-spacing: 0.5px;
         }
 
         .tg-btn span {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 400;
-            opacity: 0.8;
+            opacity: 0.85;
             margin-top: 4px;
         }
 
@@ -109,12 +125,36 @@
             transform: scale(0.97);
         }
 
+        /* Предупреждение про VPN */
+        .vpn-warning {
+            background: rgba(245, 167, 122, 0.08);
+            border: 1px solid rgba(245, 167, 122, 0.3);
+            border-radius: 20px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .vpn-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .vpn-text {
+            font-size: 13px;
+            color: #f5a77a;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
         .fallback {
-            background: #1e1a2e;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 24px;
-            padding: 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            margin-bottom: 24px;
+            padding: 14px 16px;
+            border: 1px solid rgba(164, 119, 232, 0.1);
+            margin-bottom: 20px;
         }
 
         .fallback p {
@@ -141,11 +181,11 @@
         }
 
         .copy-btn {
-            background: #6b4c9e;
+            background: linear-gradient(90deg, #6b4c9e, #8a5ac9);
             border: none;
             color: white;
             font-weight: 600;
-            padding: 6px 20px;
+            padding: 8px 20px;
             border-radius: 60px;
             cursor: pointer;
             font-size: 12px;
@@ -154,7 +194,7 @@
 
         .copy-btn:active {
             transform: scale(0.95);
-            background: #5a3f86;
+            opacity: 0.9;
         }
 
         .footer {
@@ -163,7 +203,7 @@
             font-size: 10px;
             color: #5a4a7a;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 24px;
+            margin-top: 20px;
         }
 
         .toast {
@@ -191,7 +231,7 @@
             <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
         </div>
         <h1>GEOVAXUE</h1>
-        <div class="subhead">📌 ВЕСЬ ТРЕШ В ТЕЛЕГЕ</div>
+        <div class="subhead">🔥 ВЕСЬ ТРЕШ В ТЕЛЕГЕ</div>
     </div>
 
     <div class="main-content">
@@ -199,8 +239,15 @@
             📢 ПЕРЕЙТИ В TELEGRAM
         </a>
 
+        <div class="vpn-warning">
+            <div class="vpn-icon">⚠️</div>
+            <div class="vpn-text">
+                Ссылка на Telegram открывается <strong>ТОЛЬКО с включённым VPN</strong>. Если не открывается — включи VPN и попробуй снова.
+            </div>
+        </div>
+
         <div class="fallback">
-            <p>⚠️ Если Telegram не открывается — найди канал вручную:</p>
+            <p>Если Telegram не открывается — найди канал вручную:</p>
             <div class="copy-row">
                 <span>@geovaxuebonusbot</span>
                 <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
