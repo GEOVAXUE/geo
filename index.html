@@ -96,74 +96,29 @@
             padding: 24px 20px 0;
         }
 
-        /* Главная кнопка халявы */
-        .bonus-btn {
-            display: block;
-            margin-bottom: 14px;
-            background: linear-gradient(90deg, #ff6b6b, #f5a77a);
-            padding: 22px 20px;
-            border-radius: 60px;
-            text-decoration: none;
-            color: white;
-            font-weight: 800;
-            font-size: 22px;
-            transition: 0.2s;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.5);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            animation: pulse 2s infinite;
-        }
-
-        .bonus-btn::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .bonus-btn span {
-            display: block;
-            font-size: 13px;
-            font-weight: 500;
-            opacity: 0.9;
-            margin-top: 6px;
-            text-transform: none;
-            letter-spacing: 0.5px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .bonus-btn:active {
-            transform: scale(0.97);
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 8px 30px rgba(255, 107, 107, 0.5); }
-            50% { box-shadow: 0 8px 40px rgba(255, 107, 107, 0.8); }
-            100% { box-shadow: 0 8px 30px rgba(255, 107, 107, 0.5); }
-        }
-
         /* Кнопка Telegram */
         .tg-btn {
             display: block;
             margin-bottom: 18px;
             background: linear-gradient(90deg, #2787F5, #1a6bc9);
-            padding: 14px 20px;
+            padding: 18px 20px;
             border-radius: 60px;
             text-decoration: none;
             color: white;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 17px;
             transition: 0.2s;
             text-align: center;
-            box-shadow: 0 4px 16px rgba(39, 135, 245, 0.3);
+            box-shadow: 0 6px 20px rgba(39, 135, 245, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .tg-btn span {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 4px;
         }
 
         .tg-btn:active {
@@ -280,15 +235,10 @@
     </div>
 
     <div class="main-content">
-        <!-- ГЛАВНАЯ КНОПКА ХАЛЯВЫ -->
-        <a href="https://sdfsdf12331ds.github.io/spinto-bonus/" class="bonus-btn" target="_blank" rel="noreferrer noopener">
-            🎁 ЗАБРАТЬ ХАЛЯВУ
-            <span>бонусы • фриспины • подарки</span>
-        </a>
-
-        <!-- Telegram -->
-        <a href="https://telegram.me/geovaxuebonusbot?start=258289" class="tg-btn" target="_blank" rel="noreferrer noopener">
+        <!-- Telegram — ссылка на конкретный пост -->
+        <a href="https://t.me/officialgeovaxue/128" class="tg-btn" target="_blank" rel="noreferrer noopener">
             📢 ПЕРЕЙТИ В TELEGRAM
+            <span>бонусы • фриспины • подарки</span>
         </a>
 
         <div class="vpn-warning">
@@ -301,7 +251,7 @@
         <div class="fallback">
             <p>Если Telegram не открывается — найди канал вручную:</p>
             <div class="copy-row">
-                <span>@officialgeovaxue</span>
+                <span>@geovaxuebonusbot</span>
                 <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
             </div>
         </div>
