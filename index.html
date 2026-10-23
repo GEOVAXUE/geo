@@ -1,285 +1,570 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>GEOVAXUE | Доступ</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#090711">
+<title>GEOVAXUE — Telegram</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: radial-gradient(circle at top, #1a0f2e 0%, #0a0612 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
-        }
+<style>
+:root {
+    --bg: #090711;
+    --panel: #13101f;
+    --panel-light: #1b152b;
+    --purple: #9b5cff;
+    --pink: #ff4fa3;
+    --text: #ffffff;
+    --muted: #a6a0b9;
+    --border: rgba(255,255,255,.09);
+}
 
-        .card {
-            max-width: 440px;
-            width: 100%;
-            background: linear-gradient(160deg, #1c1130 0%, #100a1e 100%);
-            border-radius: 36px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(164, 119, 232, 0.3);
-            border: 1px solid rgba(164, 119, 232, 0.2);
-            padding: 0 0 24px 0;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .header {
-            padding: 32px 20px 26px;
-            text-align: center;
-            background: linear-gradient(180deg, #2a1748 0%, #1c1130 100%);
-            border-bottom: 1px solid rgba(164, 119, 232, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 28px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(125,61,202,.22), transparent 48%),
+        radial-gradient(ellipse at 100% 75%, rgba(255,48,137,.09), transparent 35%),
+        var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(245, 167, 122, 0.15) 0%, transparent 60%);
-            pointer-events: none;
-        }
+.page {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+}
 
-        .avatar {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 14px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f5a77a, #a477e8);
-            padding: 3px;
-            box-shadow: 0 0 30px rgba(245, 167, 122, 0.5);
-            position: relative;
-            z-index: 1;
-        }
+.card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 30px 22px 22px;
+    border-radius: 30px;
+    background: linear-gradient(155deg, #191326 0%, #100d1b 55%, #100b19 100%);
+    border: 1px solid rgba(182,127,255,.2);
+    box-shadow: 0 28px 90px rgba(0,0,0,.55),
+                0 0 50px rgba(137,71,255,.08);
+}
 
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #13101e;
-        }
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 260px;
+    height: 260px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #8d46ff;
+    filter: blur(100px);
+    opacity: .22;
+}
 
-        h1 {
-            font-size: 30px;
-            font-weight: 800;
-            background: linear-gradient(90deg, #f5a77a, #a477e8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 6px;
-            position: relative;
-            z-index: 1;
-        }
+.top-label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 23px;
+}
 
-        .subhead {
-            font-size: 14px;
-            color: #f5a77a;
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid var(--border);
+    color: #d8c5ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
 
-        .main-content {
-            padding: 24px 20px 0;
-        }
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #b47aff;
+    box-shadow: 0 0 12px #a35cff;
+}
 
-        /* Кнопка Telegram */
-        .tg-btn {
-            display: block;
-            margin-bottom: 18px;
-            background: linear-gradient(90deg, #2787F5, #1a6bc9);
-            padding: 18px 20px;
-            border-radius: 60px;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            font-size: 17px;
-            transition: 0.2s;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(39, 135, 245, 0.4);
-            letter-spacing: 0.5px;
-        }
+.brand {
+    text-align: center;
+}
 
-        .tg-btn span {
-            display: block;
-            font-size: 12px;
-            font-weight: 400;
-            opacity: 0.85;
-            margin-top: 4px;
-        }
+.avatar-ring {
+    width: 104px;
+    height: 104px;
+    padding: 3px;
+    margin: 0 auto 19px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff61ad, #9655ff 55%, #4e9bff);
+    box-shadow: 0 0 35px rgba(173,83,255,.27);
+}
 
-        .tg-btn:active {
-            transform: scale(0.97);
-        }
+.avatar {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #171122;
+    background: #20152d;
+}
 
-        /* Предупреждение про VPN */
-        .vpn-warning {
-            background: rgba(245, 167, 122, 0.08);
-            border: 1px solid rgba(245, 167, 122, 0.3);
-            border-radius: 20px;
-            padding: 14px 16px;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+h1 {
+    font-size: clamp(30px, 8vw, 38px);
+    font-weight: 950;
+    line-height: 1.08;
+    letter-spacing: 1.2px;
+    background: linear-gradient(100deg, #fff 10%, #e1c7ff 48%, #ff75bd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
-        .vpn-icon {
-            font-size: 24px;
-            flex-shrink: 0;
-        }
+.subtitle {
+    margin-top: 11px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
 
-        .vpn-text {
-            font-size: 13px;
-            color: #f5a77a;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 17px;
+}
 
-        .fallback {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 24px;
-            padding: 14px 16px;
-            border: 1px solid rgba(164, 119, 232, 0.1);
-            margin-bottom: 20px;
-        }
+.tag {
+    padding: 7px 10px;
+    border-radius: 9px;
+    color: #e3d4ff;
+    background: rgba(158,93,255,.09);
+    border: 1px solid rgba(158,93,255,.17);
+    font-size: 10px;
+    font-weight: 700;
+}
 
-        .fallback p {
-            font-size: 12px;
-            color: #8a7aaa;
-            text-align: center;
-            margin-bottom: 8px;
-        }
+.separator {
+    height: 1px;
+    margin: 26px 0 22px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
 
-        .copy-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #0c0a14;
-            border-radius: 60px;
-            padding: 4px 4px 4px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
+.section-title {
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+}
 
-        .copy-row span {
-            color: #d4bfff;
-            font-weight: 500;
-            font-size: 14px;
-        }
+.tg-btn {
+    min-height: 64px;
+    padding: 13px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 17px;
+    background: linear-gradient(105deg, #7550f5 0%, #9b50f5 50%, #df4ba9 100%);
+    box-shadow: 0 10px 28px rgba(143,76,244,.24),
+                inset 0 1px 0 rgba(255,255,255,.23);
+    transition: transform .18s, filter .18s;
+}
 
-        .copy-btn {
-            background: linear-gradient(90deg, #6b4c9e, #8a5ac9);
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 8px 20px;
-            border-radius: 60px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: 0.15s;
-        }
+.tg-btn:hover {
+    filter: brightness(1.1);
+}
 
-        .copy-btn:active {
-            transform: scale(0.95);
-            opacity: 0.9;
-        }
+.tg-btn:active {
+    transform: scale(.98);
+}
 
-        .footer {
-            text-align: center;
-            padding: 16px 20px 0;
-            font-size: 10px;
-            color: #5a4a7a;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            margin-top: 20px;
-        }
+.tg-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,.17);
+    font-size: 21px;
+}
 
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #2d1f4a;
-            color: #d4bfff;
-            padding: 8px 20px;
-            border-radius: 60px;
-            font-size: 13px;
-            font-weight: 500;
-            z-index: 999;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(164, 119, 232, 0.1);
-        }
-    </style>
+.tg-label {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 850;
+}
+
+.tg-label small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: .82;
+}
+
+.arrow {
+    font-size: 23px;
+    opacity: .9;
+}
+
+.manual {
+    margin-top: 14px;
+    padding: 17px;
+    border-radius: 19px;
+    background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+    border: 1px solid var(--border);
+}
+
+.manual-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 14px;
+}
+
+.search-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(255,79,163,.1);
+    border: 1px solid rgba(255,79,163,.16);
+    font-size: 19px;
+}
+
+.manual-heading strong {
+    display: block;
+    font-size: 13px;
+}
+
+.manual-heading small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 7px 7px 7px 12px;
+    border-radius: 13px;
+    background: #0b0912;
+    border: 1px solid rgba(177,131,255,.17);
+}
+
+.channel-name {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    color: #e4d5ff;
+    font-size: 13px;
+    font-weight: 750;
+    user-select: text;
+}
+
+.copy-btn {
+    flex-shrink: 0;
+    border: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(120deg, #8151dc, #a14fbb);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: opacity .15s, transform .15s;
+}
+
+.copy-btn:active {
+    transform: scale(.96);
+}
+
+.hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 13px;
+    color: #a9a2bc;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.hint-icon {
+    flex-shrink: 0;
+}
+
+.notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 14px;
+    margin-top: 15px;
+    border-radius: 14px;
+    background: rgba(255,185,91,.055);
+    border: 1px solid rgba(255,185,91,.12);
+    color: #d8c5a9;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.notice strong {
+    color: #ffcf91;
+}
+
+.footer {
+    padding-top: 20px;
+    text-align: center;
+    color: #777086;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+.footer span {
+    color: #c09bff;
+}
+
+.toast {
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: max(24px, env(safe-area-inset-bottom));
+    width: max-content;
+    max-width: calc(100% - 32px);
+    padding: 13px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(180,130,255,.25);
+    background: #211733;
+    box-shadow: 0 12px 35px rgba(0,0,0,.4);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 650;
+    text-align: center;
+    transform: translate(-50%, 15px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 24px 15px 19px;
+        border-radius: 25px;
+    }
+
+    .copy-btn {
+        padding: 10px 9px;
+    }
+
+    .channel-name {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
+</style>
 </head>
+
 <body>
+<main class="page">
+    <section class="card">
 
-<div class="card">
-    <div class="header">
-        <div class="avatar">
-            <img src="https://i.ibb.co/7NSTWDYs/thumb.jpg" alt="GEOVAXUE">
+        <div class="top-label">
+            <div class="status">
+                <span class="status-dot"></span>
+                OFFICIAL TELEGRAM
+            </div>
         </div>
-        <h1>GEOVAXUE</h1>
-        <div class="subhead">🔥 ВЕСЬ ТРЕШ В ТЕЛЕГЕ</div>
-    </div>
 
-    <div class="main-content">
-        <!-- Telegram — ссылка на конкретный пост -->
-        <a href="https://t.me/officialgeovaxue/128" class="tg-btn" target="_blank" rel="noreferrer noopener">
-            📢 ПЕРЕЙТИ В TELEGRAM
-            <span>бонусы • фриспины • подарки</span>
+        <header class="brand">
+            <div class="avatar-ring">
+                <img
+                    class="avatar"
+                    src="https://i.ibb.co/7NSTWDYs/thumb.jpg"
+                    alt="GEOVAXUE"
+                >
+            </div>
+
+            <h1>GEOVAXUE</h1>
+
+            <p class="subtitle">
+                🔥 ВЕСЬ ТРЕШ В ТЕЛЕГЕ<br>
+                Залетай — дальше интереснее
+            </p>
+
+            <div class="tags">
+                <span class="tag">⚡ ЭКСКЛЮЗИВ</span>
+                <span class="tag">🎁 БОНУСЫ</span>
+                <span class="tag">🎰 КАЗИНО</span>
+            </div>
+        </header>
+
+        <div class="separator"></div>
+
+        <div class="section-title">Твой вход в Telegram</div>
+
+        <a
+            href="https://t.me/officialgeovaxue/128"
+            class="tg-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="tg-icon">➤</span>
+            <span class="tg-label">
+                ПЕРЕЙТИ В TELEGRAM
+                <small>Открыть канал по ссылке</small>
+            </span>
+            <span class="arrow">↗</span>
         </a>
 
-        <div class="vpn-warning">
-            <div class="vpn-icon">⚠️</div>
-            <div class="vpn-text">
-                Ссылка на Telegram открывается <strong>ТОЛЬКО с включённым VPN</strong>. Если не открывается — включи VPN и попробуй снова.
+        <section class="manual">
+            <div class="manual-heading">
+                <div class="search-icon">⌕</div>
+                <div>
+                    <strong>Не открывается ссылка?</strong>
+                    <small>Найди канал вручную через поиск Telegram</small>
+                </div>
             </div>
+
+            <div class="search-row">
+                <span class="channel-name" id="channelName">
+                    @geovaxuebonusbot
+                </span>
+                <button
+                    class="copy-btn"
+                    id="copyBtn"
+                    type="button"
+                >
+                    КОПИРОВАТЬ
+                </button>
+            </div>
+
+            <div class="hint">
+                <span class="hint-icon">💡</span>
+                <span>
+                    Скопируй имя, открой Telegram, вставь его в поиск
+                    и проверь результаты.
+                </span>
+            </div>
+        </section>
+
+        <div class="notice">
+            <span>🔒</span>
+            <span>
+                <strong>Если Telegram не открывается</strong><br>
+                Попробуй включить VPN и повторно перейти по ссылке.
+            </span>
         </div>
 
-        <div class="fallback">
-            <p>Если Telegram не открывается — найди канал вручную:</p>
-            <div class="copy-row">
-                <span>@geovaxuebonusbot</span>
-                <button class="copy-btn" onclick="copyChannel()">📋 КОПИРОВАТЬ</button>
-            </div>
-        </div>
-    </div>
+        <footer class="footer">
+            MADE WITH <span>♥</span> • GEOVAXUE
+        </footer>
+    </section>
+</main>
 
-    <div class="footer">
-        GEOVAXUE • Доступ к каналу
-    </div>
-</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-    function copyChannel() {
-        const text = '@geovaxuebonusbot';
-        navigator.clipboard.writeText(text).then(() => {
-            showToast('✅ Скопировано: ' + text);
-        });
-    }
+const copyBtn = document.getElementById('copyBtn');
+const channelName = document.getElementById('channelName');
+const toast = document.getElementById('toast');
 
-    function showToast(msg) {
-        let existing = document.getElementById('customToast');
-        if (existing) existing.remove();
-        const toast = document.createElement('div');
-        toast.id = 'customToast';
-        toast.className = 'toast';
-        toast.textContent = msg;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2000);
+let toastTimer;
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2400);
+}
+
+async function copyChannel() {
+    const text = channelName.textContent.trim();
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+        } else {
+            throw new Error('Clipboard API unavailable');
+        }
+
+        showToast('✓ Скопировано: ' + text);
+    } catch (error) {
+        // Запасной вариант для старых браузеров
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        field.style.fontSize = '16px';
+
+        document.body.appendChild(field);
+        field.select();
+        field.setSelectionRange(0, field.value.length);
+
+        let copied = false;
+
+        try {
+            copied = document.execCommand('copy');
+        } catch (e) {
+            copied = false;
+        }
+
+        field.remove();
+
+        if (copied) {
+            showToast('✓ Скопировано: ' + text);
+        } else {
+            showToast('Зажми имя и скопируй вручную');
+        }
     }
+}
+
+copyBtn.addEventListener('click', copyChannel);
 </script>
 </body>
 </html>
+```
